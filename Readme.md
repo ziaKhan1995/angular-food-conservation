@@ -51,6 +51,7 @@ Other bidders can view the bids without login/signup like this but can not place
 
 
 10.Sellers wil be informed about his payment.
+![image](https://user-images.githubusercontent.com/77499979/227801586-1d489015-bb9d-4b78-bcf7-4e5256c31331.png)
 
 
 /********************************************
@@ -59,7 +60,7 @@ Admin Panel
 ![image](https://user-images.githubusercontent.com/77499979/227801263-b6a6e591-facb-4630-9f48-bfb8346a40ea.png)
 
 
-Filers::::::::::::::::
+Apppy some Filters::::::::::::::::
 ![image](https://user-images.githubusercontent.com/77499979/227801301-23f2aca7-d0a6-4d51-b6b8-412cd869be90.png)
 
 and so, on
