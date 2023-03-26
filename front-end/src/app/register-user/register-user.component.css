@@ -1,0 +1,181 @@
+.title-text {
+  font-size: 2.53em;
+  font-size: 2.53em;
+}
+
+.h1-heading {
+  display: inline;
+  font-size: 2.53em;
+  font-weight: 700;
+  color: cadetblue;
+}
+
+.h1-heading+span {
+  font-size: 2.53em;
+}
+
+form {
+  width: 100%;
+  font-size: 12px;
+}
+
+/* form button,a{
+    font-size: larger;
+} */
+.reg-container {
+  margin: 15px 100px !important;
+}
+
+.example-container .mat-form-field+.mat-form-field {
+  margin-left: 8px;
+}
+.heading-margins{
+  margin-top:20px; 
+  margin-bottom:20px;
+}
+.input-hints{
+  font-size: 12px;
+}
+.format-hints {
+  text-align: left;
+  display: inline-block;
+  padding-top: 20px;
+}
+.format-hints .mat-icon{
+  vertical-align: bottom !important;
+}
+.format-hints span:not(:first-child){
+  padding-bottom: 10px;
+  display: inline-block;
+}
+.hasborder {
+  border: 4px solid #F00;
+}
+.green .mat-icon,.red .mat-icon{
+  color: inherit !important;
+}
+/*   
+  .example-container .mat-form-field {
+    width: 220px;
+  } */
+.example-card {
+  max-width: 900px;
+  margin: initial 20px;
+}
+
+.example-container .mat-form-field+.mat-form-field {
+  margin-left: 8px;
+}
+
+.icon-size {
+  font-size: 15px !important;
+}
+
+.example-button-row {
+  display: table-cell;
+  width: 490px;
+}
+
+.example-container form>* {
+  margin: 5px 0;
+}
+
+.example-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.example-full-width {
+  width: 100%;
+}
+
+.example-container .mat-radio-button {
+  margin: 0 12px;
+}
+
+
+.mat-card {
+  padding: 5px !important;
+}
+
+.fullinput {
+  width: 100%;
+}
+
+.currency {
+  text-transform: uppercase;
+}
+
+.country {
+  text-transform: capitalize;
+}
+
+.mat-card:not([class*=mat-elevation-z]) {
+  box-shadow: none !important;
+}
+
+.highlight {
+  font-weight: bold;
+}
+
+/* .no-data {
+    pointer-events: none;
+  } */
+
+.mat-focused .mat-form-field-label {
+  color: #3f51b5 !important;
+}
+
+.mat-form-field-appearance-legacy .mat-form-field-underline {
+  background-color: #3f51b5;
+}
+
+.mat-input-element {
+  max-width: 83.7%;
+}
+
+.mat-icon {
+  color: rgb(0 0 0 / 77%);
+}
+
+.mat-icon:hover {
+  color: #444;
+}
+
+.btn-circle {
+  border-radius: 50%;
+  border: 1.6px solid #ccc;
+  height: 20px;
+  margin-left: 20px;
+  width: 20px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.tooltip-class {
+  background: lightseagreen;
+  font-size: 14px;
+  text-align: justify;
+}
+
+.mat-tooltip {
+  /* your own custom styles here */
+  /* e.g. */
+  color: #ffffff !important;
+}
+
+.padding {
+  padding: 1.5px 30px;
+}
+
+button .bi {
+  vertical-align: super;
+  font-size: 15px;
+}
+
+@media (max-width: 767px) {
+  .reg-container {
+    margin: 20px 20px;
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "name": "server",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "watch": "nodemon",
+    "start": "node ./bin/www"
+  },
+  "dependencies": {
+    "await-to-js": "^2.1.1",
+    "bcrypt": "^4.0.1",
+    "bcrypt-promise": "^2.0.0",
+    "bcryptjs": "^2.4.3", 
+    "body-parser": "^1.19.0",
+    "cookie-parser": "^1.4.5",
+    "cors": "^2.8.5",
+    "dateformat": "^3.0.3",
+    "debug": "~2.6.9",
+    "dotenv": "^4.0.0",
+    "express": "^4.17.1",
+    "express-fileupload": "^1.2.0",
+    "jade": "~1.11.0",
+    "lodash": "^4.17.20",
+    "morgan": "^1.10.0",
+    "multer": "^1. 4.2",
+    "mysql2": "^1.7.0",
+    "parse-error": "^0.2.0",
+    "passport": "^0.4.1",
+    "passport-jwt": "^3.0.1",
+    "request": "^2.88.2",
+    "sequelize": "^4.44.4",
+    "sequelize-cli": "^3.2.0",
+    "serve-favicon": "~2.4.5",
+    "utf8": "^3.0.0",
+    "validator": "^9.4.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
+}

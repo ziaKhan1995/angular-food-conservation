@@ -1,0 +1,89 @@
+\doublespacing
+\chapter{Requirement Specifications} \label{chap:reqs}
+
+%\version{v1.10.2015}
+
+\section{Requirements}
+This chapter include all the functional requirement for the project. It includes system specification, non functional requirements and functional requirements.
+
+\section{Functional Requirements}
+The functionality that we use in our web application are listed in the following Table \ref{tab:NonFER} below.
+
+
+\begin{table}[!h]
+    \centering
+    \begin{tabular}{|p{3cm}|p{11cm}|}
+        \hline 
+        Functional requirements & Description of Functional Requirements \\
+        \hline
+        Register & In this module user will first enter all the requirements of his personal information and then he is going to register in our web application.  \\ 
+        \hline
+        Login & User that is registered in our application can login in our system. only the logged in  person can bid on our web application on products that are listed on bidding.\\
+        \hline
+        Profile configuration & In this requirement the user will be able to edit all of his bid related information and also he can change his personal information.\\ 
+        \hline
+        Forget Password & The user who do not remember his password can simply type is email in forgot password section and he will be sent his password on his email that he registered in our system. \\
+        \hline
+        Admin & This section will be for the application organizer in which he will manage the application throughout.\\
+        \hline
+        Bidding & This section will be for bidding of the food products. In this section bidder will add the details of the products and buyer will bid on the product.\\ 
+        \hline
+        Purchase History & In this section the user will be able to view the purchase history and his bidding.\\
+        \hline
+        My bidding & User will be able to view his bidding.\\ 
+        \hline
+        Data Base Search & This section will allow user to bid on desire product and search for it.\\
+        \hline
+        Contact Us & This section will allow user to send us information via email given in this section.\\
+        \hline
+        New Bid & In this section user will be able to place his product for the bid and set the price and date for bid. \\
+        \hline
+        Edit Record & In this section admin and user both will be able to edit the information about the product listed for the bidding.\\
+        \hline
+        Feedback & In this section the user will be able to give us the information about his experience in our system and can suggest us ways that how we can improve user experience and can also suggest improvements through email.\\
+        \hline
+        Sales History & In this section the user will be able to see his all previous bids and he can also view previous bids of his clients.\\
+        \hline
+        Profile Management & In this section the user will be able to edit his profile information and can update his locations based on his products.\\
+         \hline
+    \end{tabular}
+    \caption{Functional Requirements of our application}
+    \label{tab:NonFER}
+\end{table}
+\newpage
+\section{Non Functional Requirements}
+The Non functional requirements of our web application are following:
+\subsection{Availability}
+Proposed web application is always available to the user 24/7. All he need is the internet connection to use our web application.
+\subsection{Usability}
+The usability of web application involve how much friendly the application is to the user. The user can easily learn and user our web application.
+\subsection{Reliability}
+Proposed web application include no data crash and easy data access when required to the system.
+\subsection{Security}
+The access between the bidder and seller is always secured and no data is been violated. 
+\\
+
+\newpage
+\section{System Specifications}
+The system specification for our web application are shown in the following Table \ref{tab:System Requirement} below:
+\\
+\begin{table}[!h]
+
+    \centering
+    \begin{tabular}{|p{4cm}|p{10cm}|}
+        \hline Software Requirements & Descriptive  \\
+        \hline
+        VS Code  & The editor we use to built our web application is visual studio code \cite{microsoft_2021}. We use VS Code to built our web application. It is developed by Microsoft and is open source with unlimited features and extensions. It is ranked third for developing applications. \\ 
+        \hline
+        Angular &Angular is the powerful front end single page application developed by Google and provide a lot of features such components, directives, services, modules, decorators, selectors embedding, routers outlets. It has both eager loading and lazy loading strategies depends upon the developer requirement's. As for as our project is concerned we have implemented both strategies, one for each module and another for sub-components. By default it has eager loading and it also gives us the feature of wild card to move user into page due to entering wrong URL aka 404 page not found.
+         \cite{Ang}. \\
+        \hline
+        MySQL & We are using MySQL \cite{ref3}.The version of MySQL is Version 12.4.3 and SQLYog for editor managing database and all  relations.
+        MySQL can Handel, store and modify the information and data about all the actors involve in our system. \\
+        \hline
+        Node JS & It is 100 times faster and secure than typical PHP. It is non-blocking HTTP request handler which mean that it will not block the next request if there a HTTP request in execution but rather it will be queued and prioritized. It is so powerful that it can handle up to 15000 HTTP per second (RPS) and by using the Vanila HTTP module it can handle up to 700000 requests per minutes.\\
+        \hline
+    \end{tabular}
+    \caption{System Requirements}
+    \label{tab:System Requirement}
+\end{table}

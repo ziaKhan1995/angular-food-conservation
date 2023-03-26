@@ -1,0 +1,162 @@
+<mat-dialog-content class="mat-typography">
+  <div *ngIf="imageLoading" id="imageLoading">Loading ...</div>
+  <mat-tab-group mat-align-tabs="center" [selectedIndex]="selectedTab.value" color="accent" animationDuration="1000ms"
+    dynamicHeight (selectedIndexChange)="selectedTab.setValue($event)" class="web-camera">
+    <mat-tab [disabled]="(selectedTab.value!=0 && imageTaken) || disabledForSomeTime">
+      <span (paste)="onPastingImage($event)">
+        <div style="margin:5px;">
+          <ng-template mat-tab-label>
+            <mat-icon>desktop_mac</mat-icon>
+            Computer
+          </ng-template>
+          <div md-autofocus class="fileDropZone" *ngIf="!imageTaken" ngFileDragDrop
+            (fileDropped)="getUploadedFiles($event)">
+            <input accept="image/*, .heic, .heif" type="file" (change)="picked($event)" style="display: none;" #img>
+            <img (contextmenu)="$event.preventDefault()" (click)="img.click()" alt="Click to choose photo from device" class="upload-img" title="choose photo"
+              src="assets/upload-drag-drop.png">
+          </div>
+          <div *ngIf="!imageTaken" class="paste">
+            <p>Supported Formats: PNG, JPG, JPEG</p>
+            <small>To copy and paste image, click here then press using
+              ctrl+v</small>
+            </div>
+          <p class="msg" *ngIf="msg && !imageTaken">{{msg}}</p>
+        </div>
+      </span>
+    </mat-tab>
+    <mat-tab [disabled]="(selectedTab.value!=1 && imageTaken) || disabledForSomeTime">
+      <ng-template mat-tab-label class="user-select-none">
+        <mat-icon> attach_file</mat-icon>
+         Picture Link
+      </ng-template>
+      <div *ngIf="!imageTaken">
+        <mat-form-field class="paste-link" appearance="outline">
+          <mat-label>Paste Image Link</mat-label>
+          <input autocomplete="off" autofocus matInput placeholder="Paste Image link" autocomplete="off"
+            [formControl]="imageURLFromInternt">
+          <button type="button" *ngIf="imageURLFromInternt.value" class="ml-3" matSuffix mat-icon-button
+            aria-label="Clear" (click)="imageURLFromInternt.setValue('')">
+            <span class="close">&#10006;</span>
+          </button>
+        </mat-form-field>
+        <div *ngIf="!linkImageLoaded && btnClicked" class="loading-text link-padding">
+          Loading ...
+        </div>
+        <div style="margin-bottom: 1px;">
+          <!-- <button mat-raised-button type="button" (click)="getLink($event)">PASTE LINK
+        </button>&nbsp; -->
+          <button [disabled]="!imageURLFromInternt.value" mat-flat-button color="primary" type="button"
+            (click)="getImageFromInternetURL(imageURLFromInternt.value)">DOWNLOAD and EDIT
+          </button>
+        </div>
+      </div>
+    </mat-tab>
+    <mat-tab [disabled]="selectedTab.value!=2 && imageTaken">
+      <ng-template mat-tab-label>
+        <i class="gg-webcam"></i>
+        Take a picture
+      </ng-template>
+      <!-- Content 1 -->
+      <div class="show" *ngIf="!imageTaken">
+        <div *ngIf="errors.length==0">
+          <webcam [height]="330" [width]="330" [trigger]="triggerObservable" (imageCapture)="handleImage($event)"
+            *ngIf="showWebcam && selectedTab.value==2" [allowCameraSwitch]="allowCameraSwitch"
+            [switchCamera]="nextWebcamObservable" [videoOptions]="videoOptions" [imageQuality]="1"
+            (cameraSwitched)="cameraWasSwitched($event)" (initError)="handleInitError($event)"></webcam>
+          <br />
+          <button class="actionBtn" (click)="triggerSnapshot()" [disabled]="!showWebcam"
+            title="click to take photo">Take Photo</button>
+          &nbsp;
+          <button class="actionBtn" (click)="toggleWebcam();"
+            [matTooltip]="'Click to '+showWebcam?'Hide Camera':'Show Camera'">{{showWebcam?'OFF':'ON'}} Camera</button>
+          <br />
+          <button class="actionBtn" (click)="showNextWebcam(true);" [disabled]="!multipleWebcamsAvailable">Next
+            Webcam</button>
+          <input id="cameraSwitchCheckbox" type="checkbox" [(ngModel)]="allowCameraSwitch">
+          <label for="cameraSwitchCheckbox">Allow Camera Switch</label>
+        </div>
+      </div>
+      <div class="left" *ngIf="errors.length > 0">
+        <h4>Web Camera errors:</h4>
+        <ul *ngFor="let error of errors">
+          <li>{{error['message'] | json}}</li>
+        </ul>
+        <b>Hints why webcamera not working:</b><br>
+        &bull; WebCamera not supported by this device or browser.<br>
+        &bull; WebCamera permissions denied. Not allowed by user!
+        <a target="_blank" href='https://support.google.com/chrome/answer/2693767?hl=en&co=GENIE.Platform%3DDesktop'>for
+          details</a><br>
+        &bull; Maybe turned off for this device.<br>
+        &bull; *<u>Alt</u>: Select image from device or use image link.
+      </div>
+      <div class="left italic" (click)="cameraNotWork=!cameraNotWork" 
+      *ngIf="!imageTaken && !cameraNotWork && errors.length==0">
+        <u>Help: Web Camera not working</u> ?
+      </div>
+      <div class="left" *ngIf="!imageTaken && cameraNotWork && errors.length==0">
+        <h4>Web Camera not working reasons:</h4>
+        &bull; WebCamera not supported by this device or browser.<br>
+        &bull; WebCamera permissions denied. Not allowed by user!
+        <a target="_blank" href='https://support.google.com/chrome/answer/2693767?hl=en&co=GENIE.Platform%3DDesktop'>for
+          details</a><br>
+        &bull; Maybe turned off for this device.<br>
+        &bull; *<u>Alt</u>: Select image from device or use image link. <small
+          (click)="cameraNotWork=!cameraNotWork">Hide</small>
+      </div>
+    </mat-tab>
+
+  </mat-tab-group>
+
+
+  <!--HTML Code For image Cropper Started-->
+  <div fxLayout="row wrap" *ngIf="imageTaken" class="imageTaken">
+    <div class="child-1" fxFlex>
+      <button (click)="rotateLeft()">Rotate left</button>
+      <button (click)="rotateRight()">Rotate right</button>
+      <button (click)="flipHorizontal()">Flip horizontal</button>
+      <button (click)="flipVertical()">Flip vertical</button>
+      <button (click)="toggleContainWithinAspectRatio()">{{containWithinAspectRatio?'Fill Aspect Ratio':'Contain Within
+        Aspect Ratio'}}</button>
+      <br />
+      <button (click)="resetImage()">Reset image</button>
+
+      <input [(ngModel)]="rotation" placeholder="Rotation" type="number" (keyup)="updateRotation()" /> <button
+        (click)="zoomOut()">Zoom -</button> <button (click)="zoomIn()">Zoom +</button>
+    </div>
+  </div>
+  <div fxLayout="row wrap" *ngIf="imageTaken" class="imageTaken">
+    <div class="child-1" fxFlex fxFlex.lt-sm="100">
+      <div *ngIf="!isCropperReady" class="loading-text">
+        Loading...
+      </div>
+      <image-cropper 
+      [imageBase64]="imageUploadedFromDeviceToBase64String" 
+      [maintainAspectRatio]="false"
+      [containWithinAspectRatio]="containWithinAspectRatio" 
+      [aspectRatio]="4/3" [onlyScaleDown]="true"
+      [roundCropper]="false" [canvasRotation]="canvasRotation" 
+      [transform]="transform" [alignImage]="'left'"
+      [style.display]="showCropper ? null : 'none'" format="png" 
+      (imageCropped)="imageCropped($event)"
+      (imageLoaded)="imageLoaded()" 
+      (cropperReady)="cropperReady($event)" 
+      (loadImageFailed)="loadImageFailed()">
+      </image-cropper>
+    </div>
+    <!---->
+    <div class="child-2 t-a" fxFlex fxFlex.lt-sm="100">
+      <u *ngIf="isCropperReady" class="img-preview">Image Preview</u>
+      <small *ngIf="isCropperReady" class="grey"> (borders not included)</small><br>
+      <img *ngIf="croppedImage" class="cropped-image" [src]="croppedImage">
+    </div>
+  </div>
+
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button class="btn" mat-button *ngIf="isCropperReady" (click)="tryAnootherImage()" 
+  [@enterAnimation]>Try another Photo</button>&nbsp;&nbsp;
+  <button mat-stroked-button class="btn cancel-btn" (click)="closeDialog()">Cancel</button>
+  <button [disabled]="!croppedImage" mat-stroked-button color="primary" type="button btn" (click)="saveThisPicture()">
+    Save this Picture
+  </button>
+</mat-dialog-actions>

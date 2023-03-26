@@ -1,0 +1,186 @@
+<div style="display: none;">
+  <div #myAlert class="format-hints">
+    <span class="green bold large pb-5 d-inline-block">String password hints</span><br>
+    Your password must contain:<br>
+    <span [ngClass]="minLength?'green':'red'"><mat-icon>{{minLength?'sentiment_very_satisfied':'sentiment_very_dissatisfied'}}</mat-icon>
+      At least 8 characters</span><br>
+    <span [ngClass]="hasLower?'green':'red'"><mat-icon>{{hasLower?'sentiment_very_satisfied':'sentiment_very_dissatisfied'}}</mat-icon>
+      At least 3 Lowercase letters</span><br>
+    <span [ngClass]="hasUpper?'green':'red'"><mat-icon>{{hasUpper?'sentiment_very_satisfied':'sentiment_very_dissatisfied'}}</mat-icon>
+      At least 1 Uppercase letter</span><br>
+    <span [ngClass]="hasNumber?'green':'red'"><mat-icon>{{hasNumber?'sentiment_very_satisfied':'sentiment_very_dissatisfied'}}</mat-icon> 
+      At least 1 digit</span><br>
+    <span [ngClass]="format?'green':'red'"><mat-icon>{{format?'sentiment_very_satisfied':'sentiment_very_dissatisfied'}}</mat-icon>  
+      At least 1 Special characters i.e. #$%`,_!@^&*()+=</span><br>
+    <span [ngClass]="maxLength?'green':'red'"><mat-icon>{{maxLength?'sentiment_very_satisfied':'sentiment_very_dissatisfied'}}</mat-icon>
+      Maximum 16 characters</span>
+  </div>
+</div>
+<div #top></div>
+<div class="reg-container">
+  <form [formGroup]="userForm">
+    <!--alert sizes:- alert_sm: small size , alert_lg: large size-->
+      <!--alert types
+      alert_success alert_info alert_danger alert_warning alert_dark -->
+    <div *ngIf="isSubmitted" class="alert {{alertType}}" style="margin-bottom:25px;">
+      <div class="alert--icon">
+        <!--alertt icon types
+          fa-bell fa-check-circle fa-times-circle fa-exclamation-circle	 fa-exclamation-triangle-->
+        <i class="fas {{alertTypeIcon}}"></i>
+      </div>
+      <div class="alert--content">
+           {{alertMessage}}
+      </div>
+      <div class="alert--close" (click)="clear()">
+        <i class="far fa-times-circle"></i>
+      </div>
+    </div>
+    <div class="heading-margins">
+      <div class="h1-heading">Register </div><span class="grey">Now</span><br>
+      <span class="input-hints">Fields marked with <span class="red">*</span> are required</span>
+    </div>
+    <div fxLayout="row wrap">
+      <mat-card class="child-1" fxFlex="32" fxFlex.lt-sm="50">
+        <mat-form-field class="fullinput" appearance="outline">
+          <mat-label>First Name</mat-label>
+          <input #fname matInput placeholder="Jhon Doe" formControlName="userFname" maxlength="30" autocomplete="off">
+          <button type="button" matSuffix mat-icon-button>
+            <mat-icon>person</mat-icon>
+          </button>
+          <mat-hint align="end">{{fname?.value?.length || 0}}/30</mat-hint>
+          <mat-error *ngIf="ff['userFname']?.invalid">{{getFNameErrorMessage()}}</mat-error>
+        </mat-form-field>
+      </mat-card>
+      <mat-card class="child-2" fxFlex="32" fxFlex.lt-sm="50">
+        <mat-form-field class="fullinput" appearance="outline">
+          <mat-label>Last Name</mat-label>
+          <input #lname matInput placeholder="Jhon Doe" formControlName="userLname" maxlength="30" autocomplete="off">
+          <button type="button" matSuffix mat-icon-button>
+            <mat-icon>person</mat-icon>
+          </button>
+          <mat-hint align="end">{{lname?.value?.length || 0}}/30</mat-hint>
+          <mat-error *ngIf="ff['userLname']?.invalid">{{getLNameErrorMessage()}}</mat-error>
+        </mat-form-field>
+      </mat-card>
+      <mat-card class="child-3" fxFlex="32" fxFlex.lt-sm="100">
+        <mat-form-field class="fullinput" appearance="outline">
+          <mat-label>Phone</mat-label>
+          <input matInput placeholder="your contact no" formControlName="userPhoneno" type="tel" autocomplete="off">
+          <button type="button" matSuffix mat-icon-button>
+            <mat-icon>phone</mat-icon>
+          </button>
+          <mat-error *ngIf="ff!['userPhoneno']!?.invalid">{{getPhoneErrorMessage()}}</mat-error>
+        </mat-form-field>
+      </mat-card>
+      <mat-card class="child-4" fxFlex="32" fxFlex.lt-sm="100">
+        <mat-form-field class="fullinput" appearance="outline">
+          <mat-label>Email Address</mat-label>
+          <input type="email" matInput placeholder="jhondoe@gmail.com" formControlName="userEmail" autocomplete="off">
+          <button type="button" matSuffix mat-icon-button>
+            <mat-icon>email</mat-icon>
+          </button>
+          <mat-hint>Email will be used for login and verifiction purposes. Make sure it is correct</mat-hint>
+          <mat-error *ngIf="ff!['userEmail']!?.invalid">{{getEmailErrorMessage()}}</mat-error>
+        </mat-form-field>
+      </mat-card>
+    
+    <mat-card class="child-5" fxFlex="32" fxFlex.lt-sm="50">
+      <mat-form-field class="fullinput" appearance="outline" 
+      [hintLabel]="placeholder">
+        <mat-label>Password</mat-label>
+        <input #inputt matInput [type]="hide ? 'password' : 'text'" formControlName="password"
+           [placeholder]="placeholder" (focusout)="showPasswordHints(false)"
+          minlength="8" maxlength="16" autocomplete="off">
+        <mat-hint align="end">{{ff!['password']!.value?.length || 0}}/16</mat-hint>
+        <button mat-icon-button matSuffix (click)="showPassword()" [attr.aria-label]="'Hide user_password'"
+          [attr.aria-pressed]="'Show user_password'">
+          <mat-icon matRipple>{{hide?'visibility_off':'visibility'}}</mat-icon>
+        </button>
+        <mat-error *ngIf="ff!['password']!?.invalid">{{getpasswordErrorMessage()}} 
+          <mat-icon (click)="showPasswordHints(true)" class="float-right mat-icon-initials icon-size" 
+          matRipple matTooltip="         Click to know the required password Pattern" 
+          matTooltipClass="tooltip-class" matTooltipPosition="above">info_outline</mat-icon>
+        </mat-error>
+      </mat-form-field>
+    </mat-card>
+    <mat-card class="child-6" fxFlex="32" fxFlex.lt-sm="50">
+      <mat-form-field class="fullinput" appearance="outline" hintLabel="Retype password">
+        <mat-label>Confirm your Password</mat-label>
+        <input #cp matInput placeholder="Retype Password" [type]="hide ? 'password' : 'text'"
+          formControlName="confirmPassword" autocomplete="off" minlength="8" maxlength="16">
+        <mat-hint align="end">{{cp.value?.length || 0}}/16</mat-hint>
+        <button mat-icon-button matSuffix (click)="showPassword()" [attr.aria-label]="'Hide user_password'"
+          [attr.aria-pressed]="'Show user_password'">
+          <mat-icon>{{hide?'visibility_off':'visibility'}}</mat-icon>
+        </button>
+        <mat-error *ngIf="ff!['confirmPassword']!?.invalid">{{getConfirmPasswordErrorMessage()}}</mat-error>
+      </mat-form-field>
+    </mat-card>
+
+    <mat-card class="child-7" fxFlex="32" fxFlex.lt-sm="50">
+      <mat-form-field class="fullinput" appearance="outline">
+        <mat-label>City</mat-label>
+        <mat-select formControlName="userCity">
+          <mat-option value="1">Islamabad</mat-option>
+          <mat-option value="2">Rawalpindi</mat-option>
+          <mat-option value="3">Peshawer</mat-option>
+          <mat-option value="4">Lahore</mat-option>
+          <mat-option value="5">Quetta</mat-option>
+          <mat-option value="6">Multan</mat-option>
+          <mat-option value="7">Chitral</mat-option>
+        </mat-select>
+        <mat-error *ngIf="ff!['userCity']?.invalid">{{getCityErrorMessage()}}</mat-error>
+      </mat-form-field>
+    </mat-card>
+    <mat-card class="child-8" fxFlex="32" fxFlex.lt-sm="50">
+      <mat-form-field class="fullinput" appearance="outline">
+        <mat-label>Street No</mat-label>
+        <input matInput placeholder="Your street No" type="number"
+          formControlName="userStreetno" autocomplete="off">
+        <mat-error *ngIf="ff!['userStreetno']!?.invalid">{{getUserStreetNoErrorMessage()}}</mat-error>
+      </mat-form-field>
+    </mat-card>
+    <mat-card class="child-9" fxFlex="32" fxFlex.lt-sm="50">
+      <mat-form-field class="fullinput" appearance="outline">
+        <mat-label>Street Name</mat-label>
+        <input matInput placeholder="Your street Name"
+          formControlName="userStreetname" autocomplete="off">
+        <mat-error *ngIf="ff!['userStreetname']!?.invalid">{{getUserStreetNameErrorMessage()}}</mat-error>
+      </mat-form-field>
+    </mat-card>
+    <mat-card class="child-10" fxFlex="32" fxFlex.lt-sm="50">
+      <mat-form-field class="fullinput" appearance="outline"
+      hintLabel="Invalid address may lead to your bid or auction product cancellation">
+        <mat-label>Add Further Address details</mat-label>
+        <input #address maxlength="100" matInput formControlName="address" type="tel" autocomplete="off"
+          placeholder="Write your complete and valid address">
+        <button type="button" matSuffix mat-icon-button>
+          <mat-icon>info_outline</mat-icon>
+        </button>
+        <mat-hint align="end">{{address!.value!.length || 0}}/100</mat-hint>
+        <mat-error *ngIf="ff!['address']!?.invalid">{{getAddressErrorMessage()}}</mat-error>
+      </mat-form-field>
+    </mat-card>
+</div>
+    <div flexLout="row wrap" style="margin-top:5px;margin-bottom:20px;">
+      <mat-checkbox color="primary" [formControl]="keepMeLoggedIn">Keep Me Logged In</mat-checkbox>
+      <button type="button" class="btn-circle" #tooltip="matTooltip" aria-label="show info about kep me logged"
+        [matTooltip]="tooltipText" TooltipTouchGestures='on' matTooltipPosition="above" (click)="tooltip.show()"
+        matTooltipClass='tooltip-class'>
+        ?
+      </button>
+    </div>
+    <section style="font-size:larger;">
+      <button class="padding" type="button" mat-stroked-button title="Clear all inputs" (click)="reset()">Clear</button>
+      &nbsp;&nbsp;
+      <button [disabled]="isSubmitting" class="padding" mat-raised-button title="Click to submit" type="submit"
+        color="primary" (click)="submit(top)">
+        <img class="loader" *ngIf="isSubmitting" [src]="loader">Submit</button>
+      &nbsp;&nbsp;
+      <a routerLink="/login" class="btn btn-primary" matTooltipPosition="above" matTooltip="Already have an account ?"
+        matTooltipClass='tooltip-class'>
+        Go to Login</a>
+    </section>
+
+  </form>
+</div>

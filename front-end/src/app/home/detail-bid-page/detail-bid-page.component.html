@@ -1,0 +1,127 @@
+<div #top></div>
+<div *ngIf="auctionDetail && auctionDetail?.ID" class="container" fxLayout="row wrap">
+    <div *ngIf="isSubmitted" class="alert alert_success" 
+    style="margin-bottom:35px;">
+        <div class="alert--icon">
+            <i class="fas fa-check-circle"></i>
+        </div>
+        <div class="alert--content">
+            Success! You have placed Bid  successfully with price (Rs. {{userBid?.bidPrice}}) 
+        </div>
+        <div class="alert--close" (click)="isSubmitted=!isSubmitted">
+            <i class="far fa-times-circle"></i>
+        </div>
+    </div>
+    <div class="child-1" fxFlex="35" fxFlex.lt-md="50" fxFlex.lt-sm="100">
+        <span class="heading">
+            <span style="font-weight:bolder;">Bid</span> 
+            <span style="color:dimgray"> Now on &ldquo;{{auctionDetail?.Prod_Name}}&rdquo;</span>
+        </span>
+        <div class="collection">
+        <div class="images-container">
+            <img *ngIf="image1Selected" class="mat-elevation-z2" [lazyLoad]="coverImageSrc">
+            <img *ngIf="!image1Selected" class="mat-elevation-z2" [lazyLoad]="secondImageSrc">
+        </div>
+        <div class="img-selector">
+        <img class="cover-img" [ngClass]="{'img-selected':image1Selected}" [src]="coverImageSrc" 
+             (click)="image1Selected=true">
+        <img [ngClass]="{'img-selected':!image1Selected}" 
+            class="cover-img" (click)="image1Selected=false" [src]="secondImageSrc">
+        </div>
+    </div>
+    </div>
+
+    <div class="child-2 pl" fxFlex="35" fxFlex.lt-md="50" fxFlex.lt-sm="100">
+        <h1>Auction Details</h1>
+        <div style="font-size:20px">
+            <div class="line">
+                <mat-icon class="right-arrow">keyboard_arrow_right</mat-icon>
+                 <button class="btn"><mat-icon>person</mat-icon>
+                </button><span class="text capitalize">
+                    {{sellerUser?.userFname+" "+sellerUser?.userLname}}</span>
+            </div>
+            <div class="line">
+                <mat-icon class="right-arrow">keyboard_arrow_right</mat-icon>
+                 <button class="btn"><mat-icon>location_on</mat-icon>
+                </button><span class="text">{{userCity?userCity:'...'}}</span>
+            </div>
+            <div matRipple class="line cursor" [ngClass]="{'blur':auctionbidSLoading}" 
+            (click)="getAllBidsForAuction()" [matRippleDisabled]="auctionbidSLoading" 
+            matTooltip="Number of Bids submitted since auction created" matToolTipTouchGesture="on" 
+            matTooltipPosition="above" matTooltipClass='tooltip-class'>
+                <mat-icon class="right-arrow">keyboard_arrow_right</mat-icon>
+                 <button class="btn btn1" [ngClass]="{'bidsLoading':auctionbidSLoading}" 
+                 style="padding:7px 18px;">
+                    <img class="loader" *ngIf="auctionbidSLoading" [src]="loader">
+                    {{auctionDetail?.bidCount}}
+                </button><span class="text" [ngClass]="{'blink_me':blinker}">
+                 <a class="new-login">view</a> all bids</span>
+            </div>
+            <div class="line">
+                <mat-icon class="right-arrow">keyboard_arrow_right</mat-icon>
+                 <button class="btn btn1"><span class="currency">Rs</span> 
+                    {{auctionDetail.Prod_Start_Bid_Amount ?? 'NA'}}
+                </button><span class="text">Actual Price</span>
+            </div>
+            <div class="line">
+                <mat-icon class="right-arrow">keyboard_arrow_right</mat-icon>
+                 <button class="btn btn1"><span class="currency">Rs</span> 
+                    {{auctionDetail?.Auc_Reserve_Price ?? 'NA'}}
+                </button><span class="text">Direct Purchase</span>
+            </div>
+            <div class="line">
+                <mat-icon class="right-arrow">keyboard_arrow_right</mat-icon>
+                 <button class="btn btn1"><span class="currency">Rs</span>. 
+                </button><span class="text">Maximum Price</span>
+            </div>
+            <div class="line">
+                <mat-icon class="right-arrow">keyboard_arrow_right</mat-icon>
+                 <button class="btn btn1"><span class="currency">Rs</span>. 
+                </button><span class="text">Minimum Price</span>
+            </div>
+            <div class="line">
+                <mat-icon class="right-arrow">keyboard_arrow_right</mat-icon>
+                 <button class="btn btn1">{{differnceInHours ?? 'NA'}} Hrs
+                </button><span class="text">Time remaining</span>
+            </div>
+            <div class="line"> 
+                <span class="green">Auction close date</span>: 
+                {{(auctionDetail?.Auc_Close_Date  | date:'dd-MM-yyyy hh:mm a')  ?? 'NA'}}
+            </div><br>
+            <div *ngIf="showMessage()" 
+            class="line red"> <!--if u own the product-->
+                You can't bid on your own products.
+            </div>
+            <div *ngIf="!loggedInUserAccount" class="red not-logged-in-message">
+                You must have an appropriate valid account on this <b>FCWR- online surplus food bidding 
+                    website</b>  
+                  to participate in Bidding or sell your 
+                  product on bidding. Kindly goto to <a class="new-login" (click)="gotoFrom('/register')">
+                    Registration</a> page and sign in with your valid details or goto 
+                     <a class="new-login" (click)="gotoFrom('/login')">LOGIN</a> if you have already an account.
+            </div>
+                       
+        </div>
+        <!--Note update button text if already bid place before-->
+        <button class="bid-btn" (click)="openDialog(top)" mat-raised-button 
+         [disabled]="disableBidBtn()" [ngClass]="{'cursor-not-allowed':disableBidBtn()}">
+         {{(userBid && userBid.id && loggedInUserAccount?.id)?'Update Price Now':'Bid Right Now'}}
+         <mat-icon>keyboard_arrow_right</mat-icon></button>
+         
+         <div class="green bid-placed" *ngIf="(userBid && userBid.id && loggedInUserAccount?.id)">
+            You have <span *ngIf="hasBiderAlreadyBidSubmited">already</span> placed bid 
+            <span *ngIf="!hasBiderAlreadyBidSubmited">successfully</span>
+            with price (Rs. {{userBid?.bidPrice ?? 'NA'}})
+         </div>
+
+    </div>
+    <div class="child-3 description" fxFlex="30" fxFlex.lt-md="50" fxFlex.lt-sm="100">
+        <h1>Description</h1>
+        <span>{{auctionDetail?.Prod_Description}}</span>
+        <br>
+        <h2>Quantity</h2>
+        <span>{{auctionDetail?.Quantity ?? 'NA'}}</span>
+        <h2>Category</h2>
+        <span>{{auctionDetail?.prod_cat_name ?? 'NA'}}</span>
+     </div>
+</div>

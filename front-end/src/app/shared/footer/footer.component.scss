@@ -1,0 +1,226 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,500,300,700);
+
+* {
+  font-family: Open Sans;
+}
+
+section {
+  width: 100%;
+  display: inline-block;
+  background: #333;
+  height: 50vh;
+  text-align: center;
+  font-size: 22px;
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+.footer-distributed{
+	background: #fafafa;
+	box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+	box-sizing: border-box;
+	width: 100%;
+	text-align: left;
+	font: bold 16px sans-serif;
+	padding: 15px 20px;
+	position: relative;
+	margin-top: 50px;
+	left: 0;
+	bottom: 0;
+}
+
+.footer-distributed .footer-left,
+.footer-distributed .footer-center,
+.footer-distributed .footer-right{
+	display: inline-block;
+	vertical-align: top;
+}
+
+/* Footer left */
+
+.footer-distributed .footer-left{
+	width: 40%;
+}
+
+/* The company logo */
+
+.footer-distributed h4{
+	font: normal 26px 'Open Sans', cursive;
+	margin: 0;
+}
+
+.footer-distributed h4 span{
+	color:  black;
+}
+
+/* Footer links */
+
+.footer-distributed .footer-links{
+	margin: 20px 0 12px;
+	padding: 0;
+}
+
+.footer-distributed .footer-links a{
+	display:inline-block;
+	line-height: 1.8;
+  	font-weight:400;
+	text-decoration: none;
+	color:  inherit;
+}
+
+.footer-distributed .footer-company-name{
+	font-size: 14px;
+	font-weight: normal;
+	margin: 0;
+}
+
+/* Footer Center */
+
+.footer-distributed .footer-center{
+	width: 35%;
+}
+
+.footer-distributed .footer-center i{
+	font-size: 25px;
+	width: 38px;
+	height: 38px;
+	border-radius: 50%;
+	text-align: center;
+	line-height: 42px;
+	margin: 10px 15px;
+	vertical-align: middle;
+}
+
+.footer-distributed .footer-center i.bi-envelope{
+	font-size: 21px;
+	line-height: 38px;
+}
+
+.footer-distributed .footer-center p{
+	display: inline-block;
+  font-weight:400;
+	vertical-align: middle;
+	margin:0;
+}
+
+.footer-distributed .footer-center p span{
+	display:block;
+	font-weight: normal;
+	font-size:14px;
+	line-height:2;
+}
+
+.footer-distributed .footer-center p a{
+	text-decoration: none;
+	color: black !important;
+}
+
+.footer-distributed .footer-links a:before {
+  font-weight:300;
+  font-size: 20px;
+  left: 0;
+  display: inline-block;
+  padding-right: 5px;
+}
+
+.footer-distributed .footer-links .link-1:before {
+  content: none;
+}
+
+/* Footer Right */
+
+.footer-distributed .footer-right{
+	width: 20%;
+}
+
+.footer-distributed .footer-company-about{
+	line-height: 20px;
+	font-size: 15px;
+	font-weight: normal;
+	margin: 0;
+}
+.footer-distributed .footer-company-about a{
+	display: block;
+	text-decoration: none;
+	padding-bottom: 5px;
+}
+a:hover{
+	font-weight: 600;
+	opacity: 0.8;
+	text-decoration: underline !important;
+}
+.footer-distributed .footer-company-about span{
+	display: block;
+	font-size: 14px;
+	font-weight: bold;
+	margin-bottom: 10px;
+}
+
+.footer-distributed .footer-icons{
+	margin-top: 25px;
+}
+
+.footer-distributed .footer-icons a{
+	display: inline-block;
+	width: 35px;
+	height: 35px;
+	cursor: pointer;
+	background-color:  #33383b;
+	filter: brightness(120%);
+	border-radius: 50%;
+	font-size: 20px;
+	text-align: center;
+	line-height: 36px;
+	margin-right: 3px;
+	margin-bottom: 5px;
+}
+
+/* If you don't want the footer to be responsive, remove these media queries */
+.footer-company-sm{
+	display: none;
+}
+//go-to to 
+.go-to {
+	float: right;
+	color: #3f51b5;
+	margin-right: -70px !important;
+	cursor: pointer;
+	font-size: 30px;
+  }
+  .go-to:hover {
+  outline: 2px solid #3f51b5;
+  border-radius: 50%;
+  }
+
+@media (max-width: 880px) {
+	.go-to{
+		margin-right: -15px !important;
+	}
+	.show-lg{
+		display: none;
+	}
+	.footer-distributed{
+		font: bold 14px sans-serif;
+	}
+	.footer-company-name{
+		display: none;
+	}
+	.footer-company-sm{
+		display: block;
+		margin-top: 10px;
+		margin-bottom: -7px;
+	}
+	.footer-distributed .footer-left,
+	.footer-distributed .footer-center,
+	.footer-distributed .footer-right{
+		display: block;
+		width: 100%;
+		margin-bottom: 40px;
+		text-align: left;
+	}
+
+	.footer-distributed .footer-center i{
+		margin-left: 0;
+	}
+
+}

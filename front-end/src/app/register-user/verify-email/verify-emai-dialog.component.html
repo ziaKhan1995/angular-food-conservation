@@ -1,0 +1,45 @@
+<h2 mat-dialog-title>Email verification</h2>
+<form [formGroup]="form" [style.fontSize.px]="'14'">
+<mat-dialog-content [formGroup]="form">
+    <div class="card-body" *ngIf="f['email'].value && emailSent">
+        Time Left: 
+        <countdown #countdown [config]="configuration" class="custom-style" 
+        (event)="handleEvent($event)"></countdown>
+      </div>
+<h3 class="primary-text" *ngIf="f['email'].value">
+    An Email with verification code has been sent to <br>
+<span style="color: black;">{{f['email'].value}}</span>
+</h3>
+<h3 class="warn-text" *ngIf="!f['email'].value">
+    Email input is necessary. It will help in case you forget password
+</h3>
+    <mat-form-field style="margin-bottom:6px;">
+    <input autocomplete="off" (keydown)="preventInput($event)" matInput placeholder="Email" formControlName="email" >
+    <button mat-stroked-button  mat-icon-button matSuffix >
+        <span matSuffix title="Click to edit email" 
+        (click)="editEmail()">&#9998;</span>
+    </button>
+    <mat-error *ngIf="f['email'].invalid">{{getEmailErrorMessage()}}</mat-error>
+    </mat-form-field>
+ <mat-form-field hintLabel="Min 6 and Max 16 characters">
+    <mat-label>Enter code to verify:</mat-label>
+    <input autocomplete="off" cdkInitialFocus minlength="6" maxlength="16" matInput formControlName="emailCode">   
+    <mat-hint align="end">{{f['emailCode'].value?.length || 0}}/16</mat-hint>
+    <mat-error *ngIf="f['emailCode'].invalid">{{getEmailCodeErrorMessage()}}</mat-error>
+ </mat-form-field>
+</mat-dialog-content>
+<p class="red mt-5">{{errorMsg}}</p>
+<mat-dialog-actions>
+    <button class="mat-raised-button btn-success" (click)="verifyEmail()" type="submit" [disabled]="isEmailSUbmitting">
+    Verify Email
+    </button> 
+    <button [disabled]="!f['email'].value"  mat-raised-button class="btn btn-primary" 
+        (click)="resendCode()" [disabled]="TimeLeft>0">Resend Code 
+        <small class="card-body" style="vertical-align: baseline;" 
+        *ngIf="TimeLeft>0">
+         <countdown #countdown2 [config]="config2"></countdown>s
+        </small>
+    </button>    
+    <a (click)="goToHome()" class="remine-me">Remind me Later</a>   
+</mat-dialog-actions>
+</form>

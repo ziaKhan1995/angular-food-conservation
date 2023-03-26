@@ -1,0 +1,2502 @@
+[
+    {
+        "letter": "A",
+        "countryCode": "AF",
+        "countryName": "Afghanistan",
+        "dialCode": "+93",
+        "currencyCode": "AFN",
+        "population": "29121286",
+        "capital": "Kabul",
+        "continentName": "Asia"
+    },
+    {
+        "letter": "A",
+        "countryCode": "AD",
+        "countryName": "Andorra",
+        "dialCode": "+376",
+        "currencyCode": "EUR",
+        "population": "84000",
+        "capital": "Andorra la Vella",
+        "continentName": "Europe"
+    },
+    {
+        "letter": "A",
+        "countryCode": "AG",
+        "countryName": "Antigua and Barbuda",
+        "dialCode": "+1268",
+        "currencyCode": "XCD",
+        "population": "86754",
+        "capital": "St. John's",
+        "continentName": "North America"
+    },
+    {
+        "letter": "A",
+        "countryCode": "AI",
+        "countryName": "Anguilla",
+        "dialCode": "+1 264",
+        "currencyCode": "XCD",
+        "population": "13254",
+        "capital": "The Valley",
+        "continentName": "North America"
+    },
+    {
+        "letter": "A",
+        "countryCode": "AL",
+        "countryName": "Albania",
+        "dialCode": "+355",
+        "currencyCode": "ALL",
+        "population": "2986952",
+        "capital": "Tirana",
+        "continentName": "Europe"
+    },
+    {
+        "letter": "A",
+        "countryCode": "AM",
+        "countryName": "Armenia",
+        "dialCode": "+374",
+        "currencyCode": "AMD",
+        "population": "2968000",
+        "capital": "Yerevan",
+        "continentName": "Asia"
+    },
+    {
+        "letter": "A",
+        "countryCode": "AO",
+        "countryName": "Angola",
+        "dialCode": "+976",
+        "currencyCode": "AOA",
+        "population": "13068161",
+        "capital": "Luanda",
+        "continentName": "Africa"
+    },
+    {
+        "letter": "A",
+        "countryCode": "AQ",
+        "countryName": "Antarctica",
+        "dialCode": "NULL",
+        "currencyCode": "NULL",
+        "population": "0",
+        "capital": "",
+        "continentName": "Antarctica"
+    },
+    {
+        "letter": "A",
+        "countryCode": "AR",
+        "countryName": "Argentina",
+        "dialCode": "+54",
+        "currencyCode": "ARS",
+        "population": "41343201",
+        "capital": "Buenos Aires",
+        "continentName": "South America"
+    },
+    {
+        "letter": "A",
+        "countryCode": "AS",
+        "countryName": "American Samoa",
+        "dialCode": "+1684",
+        "currencyCode": "USD",
+        "population": "57881",
+        "capital": "Pago Pago",
+        "continentName": "Oceania"
+    },
+    {
+        "letter": "A",
+        "countryCode": "AT",
+        "countryName": "Austria",
+        "dialCode": "+43",
+        "currencyCode": "EUR",
+        "population": "8205000",
+        "capital": "Vienna",
+        "continentName": "Europe"
+    },
+    {
+        "letter": "A",
+        "countryCode": "AU",
+        "countryName": "Australia",
+        "dialCode": "+61",
+        "currencyCode": "AUD",
+        "population": "21515754",
+        "capital": "Canberra",
+        "continentName": "Oceania"
+    },
+    {
+        "letter": "A",
+        "countryCode": "AW",
+        "countryName": "Aruba",
+        "dialCode": "+297",
+        "currencyCode": "AWG",
+        "population": "71566",
+        "capital": "Oranjestad",
+        "continentName": "North America"
+    },
+    {
+        "letter": "A",
+        "countryCode": "AL",
+        "countryName": "Åland",
+        "dialCode": "+358",
+        "currencyCode": "EUR",
+        "population": "26711",
+        "capital": "Mariehamn",
+        "continentName": "Europe"
+    },
+    {
+        "letter": "A",
+        "countryCode": "AX",
+        "countryName": "Azerbaijan",
+        "dialCode": "+994",
+        "currencyCode": "AZN",
+        "population": "8303512",
+        "capital": "Baku",
+        "continentName": "Asia"
+    },
+    {
+        "letter": "B",
+        "countryCode": "BA",
+        "countryName": "Bosnia and Herzegovina",
+        "dialCode": "+387",
+        "currencyCode": "BAM",
+        "population": "4590000",
+        "capital": "Sarajevo",
+        "continentName": "Europe"
+    },
+    {
+        "letter": "B",
+        "countryCode": "BB",
+        "countryName": "Barbados",
+        "dialCode": "+1 246",
+        "currencyCode": "BBD",
+        "population": "285653",
+        "capital": "Bridgetown",
+        "continentName": "North America"
+    },
+    {
+        "letter": "B",
+        "countryCode": "BD",
+        "countryName": "Bangladesh",
+        "dialCode": "+880",
+        "currencyCode": "BDT",
+        "population": "156118464",
+        "capital": "Dhaka",
+        "continentName": "Asia"
+    },
+    {
+        "letter": "B",
+        "countryCode": "BE",
+        "countryName": "Belgium",
+        "dialCode": "+32",
+        "currencyCode": "EUR",
+        "population": "10403000",
+        "capital": "Brussels",
+        "continentName": "Europe"
+    },
+    {
+        "letter": "B",
+        "countryCode": "BF",
+        "countryName": "Burkina Faso",
+        "dialCode": "+226",
+        "currencyCode": "XOF",
+        "population": "16241811",
+        "capital": "Ouagadougou",
+        "continentName": "Africa"
+    },
+    {
+        "letter": "B",
+        "countryCode": "BG",
+        "countryName": "Bulgaria",
+        "dialCode": "+359",
+        "currencyCode": "BGN",
+        "population": "7148785",
+        "capital": "Sofia",
+        "continentName": "Europe"
+    },
+    {
+        "letter": "B",
+        "countryCode": "BH",
+        "countryName": "Bahrain",
+        "dialCode": "+973",
+        "currencyCode": "BHD",
+        "population": "738004",
+        "capital": "Manama",
+        "continentName": "Asia"
+    },
+    {
+        "letter": "B",
+        "countryCode": "BI",
+        "countryName": "Burundi",
+        "dialCode": "+257",
+        "currencyCode": "BIF",
+        "population": "9863117",
+        "capital": "Bujumbura",
+        "continentName": "Africa"
+    },
+    {
+        "letter": "B",
+        "countryCode": "BJ",
+        "countryName": "Benin",
+        "dialCode": "+229",
+        "currencyCode": "XOF",
+        "population": "9056010",
+        "capital": "Porto-Novo",
+        "continentName": "Africa"
+    },
+    {
+        "letter": "B",
+        "countryCode": "BL",
+        "countryName": "Saint Barthélemy",
+        "dialCode": "+590",
+        "currencyCode": "EUR",
+        "population": "8450",
+        "capital": "Gustavia",
+        "continentName": "North America"
+    },
+    {
+        "letter": "B",
+        "countryCode": "BM",
+        "countryName": "Bermuda",
+        "dialCode": "+1441",
+        "currencyCode": "BMD",
+        "population": "65365",
+        "capital": "Hamilton",
+        "continentName": "North America"
+    },
+    {
+        "letter": "B",
+        "countryCode": "BN",
+        "countryName": "Brunei",
+        "dialCode": "+673",
+        "currencyCode": "BND",
+        "population": "395027",
+        "capital": "Bandar Seri Begawan",
+        "continentName": "Asia"
+    },
+    {
+        "letter": "B",
+        "countryCode": "BO",
+        "countryName": "Bolivia",
+        "dialCode": "+591",
+        "currencyCode": "BOB",
+        "population": "9947418",
+        "capital": "Sucre",
+        "continentName": "South America"
+    },
+    {
+        "letter": "B",
+        "countryCode": "BQ",
+        "countryName": "Bonaire",
+        "dialCode": "+599",
+        "currencyCode": "USD",
+        "population": "18012",
+        "capital": "Kralendijk",
+        "continentName": "North America"
+    },
+    {
+        "letter": "B",
+        "countryCode": "BR",
+        "countryName": "Brazil",
+        "dialCode": "+55",
+        "currencyCode": "BRL",
+        "population": "201103330",
+        "capital": "Brasília",
+        "continentName": "South America"
+    },
+    {
+        "letter": "B",
+        "countryCode": "BS",
+        "countryName": "Bahamas",
+        "dialCode": "+1242",
+        "currencyCode": "BSD",
+        "population": "301790",
+        "capital": "Nassau",
+        "continentName": "North America"
+    },
+    {
+        "letter": "B",
+        "countryCode": "BT",
+        "countryName": "Bhutan",
+        "dialCode": "+975",
+        "currencyCode": "BTN",
+        "population": "699847",
+        "capital": "Thimphu",
+        "continentName": "Asia"
+    },
+    {
+        "letter": "B",
+        "countryCode": "BV",
+        "countryName": "Bouvet Island",
+        "dialCode": "+47",
+        "currencyCode": "NOK",
+        "population": "0",
+        "capital": "",
+        "continentName": "Antarctica"
+    },
+    {
+        "letter": "B",
+        "countryCode": "BW",
+        "countryName": "Botswana",
+        "dialCode": "+267",
+        "currencyCode": "BWP",
+        "population": "2029307",
+        "capital": "Gaborone",
+        "continentName": "Africa"
+    },
+    {
+        "letter": "B",
+        "countryCode": "BY",
+        "countryName": "Belarus",
+        "dialCode": "+375",
+        "currencyCode": "BYR",
+        "population": "9685000",
+        "capital": "Minsk",
+        "continentName": "Europe"
+    },
+    {
+        "letter": "B",
+        "countryCode": "BZ",
+        "countryName": "Belize",
+        "dialCode": "+501",
+        "currencyCode": "BZD",
+        "population": "314522",
+        "capital": "Belmopan",
+        "continentName": "North America"
+    },
+    {
+        "letter": "C",
+        "countryCode": "CA",
+        "countryName": "Canada",
+        "dialCode": "+1",
+        "currencyCode": "CAD",
+        "population": "33679000",
+        "capital": "Ottawa",
+        "continentName": "North America"
+    },
+    {
+        "letter": "C",
+        "countryCode": "CC",
+        "countryName": "Cocos [Keeling] Islands",
+        "dialCode": "+61",
+        "currencyCode": "AUD",
+        "population": "628",
+        "capital": "West Island",
+        "continentName": "Asia"
+    },
+    {
+        "letter": "C",
+        "countryCode": "CD",
+        "countryName": "Democratic Republic of the Congo",
+        "dialCode": "+243",
+        "currencyCode": "CDF",
+        "population": "70916439",
+        "capital": "Kinshasa",
+        "continentName": "Africa"
+    },
+    {
+        "letter": "C",
+        "countryCode": "CF",
+        "countryName": "Central African Republic",
+        "dialCode": "+236",
+        "currencyCode": "XAF",
+        "population": "4844927",
+        "capital": "Bangui",
+        "continentName": "Africa"
+    },
+    {
+        "letter": "C",
+        "countryCode": "CG",
+        "countryName": "Republic of the Congo",
+        "dialCode": "+242",
+        "currencyCode": "XAF",
+        "population": "3039126",
+        "capital": "Brazzaville",
+        "continentName": "Africa"
+    },
+    {
+        "letter": "C",
+        "countryCode": "CH",
+        "countryName": "Switzerland",
+        "dialCode": "+41",
+        "currencyCode": "CHF",
+        "population": "7581000",
+        "capital": "Bern",
+        "continentName": "Europe"
+    },
+    {
+        "letter": "C",
+        "countryCode": "CI",
+        "countryName": "Ivory Coast",
+        "dialCode": "+225",
+        "currencyCode": "XOF",
+        "population": "21058798",
+        "capital": "Yamoussoukro",
+        "continentName": "Africa"
+    },
+    {
+        "letter": "C",
+        "countryCode": "CK",
+        "countryName": "Cook Islands",
+        "dialCode": "+682",
+        "currencyCode": "NZD",
+        "population": "21388",
+        "capital": "Avarua",
+        "continentName": "Oceania"
+    },
+    {
+        "letter": "C",
+        "countryCode": "CL",
+        "countryName": "Chile",
+        "dialCode": "+56",
+        "currencyCode": "CLP",
+        "population": "16746491",
+        "capital": "Santiago",
+        "continentName": "South America"
+    },
+    {
+        "letter": "C",
+        "countryCode": "CM",
+        "countryName": "Cameroon",
+        "dialCode": "+237",
+        "currencyCode": "XAF",
+        "population": "19294149",
+        "capital": "Yaoundé",
+        "continentName": "Africa"
+    },
+    {
+        "letter": "C",
+        "countryCode": "CN",
+        "countryName": "China",
+        "dialCode": "+86",
+        "currencyCode": "CNY",
+        "population": "1330044000",
+        "capital": "Beijing",
+        "continentName": "Asia"
+    },
+    {
+        "letter": "C",
+        "countryCode": "CO",
+        "countryName": "Colombia",
+        "dialCode": "+57",
+        "currencyCode": "COP",
+        "population": "47790000",
+        "capital": "Bogotá",
+        "continentName": "South America"
+    },
+    {
+        "letter": "C",
+        "countryCode": "CR",
+        "countryName": "Costa Rica",
+        "dialCode": "+506",
+        "currencyCode": "CRC",
+        "population": "4516220",
+        "capital": "San José",
+        "continentName": "North America"
+    },
+    {
+        "letter": "C",
+        "countryCode": "CU",
+        "countryName": "Cuba",
+        "dialCode": "+53",
+        "currencyCode": "CUP",
+        "population": "11423000",
+        "capital": "Havana",
+        "continentName": "North America"
+    },
+    {
+        "letter": "C",
+        "countryCode": "CV",
+        "countryName": "Cape Verde",
+        "dialCode": "+238",
+        "currencyCode": "CVE",
+        "population": "508659",
+        "capital": "Praia",
+        "continentName": "Africa"
+    },
+    {
+        "letter": "C",
+        "countryCode": "CW",
+        "countryName": "Curacao",
+        "dialCode": "+5999",
+        "currencyCode": "ANG",
+        "population": "141766",
+        "capital": "Willemstad",
+        "continentName": "North America"
+    },
+    {
+        "letter": "C",
+        "countryCode": "CX",
+        "countryName": "Christmas Island",
+        "dialCode": "+61",
+        "currencyCode": "AUD",
+        "population": "1500",
+        "capital": "Flying Fish Cove",
+        "continentName": "Asia"
+    },
+    {
+        "letter": "C",
+        "countryCode": "CY",
+        "countryName": "Cyprus",
+        "dialCode": "+357",
+        "currencyCode": "EUR",
+        "population": "1102677",
+        "capital": "Nicosia",
+        "continentName": "Europe"
+    },
+    {
+        "letter": "C",
+        "countryCode": "CZ",
+        "countryName": "Czechia",
+        "dialCode": "+420",
+        "currencyCode": "CZK",
+        "population": "10476000",
+        "capital": "Prague",
+        "continentName": "Europe"
+    },
+    {
+        "letter": "C",
+        "countryCode": "DE",
+        "countryName": "Germany",
+        "dialCode": "+49",
+        "currencyCode": "EUR",
+        "population": "81802257",
+        "capital": "Berlin",
+        "continentName": "Europe"
+    },
+    {
+        "letter": "C",
+        "countryCode": "DJ",
+        "countryName": "Djibouti",
+        "dialCode": "+253",
+        "currencyCode": "DJF",
+        "population": "740528",
+        "capital": "Djibouti",
+        "continentName": "Africa"
+    },
+    {
+        "letter": "C",
+        "countryCode": "DK",
+        "countryName": "Denmark",
+        "dialCode": "+45",
+        "currencyCode": "DKK",
+        "population": "5484000",
+        "capital": "Copenhagen",
+        "continentName": "Europe"
+    },
+    {
+        "letter": "D",
+        "countryCode": "DM",
+        "countryName": "Dominica",
+        "dialCode": "+1 767",
+        "currencyCode": "XCD",
+        "population": "72813",
+        "capital": "Roseau",
+        "continentName": "North America"
+    },
+    {
+        "letter": "D",
+        "countryCode": "DO",
+        "countryName": "Dominican Republic",
+        "dialCode": "+1 849",
+        "currencyCode": "DOP",
+        "population": "9823821",
+        "capital": "Santo Domingo",
+        "continentName": "North America"
+    },
+    {
+        "letter": "D",
+        "countryCode": "DZ",
+        "countryName": "Algeria",
+        "dialCode": "+213",
+        "currencyCode": "DZD",
+        "population": "34586184",
+        "capital": "Algiers",
+        "continentName": "Africa"
+    },
+    {
+        "letter": "E",
+        "countryCode": "EC",
+        "countryName": "Ecuador",
+        "dialCode": "+593",
+        "currencyCode": "USD",
+        "population": "14790608",
+        "capital": "Quito",
+        "continentName": "South America"
+    },
+    {
+        "letter": "E",
+        "countryCode": "EE",
+        "countryName": "Estonia",
+        "dialCode": "+372",
+        "currencyCode": "EUR",
+        "population": "1291170",
+        "capital": "Tallinn",
+        "continentName": "Europe"
+    },
+    {
+        "letter": "E",
+        "countryCode": "EG",
+        "countryName": "Egypt",
+        "dialCode": "+20",
+        "currencyCode": "EGP",
+        "population": "80471869",
+        "capital": "Cairo",
+        "continentName": "Africa"
+    },
+    {
+        "letter": "E",
+        "countryCode": "EH",
+        "countryName": "Western Sahara",
+        "dialCode": "+732",
+        "currencyCode": "MAD",
+        "population": "273008",
+        "capital": "Laâyoune / El Aaiún",
+        "continentName": "Africa"
+    },
+    {
+        "letter": "E",
+        "countryCode": "ER",
+        "countryName": "Eritrea",
+        "dialCode": "+291",
+        "currencyCode": "ERN",
+        "population": "5792984",
+        "capital": "Asmara",
+        "continentName": "Africa"
+    },
+    {
+        "letter": "E",
+        "countryCode": "ES",
+        "countryName": "Spain",
+        "dialCode": "+34",
+        "currencyCode": "EUR",
+        "population": "46505963",
+        "capital": "Madrid",
+        "continentName": "Europe"
+    },
+    {
+        "letter": "E",
+        "countryCode": "ET",
+        "countryName": "Ethiopia",
+        "dialCode": "+251",
+        "currencyCode": "ETB",
+        "population": "88013491",
+        "capital": "Addis Ababa",
+        "continentName": "Africa"
+    },
+    {
+        "letter": "F",
+        "countryCode": "FI",
+        "countryName": "Finland",
+        "dialCode": "+358",
+        "currencyCode": "EUR",
+        "population": "5244000",
+        "capital": "Helsinki",
+        "continentName": "Europe"
+    },
+    {
+        "letter": "F",
+        "countryCode": "FJ",
+        "countryName": "Fiji",
+        "dialCode": "+679",
+        "currencyCode": "FJD",
+        "population": "875983",
+        "capital": "Suva",
+        "continentName": "Oceania"
+    },
+    {
+        "letter": "F",
+        "countryCode": "FK",
+        "countryName": "Falkland Islands",
+        "dialCode": "+500",
+        "currencyCode": "FKP",
+        "population": "2638",
+        "capital": "Stanley",
+        "continentName": "South America"
+    },
+    {
+        "letter": "F",
+        "countryCode": "FM",
+        "countryName": "Micronesia",
+        "dialCode": "+691",
+        "currencyCode": "USD",
+        "population": "107708",
+        "capital": "Palikir",
+        "continentName": "Oceania"
+    },
+    {
+        "letter": "F",
+        "countryCode": "FO",
+        "countryName": "Faroe Islands",
+        "dialCode": "+298",
+        "currencyCode": "DKK",
+        "population": "48228",
+        "capital": "Tórshavn",
+        "continentName": "Europe"
+    },
+    {
+        "letter": "F",
+        "countryCode": "FR",
+        "countryName": "France",
+        "dialCode": "+33",
+        "currencyCode": "EUR",
+        "population": "64768389",
+        "capital": "Paris",
+        "continentName": "Europe"
+    },
+    {
+        "letter": "G",
+        "countryCode": "GA",
+        "countryName": "Gabon",
+        "dialCode": "+241",
+        "currencyCode": "XAF",
+        "population": "1545255",
+        "capital": "Libreville",
+        "continentName": "Africa"
+    },
+    {
+        "letter": "G",
+        "countryCode": "GB",
+        "countryName": "United Kingdom",
+        "dialCode": "+44",
+        "currencyCode": "GBP",
+        "population": "62348447",
+        "capital": "London",
+        "continentName": "Europe"
+    },
+    {
+        "letter": "G",
+        "countryCode": "GD",
+        "countryName": "Grenada",
+        "dialCode": "+1 473",
+        "currencyCode": "XCD",
+        "population": "107818",
+        "capital": "St. George's",
+        "continentName": "North America"
+    },
+    {
+        "letter": "G",
+        "countryCode": "GE",
+        "countryName": "Georgia",
+        "dialCode": "+995",
+        "currencyCode": "GEL",
+        "population": "4630000",
+        "capital": "Tbilisi",
+        "continentName": "Asia"
+    },
+    {
+        "letter": "G",
+        "countryCode": "GF",
+        "countryName": "French Guiana",
+        "dialCode": "+594",
+        "currencyCode": "EUR",
+        "population": "195506",
+        "capital": "Cayenne",
+        "continentName": "South America"
+    },
+    {
+        "letter": "G",
+        "countryCode": "GG",
+        "countryName": "Guernsey",
+        "dialCode": "+44",
+        "currencyCode": "GBP",
+        "population": "65228",
+        "capital": "St Peter Port",
+        "continentName": "Europe"
+    },
+    {
+        "letter": "G",
+        "countryCode": "GH",
+        "countryName": "Ghana",
+        "dialCode": "+233",
+        "currencyCode": "GHS",
+        "population": "24339838",
+        "capital": "Accra",
+        "continentName": "Africa"
+    },
+    {
+        "letter": "G",
+        "countryCode": "GI",
+        "countryName": "Gibraltar",
+        "dialCode": "+350",
+        "currencyCode": "GIP",
+        "population": "27884",
+        "capital": "Gibraltar",
+        "continentName": "Europe"
+    },
+    {
+        "letter": "G",
+        "countryCode": "GL",
+        "countryName": "Greenland",
+        "dialCode": "+299",
+        "currencyCode": "DKK",
+        "population": "56375",
+        "capital": "Nuuk",
+        "continentName": "North America"
+    },
+    {
+        "letter": "G",
+        "countryCode": "GM",
+        "countryName": "Gambia",
+        "dialCode": "+220",
+        "currencyCode": "GMD",
+        "population": "1593256",
+        "capital": "Bathurst",
+        "continentName": "Africa"
+    },
+    {
+        "letter": "G",
+        "countryCode": "GN",
+        "countryName": "Guinea",
+        "dialCode": "+224",
+        "currencyCode": "GNF",
+        "population": "10324025",
+        "capital": "Conakry",
+        "continentName": "Africa"
+    },
+    {
+        "letter": "G",
+        "countryCode": "GP",
+        "countryName": "Guadeloupe",
+        "dialCode": "+590",
+        "currencyCode": "EUR",
+        "population": "443000",
+        "capital": "Basse-Terre",
+        "continentName": "North America"
+    },
+    {
+        "letter": "G",
+        "countryCode": "GQ",
+        "countryName": "Equatorial Guinea",
+        "dialCode": "+240",
+        "currencyCode": "XAF",
+        "population": "1014999",
+        "capital": "Malabo",
+        "continentName": "Africa"
+    },
+    {
+        "letter": "G",
+        "countryCode": "GR",
+        "countryName": "Greece",
+        "dialCode": "+30",
+        "currencyCode": "EUR",
+        "population": "11000000",
+        "capital": "Athens",
+        "continentName": "Europe"
+    },
+    {
+        "letter": "G",
+        "countryCode": "GS",
+        "countryName": "South Georgia and the South Sandwich Islands",
+        "dialCode": "+500",
+        "currencyCode": "GBP",
+        "population": "30",
+        "capital": "Grytviken",
+        "continentName": "Antarctica"
+    },
+    {
+        "letter": "G",
+        "countryCode": "GT",
+        "countryName": "Guatemala",
+        "dialCode": "+502",
+        "currencyCode": "GTQ",
+        "population": "13550440",
+        "capital": "Guatemala City",
+        "continentName": "North America"
+    },
+    {
+        "letter": "G",
+        "countryCode": "GU",
+        "countryName": "Guam",
+        "dialCode": "+1671",
+        "currencyCode": "USD",
+        "population": "159358",
+        "capital": "Hagåtña",
+        "continentName": "Oceania"
+    },
+    {
+        "letter": "G",
+        "countryCode": "GW",
+        "countryName": "Guinea-Bissau",
+        "dialCode": "+245",
+        "currencyCode": "XOF",
+        "population": "1565126",
+        "capital": "Bissau",
+        "continentName": "Africa"
+    },
+    {
+        "letter": "G",
+        "countryCode": "GY",
+        "countryName": "Guyana",
+        "dialCode": "+595",
+        "currencyCode": "GYD",
+        "population": "748486",
+        "capital": "Georgetown",
+        "continentName": "South America"
+    },
+    {
+        "letter": "H",
+        "countryCode": "HK",
+        "countryName": "Hong Kong",
+        "dialCode": "+852",
+        "currencyCode": "HKD",
+        "population": "6898686",
+        "capital": "Hong Kong",
+        "continentName": "Asia"
+    },
+    {
+        "letter": "H",
+        "countryCode": "HM",
+        "countryName": "Heard Island and McDonald Islands",
+        "dialCode": "+0",
+        "currencyCode": "AUD",
+        "population": "0",
+        "capital": "",
+        "continentName": "Antarctica"
+    },
+    {
+        "letter": "H",
+        "countryCode": "HN",
+        "countryName": "Honduras",
+        "dialCode": "+504",
+        "currencyCode": "HNL",
+        "population": "7989415",
+        "capital": "Tegucigalpa",
+        "continentName": "North America"
+    },
+    {
+        "letter": "H",
+        "countryCode": "HR",
+        "countryName": "Croatia",
+        "dialCode": "+385",
+        "currencyCode": "HRK",
+        "population": "4284889",
+        "capital": "Zagreb",
+        "continentName": "Europe"
+    },
+    {
+        "letter": "H",
+        "countryCode": "HT",
+        "countryName": "Haiti",
+        "dialCode": "+509",
+        "currencyCode": "HTG",
+        "population": "9648924",
+        "capital": "Port-au-Prince",
+        "continentName": "North America"
+    },
+    {
+        "letter": "H",
+        "countryCode": "HU",
+        "countryName": "Hungary",
+        "dialCode": "+36",
+        "currencyCode": "HUF",
+        "population": "9982000",
+        "capital": "Budapest",
+        "continentName": "Europe"
+    },
+    {
+        "letter": "I",
+        "countryCode": "ID",
+        "countryName": "Indonesia",
+        "dialCode": "+62",
+        "currencyCode": "IDR",
+        "population": "242968342",
+        "capital": "Jakarta",
+        "continentName": "Asia"
+    },
+    {
+        "letter": "I",
+        "countryCode": "IE",
+        "countryName": "Ireland",
+        "dialCode": "+353",
+        "currencyCode": "EUR",
+        "population": "4622917",
+        "capital": "Dublin",
+        "continentName": "Europe"
+    },
+    {
+        "letter": "I",
+        "countryCode": "IL",
+        "countryName": "Israel",
+        "dialCode": "+972",
+        "currencyCode": "ILS",
+        "population": "7353985",
+        "capital": "",
+        "continentName": "Asia"
+    },
+    {
+        "letter": "I",
+        "countryCode": "IM",
+        "countryName": "Isle of Man",
+        "dialCode": "+44",
+        "currencyCode": "GBP",
+        "population": "75049",
+        "capital": "Douglas",
+        "continentName": "Europe"
+    },
+    {
+        "letter": "I",
+        "countryCode": "IN",
+        "countryName": "India",
+        "dialCode": "+91",
+        "currencyCode": "INR",
+        "population": "1173108018",
+        "capital": "New Delhi",
+        "continentName": "Asia"
+    },
+    {
+        "letter": "I",
+        "countryCode": "IO",
+        "countryName": "British Indian Ocean Territory",
+        "dialCode": "+246",
+        "currencyCode": "USD",
+        "population": "4000",
+        "capital": "",
+        "continentName": "Asia"
+    },
+    {
+        "letter": "I",
+        "countryCode": "IQ",
+        "countryName": "Iraq",
+        "dialCode": "+964",
+        "currencyCode": "IQD",
+        "population": "29671605",
+        "capital": "Baghdad",
+        "continentName": "Asia"
+    },
+    {
+        "letter": "I",
+        "countryCode": "IR",
+        "countryName": "Iran",
+        "dialCode": "+98",
+        "currencyCode": "IRR",
+        "population": "76923300",
+        "capital": "Tehran",
+        "continentName": "Asia"
+    },
+    {
+        "letter": "I",
+        "countryCode": "IS",
+        "countryName": "Iceland",
+        "dialCode": "+354",
+        "currencyCode": "ISK",
+        "population": "308910",
+        "capital": "Reykjavik",
+        "continentName": "Europe"
+    },
+    {
+        "letter": "I",
+        "countryCode": "IT",
+        "countryName": "Italy",
+        "dialCode": "+39",
+        "currencyCode": "EUR",
+        "population": "60340328",
+        "capital": "Rome",
+        "continentName": "Europe"
+    },
+    {
+        "letter": "J",
+        "countryCode": "JE",
+        "countryName": "Jersey",
+        "dialCode": "+44",
+        "currencyCode": "GBP",
+        "population": "90812",
+        "capital": "Saint Helier",
+        "continentName": "Europe"
+    },
+    {
+        "letter": "J",
+        "countryCode": "JM",
+        "countryName": "Jamaica",
+        "dialCode": "+1 876",
+        "currencyCode": "JMD",
+        "population": "2847232",
+        "capital": "Kingston",
+        "continentName": "North America"
+    },
+    {
+        "letter": "J",
+        "countryCode": "JO",
+        "countryName": "Jordan",
+        "dialCode": "+962",
+        "currencyCode": "JOD",
+        "population": "6407085",
+        "capital": "Amman",
+        "continentName": "Asia"
+    },
+    {
+        "letter": "J",
+        "countryCode": "JP",
+        "countryName": "Japan",
+        "dialCode": "+81",
+        "currencyCode": "JPY",
+        "population": "127288000",
+        "capital": "Tokyo",
+        "continentName": "Asia"
+    },
+    {
+        "letter": "K",
+        "countryCode": "KE",
+        "countryName": "Kenya",
+        "dialCode": "+254",
+        "currencyCode": "KES",
+        "population": "40046566",
+        "capital": "Nairobi",
+        "continentName": "Africa"
+    },
+    {
+        "letter": "K",
+        "countryCode": "KG",
+        "countryName": "Kyrgyzstan",
+        "dialCode": "+996",
+        "currencyCode": "KGS",
+        "population": "5776500",
+        "capital": "Bishkek",
+        "continentName": "Asia"
+    },
+    {
+        "letter": "K",
+        "countryCode": "KI",
+        "countryName": "Kiribati",
+        "dialCode": "+686",
+        "currencyCode": "AUD",
+        "population": "92533",
+        "capital": "Tarawa",
+        "continentName": "Oceania"
+    },
+    {
+        "letter": "K",
+        "countryCode": "KM",
+        "countryName": "Comoros",
+        "dialCode": "+269",
+        "currencyCode": "KMF",
+        "population": "773407",
+        "capital": "Moroni",
+        "continentName": "Africa"
+    },
+    {
+        "letter": "K",
+        "countryCode": "KN",
+        "countryName": "Saint Kitts and Nevis",
+        "dialCode": "+1869",
+        "currencyCode": "XCD",
+        "population": "51134",
+        "capital": "Basseterre",
+        "continentName": "North America"
+    },
+    {
+        "letter": "K",
+        "countryCode": "KP",
+        "countryName": "North Korea",
+        "dialCode": "+850",
+        "currencyCode": "KPW",
+        "population": "22912177",
+        "capital": "Pyongyang",
+        "continentName": "Asia"
+    },
+    {
+        "letter": "K",
+        "countryCode": "KR",
+        "countryName": "South Korea",
+        "dialCode": "+82",
+        "currencyCode": "KRW",
+        "population": "48422644",
+        "capital": "Seoul",
+        "continentName": "Asia"
+    },
+    {
+        "letter": "K",
+        "countryCode": "KW",
+        "countryName": "Kuwait",
+        "dialCode": "+965",
+        "currencyCode": "KWD",
+        "population": "2789132",
+        "capital": "Kuwait City",
+        "continentName": "Asia"
+    },
+    {
+        "letter": "K",
+        "countryCode": "KY",
+        "countryName": "Cayman Islands",
+        "dialCode": "+ 345",
+        "currencyCode": "KYD",
+        "population": "44270",
+        "capital": "George Town",
+        "continentName": "North America"
+    },
+    {
+        "letter": "K",
+        "countryCode": "KZ",
+        "countryName": "Kazakhstan",
+        "dialCode": "+77",
+        "currencyCode": "KZT",
+        "population": "15340000",
+        "capital": "Astana",
+        "continentName": "Asia"
+    },
+    {
+        "letter": "L",
+        "countryCode": "LA",
+        "countryName": "Laos",
+        "dialCode": "+856",
+        "currencyCode": "LAK",
+        "population": "6368162",
+        "capital": "Vientiane",
+        "continentName": "Asia"
+    },
+    {
+        "letter": "L",
+        "countryCode": "LB",
+        "countryName": "Lebanon",
+        "dialCode": "+961",
+        "currencyCode": "LBP",
+        "population": "4125247",
+        "capital": "Beirut",
+        "continentName": "Asia"
+    },
+    {
+        "letter": "L",
+        "countryCode": "LC",
+        "countryName": "Saint Lucia",
+        "dialCode": "+1 758",
+        "currencyCode": "XCD",
+        "population": "160922",
+        "capital": "Castries",
+        "continentName": "North America"
+    },
+    {
+        "letter": "L",
+        "countryCode": "LI",
+        "countryName": "Liechtenstein",
+        "dialCode": "+423",
+        "currencyCode": "CHF",
+        "population": "35000",
+        "capital": "Vaduz",
+        "continentName": "Europe"
+    },
+    {
+        "letter": "L",
+        "countryCode": "LK",
+        "countryName": "Sri Lanka",
+        "dialCode": "+94",
+        "currencyCode": "LKR",
+        "population": "21513990",
+        "capital": "Colombo",
+        "continentName": "Asia"
+    },
+    {
+        "letter": "L",
+        "countryCode": "LR",
+        "countryName": "Liberia",
+        "dialCode": "+231",
+        "currencyCode": "LRD",
+        "population": "3685076",
+        "capital": "Monrovia",
+        "continentName": "Africa"
+    },
+    {
+        "letter": "L",
+        "countryCode": "LS",
+        "countryName": "Lesotho",
+        "dialCode": "+266",
+        "currencyCode": "LSL",
+        "population": "1919552",
+        "capital": "Maseru",
+        "continentName": "Africa"
+    },
+    {
+        "letter": "L",
+        "countryCode": "LT",
+        "countryName": "Lithuania",
+        "dialCode": "+370",
+        "currencyCode": "EUR",
+        "population": "2944459",
+        "capital": "Vilnius",
+        "continentName": "Europe"
+    },
+    {
+        "letter": "L",
+        "countryCode": "LU",
+        "countryName": "Luxembourg",
+        "dialCode": "+352",
+        "currencyCode": "EUR",
+        "population": "497538",
+        "capital": "Luxembourg",
+        "continentName": "Europe"
+    },
+    {
+        "letter": "L",
+        "countryCode": "LV",
+        "countryName": "Latvia",
+        "dialCode": "+371",
+        "currencyCode": "EUR",
+        "population": "2217969",
+        "capital": "Riga",
+        "continentName": "Europe"
+    },
+    {
+        "letter": "L",
+        "countryCode": "LY",
+        "countryName": "Libya",
+        "dialCode": "+218",
+        "currencyCode": "LYD",
+        "population": "6461454",
+        "capital": "Tripoli",
+        "continentName": "Africa"
+    },
+    {
+        "letter": "M",
+        "countryCode": "MA",
+        "countryName": "Morocco",
+        "dialCode": "+212",
+        "currencyCode": "MAD",
+        "population": "33848242",
+        "capital": "Rabat",
+        "continentName": "Africa"
+    },
+    {
+        "letter": "M",
+        "countryCode": "MC",
+        "countryName": "Monaco",
+        "dialCode": "+377",
+        "currencyCode": "EUR",
+        "population": "32965",
+        "capital": "Monaco",
+        "continentName": "Europe"
+    },
+    {
+        "letter": "M",
+        "countryCode": "MD",
+        "countryName": "Moldova",
+        "dialCode": "+373",
+        "currencyCode": "MDL",
+        "population": "4324000",
+        "capital": "Chişinău",
+        "continentName": "Europe"
+    },
+    {
+        "letter": "M",
+        "countryCode": "ME",
+        "countryName": "Montenegro",
+        "dialCode": "+382",
+        "currencyCode": "EUR",
+        "population": "666730",
+        "capital": "Podgorica",
+        "continentName": "Europe"
+    },
+    {
+        "letter": "M",
+        "countryCode": "MF",
+        "countryName": "Saint Martin",
+        "dialCode": "+590",
+        "currencyCode": "EUR",
+        "population": "35925",
+        "capital": "Marigot",
+        "continentName": "North America"
+    },
+    {
+        "letter": "M",
+        "countryCode": "MG",
+        "countryName": "Madagascar",
+        "dialCode": "+261",
+        "currencyCode": "MGA",
+        "population": "21281844",
+        "capital": "Antananarivo",
+        "continentName": "Africa"
+    },
+    {
+        "letter": "M",
+        "countryCode": "MH",
+        "countryName": "Marshall Islands",
+        "dialCode": "+692",
+        "currencyCode": "USD",
+        "population": "65859",
+        "capital": "Majuro",
+        "continentName": "Oceania"
+    },
+    {
+        "letter": "M",
+        "countryCode": "MK",
+        "countryName": "Macedonia",
+        "dialCode": "+389",
+        "currencyCode": "MKD",
+        "population": "2062294",
+        "capital": "Skopje",
+        "continentName": "Europe"
+    },
+    {
+        "letter": "M",
+        "countryCode": "ML",
+        "countryName": "Mali",
+        "dialCode": "+223",
+        "currencyCode": "XOF",
+        "population": "13796354",
+        "capital": "Bamako",
+        "continentName": "Africa"
+    },
+    {
+        "letter": "M",
+        "countryCode": "MM",
+        "countryName": "Myanmar [Burma]",
+        "dialCode": "+95",
+        "currencyCode": "MMK",
+        "population": "53414374",
+        "capital": "Naypyitaw",
+        "continentName": "Asia"
+    },
+    {
+        "letter": "M",
+        "countryCode": "MN",
+        "countryName": "Mongolia",
+        "dialCode": "+976",
+        "currencyCode": "MNT",
+        "population": "3086918",
+        "capital": "Ulan Bator",
+        "continentName": "Asia"
+    },
+    {
+        "letter": "M",
+        "countryCode": "MO",
+        "countryName": "Macao",
+        "dialCode": "+853",
+        "currencyCode": "MOP",
+        "population": "449198",
+        "capital": "Macao",
+        "continentName": "Asia"
+    },
+    {
+        "letter": "M",
+        "countryCode": "MP",
+        "countryName": "Northern Mariana Islands",
+        "dialCode": "+1 670",
+        "currencyCode": "USD",
+        "population": "53883",
+        "capital": "Saipan",
+        "continentName": "Oceania"
+    },
+    {
+        "letter": "M",
+        "countryCode": "MQ",
+        "countryName": "Martinique",
+        "dialCode": "+596",
+        "currencyCode": "EUR",
+        "population": "432900",
+        "capital": "Fort-de-France",
+        "continentName": "North America"
+    },
+    {
+        "letter": "M",
+        "countryCode": "MR",
+        "countryName": "Mauritania",
+        "dialCode": "+222",
+        "currencyCode": "MRO",
+        "population": "3205060",
+        "capital": "Nouakchott",
+        "continentName": "Africa"
+    },
+    {
+        "letter": "M",
+        "countryCode": "MS",
+        "countryName": "Montserrat",
+        "dialCode": "+1664",
+        "currencyCode": "XCD",
+        "population": "9341",
+        "capital": "Plymouth",
+        "continentName": "North America"
+    },
+    {
+        "letter": "M",
+        "countryCode": "MT",
+        "countryName": "Malta",
+        "dialCode": "+356",
+        "currencyCode": "EUR",
+        "population": "403000",
+        "capital": "Valletta",
+        "continentName": "Europe"
+    },
+    {
+        "letter": "M",
+        "countryCode": "MU",
+        "countryName": "Mauritius",
+        "dialCode": "+230",
+        "currencyCode": "MUR",
+        "population": "1294104",
+        "capital": "Port Louis",
+        "continentName": "Africa"
+    },
+    {
+        "letter": "M",
+        "countryCode": "MV",
+        "countryName": "Maldives",
+        "dialCode": "+960",
+        "currencyCode": "MVR",
+        "population": "395650",
+        "capital": "Malé",
+        "continentName": "Asia"
+    },
+    {
+        "letter": "M",
+        "countryCode": "MW",
+        "countryName": "Malawi",
+        "dialCode": "+265",
+        "currencyCode": "MWK",
+        "population": "15447500",
+        "capital": "Lilongwe",
+        "continentName": "Africa"
+    },
+    {
+        "letter": "M",
+        "countryCode": "MX",
+        "countryName": "Mexico",
+        "dialCode": "+52",
+        "currencyCode": "MXN",
+        "population": "112468855",
+        "capital": "Mexico City",
+        "continentName": "North America"
+    },
+    {
+        "letter": "M",
+        "countryCode": "MY",
+        "countryName": "Malaysia",
+        "dialCode": "+60",
+        "currencyCode": "MYR",
+        "population": "28274729",
+        "capital": "Kuala Lumpur",
+        "continentName": "Asia"
+    },
+    {
+        "letter": "M",
+        "countryCode": "MZ",
+        "countryName": "Mozambique",
+        "dialCode": "+258",
+        "currencyCode": "MZN",
+        "population": "22061451",
+        "capital": "Maputo",
+        "continentName": "Africa"
+    },
+    {
+        "letter": "N",
+        "countryCode": "NA",
+        "countryName": "Namibia",
+        "dialCode": "+264",
+        "currencyCode": "NAD",
+        "population": "2128471",
+        "capital": "Windhoek",
+        "continentName": "Africa"
+    },
+    {
+        "letter": "N",
+        "countryCode": "NC",
+        "countryName": "New Caledonia",
+        "dialCode": "+687",
+        "currencyCode": "XPF",
+        "population": "216494",
+        "capital": "Noumea",
+        "continentName": "Oceania"
+    },
+    {
+        "letter": "N",
+        "countryCode": "NE",
+        "countryName": "Niger",
+        "dialCode": "+227",
+        "currencyCode": "XOF",
+        "population": "15878271",
+        "capital": "Niamey",
+        "continentName": "Africa"
+    },
+    {
+        "letter": "N",
+        "countryCode": "NF",
+        "countryName": "Norfolk Island",
+        "dialCode": "+672",
+        "currencyCode": "AUD",
+        "population": "1828",
+        "capital": "Kingston",
+        "continentName": "Oceania"
+    },
+    {
+        "letter": "N",
+        "countryCode": "NG",
+        "countryName": "Nigeria",
+        "dialCode": "+234",
+        "currencyCode": "NGN",
+        "population": "154000000",
+        "capital": "Abuja",
+        "continentName": "Africa"
+    },
+    {
+        "letter": "N",
+        "countryCode": "NI",
+        "countryName": "Nicaragua",
+        "dialCode": "+505",
+        "currencyCode": "NIO",
+        "population": "5995928",
+        "capital": "Managua",
+        "continentName": "North America"
+    },
+    {
+        "letter": "N",
+        "countryCode": "NL",
+        "countryName": "Netherlands",
+        "dialCode": "+31",
+        "currencyCode": "EUR",
+        "population": "16645000",
+        "capital": "Amsterdam",
+        "continentName": "Europe"
+    },
+    {
+        "letter": "N",
+        "countryCode": "NO",
+        "countryName": "Norway",
+        "dialCode": "+47",
+        "currencyCode": "NOK",
+        "population": "5009150",
+        "capital": "Oslo",
+        "continentName": "Europe"
+    },
+    {
+        "letter": "N",
+        "countryCode": "NP",
+        "countryName": "Nepal",
+        "dialCode": "+977",
+        "currencyCode": "NPR",
+        "population": "28951852",
+        "capital": "Kathmandu",
+        "continentName": "Asia"
+    },
+    {
+        "letter": "N",
+        "countryCode": "NR",
+        "countryName": "Nauru",
+        "dialCode": "+674",
+        "currencyCode": "AUD",
+        "population": "10065",
+        "capital": "Yaren",
+        "continentName": "Oceania"
+    },
+    {
+        "letter": "N",
+        "countryCode": "NU",
+        "countryName": "Niue",
+        "dialCode": "+683",
+        "currencyCode": "NZD",
+        "population": "2166",
+        "capital": "Alofi",
+        "continentName": "Oceania"
+    },
+    {
+        "letter": "N",
+        "countryCode": "NZ",
+        "countryName": "New Zealand",
+        "dialCode": "+64",
+        "currencyCode": "NZD",
+        "population": "4252277",
+        "capital": "Wellington",
+        "continentName": "Oceania"
+    },
+    {
+        "letter": "O",
+        "countryCode": "OM",
+        "countryName": "Oman",
+        "dialCode": "+968",
+        "currencyCode": "OMR",
+        "population": "2967717",
+        "capital": "Muscat",
+        "continentName": "Asia"
+    },
+    {
+        "letter": "C",
+        "countryCode": "KH",
+        "countryName": "Cambodia",
+        "dialCode": "+855",
+        "currencyCode": "KHR",
+        "population": "14453680",
+        "capital": "Phnom Penh",
+        "continentName": "Asia"
+    },
+    {
+        "letter": "P",
+        "countryCode": "PA",
+        "countryName": "Panama",
+        "dialCode": "+507",
+        "currencyCode": "PAB",
+        "population": "3410676",
+        "capital": "Panama City",
+        "continentName": "North America"
+    },
+    {
+        "letter": "P",
+        "countryCode": "PE",
+        "countryName": "Peru",
+        "dialCode": "+51",
+        "currencyCode": "PEN",
+        "population": "29907003",
+        "capital": "Lima",
+        "continentName": "South America"
+    },
+    {
+        "letter": "F",
+        "countryCode": "PF",
+        "countryName": "French Polynesia",
+        "dialCode": "+689",
+        "currencyCode": "XPF",
+        "population": "270485",
+        "capital": "Papeete",
+        "continentName": "Oceania"
+    },
+    {
+        "letter": "P",
+        "countryCode": "PG",
+        "countryName": "Papua New Guinea",
+        "dialCode": "+675",
+        "currencyCode": "PGK",
+        "population": "6064515",
+        "capital": "Port Moresby",
+        "continentName": "Oceania"
+    },
+    {
+        "letter": "P",
+        "countryCode": "PH",
+        "countryName": "Philippines",
+        "dialCode": "+63",
+        "currencyCode": "PHP",
+        "population": "99900177",
+        "capital": "Manila",
+        "continentName": "Asia"
+    },
+    {
+        "letter": "P",
+        "countryCode": "PK",
+        "countryName": "Pakistan",
+        "dialCode": "+92",
+        "currencyCode": "RS",
+        "population": "184404791",
+        "capital": "Islamabad",
+        "continentName": "Asia"
+    },
+    {
+        "letter": "P",
+        "countryCode": "PL",
+        "countryName": "Poland",
+        "dialCode": "+48",
+        "currencyCode": "PLN",
+        "population": "38500000",
+        "capital": "Warsaw",
+        "continentName": "Europe"
+    },
+    {
+        "letter": "S",
+        "countryCode": "PM",
+        "countryName": "Saint Pierre and Miquelon",
+        "dialCode": "+508",
+        "currencyCode": "EUR",
+        "population": "7012",
+        "capital": "Saint-Pierre",
+        "continentName": "North America"
+    },
+    {
+        "letter": "P",
+        "countryCode": "PN",
+        "countryName": "Pitcairn Islands",
+        "dialCode": "+64",
+        "currencyCode": "NZD",
+        "population": "46",
+        "capital": "Adamstown",
+        "continentName": "Oceania"
+    },
+    {
+        "letter": "P",
+        "countryCode": "PR",
+        "countryName": "Puerto Rico",
+        "dialCode": "+1939",
+        "currencyCode": "USD",
+        "population": "3916632",
+        "capital": "San Juan",
+        "continentName": "North America"
+    },
+    {
+        "letter": "P",
+        "countryCode": "PS",
+        "countryName": "Palestine",
+        "dialCode": "+970",
+        "currencyCode": "ILS",
+        "population": "3800000",
+        "capital": "",
+        "continentName": "Asia"
+    },
+    {
+        "letter": "P",
+        "countryCode": "PT",
+        "countryName": "Portugal",
+        "dialCode": "+351",
+        "currencyCode": "EUR",
+        "population": "10676000",
+        "capital": "Lisbon",
+        "continentName": "Europe"
+    },
+    {
+        "letter": "P",
+        "countryCode": "PW",
+        "countryName": "Palau",
+        "dialCode": "+680",
+        "currencyCode": "USD",
+        "population": "19907",
+        "capital": "Melekeok",
+        "continentName": "Oceania"
+    },
+    {
+        "letter": "P",
+        "countryCode": "PY",
+        "countryName": "Paraguay",
+        "dialCode": "+595",
+        "currencyCode": "PYG",
+        "population": "6375830",
+        "capital": "Asunción",
+        "continentName": "South America"
+    },
+    {
+        "letter": "Q",
+        "countryCode": "QA",
+        "countryName": "Qatar",
+        "dialCode": "+974",
+        "currencyCode": "QAR",
+        "population": "840926",
+        "capital": "Doha",
+        "continentName": "Asia"
+    },
+    {
+        "letter": "R",
+        "countryCode": "RE",
+        "countryName": "Réunion",
+        "dialCode": "+262",
+        "currencyCode": "EUR",
+        "population": "776948",
+        "capital": "Saint-Denis",
+        "continentName": "Africa"
+    },
+    {
+        "letter": "R",
+        "countryCode": "RO",
+        "countryName": "Romania",
+        "dialCode": "+40",
+        "currencyCode": "RON",
+        "population": "21959278",
+        "capital": "Bucharest",
+        "continentName": "Europe"
+    },
+    {
+        "letter": "R",
+        "countryCode": "RS",
+        "countryName": "Serbia",
+        "dialCode": "+381",
+        "currencyCode": "RSD",
+        "population": "7344847",
+        "capital": "Belgrade",
+        "continentName": "Europe"
+    },
+    {
+        "letter": "R",
+        "countryCode": "RU",
+        "countryName": "Russia",
+        "dialCode": "+7",
+        "currencyCode": "RUB",
+        "population": "140702000",
+        "capital": "Moscow",
+        "continentName": "Europe"
+    },
+    {
+        "letter": "R",
+        "countryCode": "RW",
+        "countryName": "Rwanda",
+        "dialCode": "+250",
+        "currencyCode": "RWF",
+        "population": "11055976",
+        "capital": "Kigali",
+        "continentName": "Africa"
+    },
+    {
+        "letter": "S",
+        "countryCode": "SA",
+        "countryName": "Saudi Arabia",
+        "dialCode": "+965",
+        "currencyCode": "SAR",
+        "population": "25731776",
+        "capital": "Riyadh",
+        "continentName": "Asia"
+    },
+    {
+        "letter": "S",
+        "countryCode": "SB",
+        "countryName": "Solomon Islands",
+        "dialCode": "+677",
+        "currencyCode": "SBD",
+        "population": "559198",
+        "capital": "Honiara",
+        "continentName": "Oceania"
+    },
+    {
+        "letter": "S",
+        "countryCode": "SC",
+        "countryName": "Seychelles",
+        "dialCode": "+248",
+        "currencyCode": "SCR",
+        "population": "88340",
+        "capital": "Victoria",
+        "continentName": "Africa"
+    },
+    {
+        "letter": "S",
+        "countryCode": "SD",
+        "countryName": "Sudan",
+        "dialCode": "+249",
+        "currencyCode": "SDG",
+        "population": "35000000",
+        "capital": "Khartoum",
+        "continentName": "Africa"
+    },
+    {
+        "letter": "S",
+        "countryCode": "SE",
+        "countryName": "Sweden",
+        "dialCode": "+46",
+        "currencyCode": "SEK",
+        "population": "9828655",
+        "capital": "Stockholm",
+        "continentName": "Europe"
+    },
+    {
+        "letter": "S",
+        "countryCode": "SG",
+        "countryName": "Singapore",
+        "dialCode": "+65",
+        "currencyCode": "SGD",
+        "population": "4701069",
+        "capital": "Singapore",
+        "continentName": "Asia"
+    },
+    {
+        "letter": "S",
+        "countryCode": "SH",
+        "countryName": "Saint Helena",
+        "dialCode": "+290",
+        "currencyCode": "SHP",
+        "population": "7460",
+        "capital": "Jamestown",
+        "continentName": "Africa"
+    },
+    {
+        "letter": "S",
+        "countryCode": "SI",
+        "countryName": "Slovenia",
+        "dialCode": "+386",
+        "currencyCode": "EUR",
+        "population": "2007000",
+        "capital": "Ljubljana",
+        "continentName": "Europe"
+    },
+    {
+        "letter": "S",
+        "countryCode": "SJ",
+        "countryName": "Svalbard and Jan Mayen",
+        "dialCode": "+47",
+        "currencyCode": "NOK",
+        "population": "2550",
+        "capital": "Longyearbyen",
+        "continentName": "Europe"
+    },
+    {
+        "letter": "S",
+        "countryCode": "SK",
+        "countryName": "Slovakia",
+        "dialCode": "+421",
+        "currencyCode": "EUR",
+        "population": "5455000",
+        "capital": "Bratislava",
+        "continentName": "Europe"
+    },
+    {
+        "letter": "S",
+        "countryCode": "SL",
+        "countryName": "Sierra Leone",
+        "dialCode": "+232",
+        "currencyCode": "SLL",
+        "population": "5245695",
+        "capital": "Freetown",
+        "continentName": "Africa"
+    },
+    {
+        "letter": "S",
+        "countryCode": "SM",
+        "countryName": "San Marino",
+        "dialCode": "+378",
+        "currencyCode": "EUR",
+        "population": "31477",
+        "capital": "San Marino",
+        "continentName": "Europe"
+    },
+    {
+        "letter": "S",
+        "countryCode": "SN",
+        "countryName": "Senegal",
+        "dialCode": "+221",
+        "currencyCode": "XOF",
+        "population": "12323252",
+        "capital": "Dakar",
+        "continentName": "Africa"
+    },
+    {
+        "letter": "S",
+        "countryCode": "SO",
+        "countryName": "Somalia",
+        "dialCode": "+252",
+        "currencyCode": "SOS",
+        "population": "10112453",
+        "capital": "Mogadishu",
+        "continentName": "Africa"
+    },
+    {
+        "letter": "S",
+        "countryCode": "SR",
+        "countryName": "Suriname",
+        "dialCode": "+597",
+        "currencyCode": "SRD",
+        "population": "492829",
+        "capital": "Paramaribo",
+        "continentName": "South America"
+    },
+    {
+        "letter": "S",
+        "countryCode": "SS",
+        "countryName": "South Sudan",
+        "dialCode": "+211",
+        "currencyCode": "SSP",
+        "population": "8260490",
+        "capital": "Juba",
+        "continentName": "Africa"
+    },
+    {
+        "letter": "S",
+        "countryCode": "ST",
+        "countryName": "São Tomé and Príncipe",
+        "dialCode": "+239",
+        "currencyCode": "STD",
+        "population": "175808",
+        "capital": "São Tomé",
+        "continentName": "Africa"
+    },
+    {
+        "letter": "S",
+        "countryCode": "SV",
+        "countryName": "El Salvador",
+        "dialCode": "+503",
+        "currencyCode": "USD",
+        "population": "6052064",
+        "capital": "San Salvador",
+        "continentName": "North America"
+    },
+    {
+        "letter": "S",
+        "countryCode": "SX",
+        "countryName": "Sint Maarten",
+        "dialCode": "+1721",
+        "currencyCode": "ANG",
+        "population": "37429",
+        "capital": "Philipsburg",
+        "continentName": "North America"
+    },
+    {
+        "letter": "S",
+        "countryCode": "SY",
+        "countryName": "Syria",
+        "dialCode": "+963",
+        "currencyCode": "SYP",
+        "population": "22198110",
+        "capital": "Damascus",
+        "continentName": "Asia"
+    },
+    {
+        "letter": "S",
+        "countryCode": "SZ",
+        "countryName": "Swaziland",
+        "dialCode": "+268",
+        "currencyCode": "SZL",
+        "population": "1354051",
+        "capital": "Mbabane",
+        "continentName": "Africa"
+    },
+    {
+        "letter": "T",
+        "countryCode": "TC",
+        "countryName": "Turks and Caicos Islands",
+        "dialCode": "+1649",
+        "currencyCode": "USD",
+        "population": "20556",
+        "capital": "Cockburn Town",
+        "continentName": "North America"
+    },
+    {
+        "letter": "C",
+        "countryCode": "TD",
+        "countryName": "Chad",
+        "dialCode": "+235",
+        "currencyCode": "XAF",
+        "population": "10543464",
+        "capital": "N'Djamena",
+        "continentName": "Africa"
+    },
+    {
+        "letter": "F",
+        "countryCode": "TF",
+        "countryName": "French Southern Territories",
+        "dialCode": "+262",
+        "currencyCode": "EUR",
+        "population": "140",
+        "capital": "Port-aux-Français",
+        "continentName": "Antarctica"
+    },
+    {
+        "letter": "T",
+        "countryCode": "TG",
+        "countryName": "Togo",
+        "dialCode": "+228",
+        "currencyCode": "XOF",
+        "population": "6587239",
+        "capital": "Lomé",
+        "continentName": "Africa"
+    },
+    {
+        "letter": "T",
+        "countryCode": "TH",
+        "countryName": "Thailand",
+        "dialCode": "+66",
+        "currencyCode": "THB",
+        "population": "67089500",
+        "capital": "Bangkok",
+        "continentName": "Asia"
+    },
+    {
+        "letter": "T",
+        "countryCode": "TJ",
+        "countryName": "Tajikistan",
+        "dialCode": "+690",
+        "currencyCode": "TJS",
+        "population": "7487489",
+        "capital": "Dushanbe",
+        "continentName": "Asia"
+    },
+    {
+        "letter": "T",
+        "countryCode": "TK",
+        "countryName": "Tokelau",
+        "dialCode": "+690",
+        "currencyCode": "NZD",
+        "population": "1466",
+        "capital": "",
+        "continentName": "Oceania"
+    },
+    {
+        "letter": "E",
+        "countryCode": "TL",
+        "countryName": "East Timor",
+        "dialCode": "+670",
+        "currencyCode": "USD",
+        "population": "1154625",
+        "capital": "Dili",
+        "continentName": "Oceania"
+    },
+    {
+        "letter": "T",
+        "countryCode": "TM",
+        "countryName": "Turkmenistan",
+        "dialCode": "+993",
+        "currencyCode": "TMT",
+        "population": "4940916",
+        "capital": "Ashgabat",
+        "continentName": "Asia"
+    },
+    {
+        "letter": "T",
+        "countryCode": "TN",
+        "countryName": "Tunisia",
+        "dialCode": "+216",
+        "currencyCode": "TND",
+        "population": "10589025",
+        "capital": "Tunis",
+        "continentName": "Africa"
+    },
+    {
+        "letter": "T",
+        "countryCode": "TO",
+        "countryName": "Tonga",
+        "dialCode": "+676",
+        "currencyCode": "TOP",
+        "population": "122580",
+        "capital": "Nuku'alofa",
+        "continentName": "Oceania"
+    },
+    {
+        "letter": "T",
+        "countryCode": "TR",
+        "countryName": "Turkey",
+        "dialCode": "+90",
+        "currencyCode": "TRY",
+        "population": "77804122",
+        "capital": "Ankara",
+        "continentName": "Asia"
+    },
+    {
+        "letter": "T",
+        "countryCode": "TT",
+        "countryName": "Trinidad and Tobago",
+        "dialCode": "+1 868",
+        "currencyCode": "TTD",
+        "population": "1228691",
+        "capital": "Port of Spain",
+        "continentName": "North America"
+    },
+    {
+        "letter": "T",
+        "countryCode": "TV",
+        "countryName": "Tuvalu",
+        "dialCode": "+688",
+        "currencyCode": "AUD",
+        "population": "10472",
+        "capital": "Funafuti",
+        "continentName": "Oceania"
+    },
+    {
+        "letter": "T",
+        "countryCode": "TW",
+        "countryName": "Taiwan",
+        "dialCode": "+886",
+        "currencyCode": "TWD",
+        "population": "22894384",
+        "capital": "Taipei",
+        "continentName": "Asia"
+    },
+    {
+        "letter": "T",
+        "countryCode": "TZ",
+        "countryName": "Tanzania",
+        "dialCode": "+255",
+        "currencyCode": "TZS",
+        "population": "41892895",
+        "capital": "Dodoma",
+        "continentName": "Africa"
+    },
+    {
+        "letter": "U",
+        "countryCode": "UA",
+        "countryName": "Ukraine",
+        "dialCode": "+380",
+        "currencyCode": "UAH",
+        "population": "45415596",
+        "capital": "Kiev",
+        "continentName": "Europe"
+    },
+    {
+        "letter": "U",
+        "countryCode": "UG",
+        "countryName": "Uganda",
+        "dialCode": "+256",
+        "currencyCode": "UGX",
+        "population": "33398682",
+        "capital": "Kampala",
+        "continentName": "Africa"
+    },
+    {
+        "letter": "U",
+        "countryCode": "UM",
+        "countryName": "U.S. Minor Outlying Islands",
+        "dialCode": "+264",
+        "currencyCode": "USD",
+        "population": "0",
+        "capital": "",
+        "continentName": "Oceania"
+    },
+    {
+        "letter": "U",
+        "countryCode": "AE",
+        "countryName": "United Arab Emirates",
+        "dialCode": "+971",
+        "currencyCode": "AED",
+        "population": "4975593",
+        "capital": "Abu Dhabi",
+        "continentName": "Asia"
+    },
+    {
+        "letter": "U",
+        "countryCode": "US",
+        "countryName": "United States",
+        "dialCode": "+1",
+        "currencyCode": "USD",
+        "population": "310232863",
+        "capital": "Washington",
+        "continentName": "North America"
+    },
+    {
+        "letter": "U",
+        "countryCode": "UY",
+        "countryName": "Uruguay",
+        "dialCode": "+598",
+        "currencyCode": "UYU",
+        "population": "3477000",
+        "capital": "Montevideo",
+        "continentName": "South America"
+    },
+    {
+        "letter": "U",
+        "countryCode": "UZ",
+        "countryName": "Uzbekistan",
+        "dialCode": "+998",
+        "currencyCode": "UZS",
+        "population": "27865738",
+        "capital": "Tashkent",
+        "continentName": "Asia"
+    },
+    {
+        "letter": "V",
+        "countryCode": "VA",
+        "countryName": "Vatican City",
+        "dialCode": "+379",
+        "currencyCode": "EUR",
+        "population": "921",
+        "capital": "Vatican City",
+        "continentName": "Europe"
+    },
+    {
+        "letter": "V",
+        "countryCode": "VC",
+        "countryName": "Saint Vincent and the Grenadines",
+        "dialCode": "+1 784",
+        "currencyCode": "XCD",
+        "population": "104217",
+        "capital": "Kingstown",
+        "continentName": "North America"
+    },
+    {
+        "letter": "V",
+        "countryCode": "VE",
+        "countryName": "Venezuela",
+        "dialCode": "+58",
+        "currencyCode": "VEF",
+        "population": "27223228",
+        "capital": "Caracas",
+        "continentName": "South America"
+    },
+    {
+        "letter": "V",
+        "countryCode": "VG",
+        "countryName": "British Virgin Islands",
+        "dialCode": "+1",
+        "currencyCode": "USD",
+        "population": "21730",
+        "capital": "Road Town",
+        "continentName": "North America"
+    },
+    {
+        "letter": "V",
+        "countryCode": "VI",
+        "countryName": "U.S. Virgin Islands",
+        "dialCode": "+1",
+        "currencyCode": "USD",
+        "population": "108708",
+        "capital": "Charlotte Amalie",
+        "continentName": "North America"
+    },
+    {
+        "letter": "V",
+        "countryCode": "VN",
+        "countryName": "Vietnam",
+        "dialCode": "+84",
+        "currencyCode": "VND",
+        "population": "89571130",
+        "capital": "Hanoi",
+        "continentName": "Asia"
+    },
+    {
+        "letter": "V",
+        "countryCode": "VU",
+        "countryName": "Vanuatu",
+        "dialCode": "+678",
+        "currencyCode": "VUV",
+        "population": "221552",
+        "capital": "Port Vila",
+        "continentName": "Oceania"
+    },
+    {
+        "letter": "W",
+        "countryCode": "WF",
+        "countryName": "Wallis and Futuna",
+        "dialCode": "+681",
+        "currencyCode": "XPF",
+        "population": "16025",
+        "capital": "Mata-Utu",
+        "continentName": "Oceania"
+    },
+    {
+        "letter": "S",
+        "countryCode": "WS",
+        "countryName": "Samoa",
+        "dialCode": "+1684",
+        "currencyCode": "WST",
+        "population": "192001",
+        "capital": "Apia",
+        "continentName": "Oceania"
+    },
+    {
+        "letter": "K",
+        "countryCode": "XK",
+        "countryName": "Kosovo",
+        "dialCode": "+383",
+        "currencyCode": "EUR",
+        "population": "1800000",
+        "capital": "Pristina",
+        "continentName": "Europe"
+    },
+    {
+        "letter": "Y",
+        "countryCode": "YE",
+        "countryName": "Yemen",
+        "dialCode": "+967",
+        "currencyCode": "YER",
+        "population": "23495361",
+        "capital": "Sanaa",
+        "continentName": "Asia"
+    },
+    {
+        "letter": "M",
+        "countryCode": "YT",
+        "countryName": "Mayotte",
+        "dialCode": "+262",
+        "currencyCode": "EUR",
+        "population": "159042",
+        "capital": "Mamoudzou",
+        "continentName": "Africa"
+    },
+    {
+        "letter": "S",
+        "countryCode": "ZA",
+        "countryName": "South Africa",
+        "dialCode": "+27",
+        "currencyCode": "ZAR",
+        "population": "49000000",
+        "capital": "Pretoria",
+        "continentName": "Africa"
+    },
+    {
+        "letter": "Z",
+        "countryCode": "ZM",
+        "countryName": "Zambia",
+        "dialCode": "+260",
+        "currencyCode": "ZMW",
+        "population": "13460305",
+        "capital": "Lusaka",
+        "continentName": "Africa"
+    },
+    {
+        "letter": "Z",
+        "countryCode": "ZW",
+        "countryName": "Zimbabwe",
+        "dialCode": "+263",
+        "currencyCode": "ZWL",
+        "population": "13061000",
+        "capital": "Harare",
+        "continentName": "Africa"
+    }
+]

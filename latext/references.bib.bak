@@ -1,0 +1,27 @@
+% This file was created with JabRef 2.10.
+% Encoding: Cp1252
+
+
+@Article{Denning:2005:CSS:1053291.1053309,
+  Title                    = {Is Computer Science Science?},
+  Author                   = {Denning, Peter J.},
+  Journal                  = {Commun. ACM},
+  Year                     = {2005},
+
+  Month                    = apr,
+  Number                   = {4},
+  Pages                    = {27--31},
+  Volume                   = {48},
+
+  Acmid                    = {1053309},
+  Address                  = {New York, NY, USA},
+  Doi                      = {10.1145/1053291.1053309},
+  ISSN                     = {0001-0782},
+  Issue_date               = {April 2005},
+  Numpages                 = {5},
+  Owner                    = {Dr. Arif Ur Rahman},
+  Publisher                = {ACM},
+  Timestamp                = {2015.09.10},
+  Url                      = {http://doi.acm.org/10.1145/1053291.1053309}
+}
+

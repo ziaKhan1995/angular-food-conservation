@@ -1,0 +1,160 @@
+
+.content {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
+  .example-spacer {
+    flex: 1 1 auto;
+  }
+
+a {
+  text-decoration: none;
+  min-width: 20px !important;
+  position: relative;
+  z-index: 50;
+}
+
+a:before {
+  position: absolute;
+  content: '';
+  top: -10px;
+  right: -10px;
+  left: -10px;
+  bottom: -10px;
+  z-index: 40;
+}
+
+main {
+  margin: 30px;
+}
+.mat-icon{
+  color: #fff !important;
+}
+.header {
+    height: 200px;
+    width: 100%;
+  }
+
+.secondToolbar {
+  position: fixed;
+  top: 0;
+  height: 0;
+  opacity: 0;
+  transition: opacity .25s ease-out, height .15s ease;
+  cursor: default;
+  user-select: none;
+}
+
+.sticky {
+  height: 64px;
+  opacity: 1;
+  transition: opacity .25s ease-out, height .15s ease;
+}
+
+.margin{
+margin-left: 10%;
+}
+.menu{
+  font-size: 20px;
+  font-weight:600 ;
+}
+
+
+//go-to to 
+.go-to {
+  float: right;
+  margin-top: 3px;
+  color: #3f51b5;
+  margin-right: 2px;
+  cursor: pointer;
+  font-size: 30px;
+}
+.go-to:hover {
+outline: 2px solid #3f51b5;
+border-radius: 50%;
+}
+.refresh{
+  color: #ffffff !important;
+  font-size: 19px;
+  transform: rotate(-60deg);
+  -webkit-transform: rotate(-60deg);
+  -moz-transform: rotate(-60deg);
+  -o-transform: rotate(-60deg);
+  font-weight: bolder;
+}
+// div .margin{
+//   float: right;
+// }
+.footer{
+  bottom: 0;
+  margin-top: 200px;
+  clear: both;
+  position: relative;
+} 
+.logo{
+  margin-top: 15px;
+}
+.logo-img{
+  width: 50px;
+  height: 44px;
+  vertical-align: super;
+  cursor: pointer;
+}
+.tool-bar{
+  padding: 1px 1px 0px 1px;
+  height: 45px;
+  z-index: 10;
+}
+.list-right{
+  width:100%;text-align:right
+}
+.nav-list{
+  background: #3f51b5; 
+  color: white;
+}
+.padding{
+  height: 45px;
+  margin-bottom: 1.3px;
+}
+.a-links a{
+  text-align: left;
+  margin-top: 1px;
+  margin-bottom: 1px;
+  padding: 2px 26px;
+}
+.a-links a:nth-child(2){
+  margin-top:12px;
+}
+.a-links a:last-child{
+  opacity: 0.8;
+  margin-top: 10px;
+}
+.bi-power{
+  font-size: 16px;
+  -webkit-text-stroke: 0.7px;
+}
+.bi-person-check{
+  font-size: 24px;
+}
+.ml{
+  margin-left: -1px;
+}
+
+
+.disable-click{
+  opacity: 0.6;
+  pointer-events: none;
+}
+.profile-img {
+  width: 25px;
+  height: 25px;
+  vertical-align: inherit;
+  border-radius: 50%;
+}
+
+.profile-img-border {
+  border: 1.8px solid #ddd;
+}

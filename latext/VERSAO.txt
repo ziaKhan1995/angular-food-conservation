@@ -1,0 +1,10 @@
+Distribution: FEUP-TESES
+Current version: v2009f
+feupteses.sty: 0.9f
+
+Changes for v2009f:
+1. option print: hide hyperlinks
+
+Changes for v2009e:
+1. plainnat-pt.bst: finished conversion to Portuguese.
+2. unsrt-pt.bst: added to the distribution

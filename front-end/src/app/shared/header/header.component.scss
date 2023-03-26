@@ -1,0 +1,39 @@
+a {
+  text-decoration: none;
+  font-size: 12px;
+  min-width: 10px !important;
+  padding-right:10px;
+  margin-right: 3px;
+  position: relative;
+  z-index: 50;
+}
+
+a:before {
+  position: absolute;
+  content: '';
+  top: -10px;
+  right: -10px;
+  left: -10px;
+  bottom: -10px;
+  z-index: 40;
+}
+.mat-icon{
+  color: #fff !important;
+}
+a:hover,a:active {
+  color: lightgray;
+}
+a:active {
+  outline: 2px solid lightseagreen;
+}
+
+
+.nav-caption {
+  display: inline-block;
+  padding-left: 6px;
+}
+.my-btn {
+  margin-right: 3px;
+  margin-bottom: 7px;
+  padding: 0 7px !important;
+}

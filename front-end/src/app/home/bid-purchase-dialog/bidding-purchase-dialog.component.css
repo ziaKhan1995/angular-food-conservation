@@ -1,0 +1,15 @@
+.full-width{
+  width: -webkit-fill-available;
+  font-size:15px;
+}
+p{
+  margin-bottom: 2px;
+}
+.close{
+  float: right;
+  color: darkgray;
+  cursor: pointer;
+}
+.close:hover{
+  color: #333;
+}

@@ -1,0 +1,24 @@
+<h1 mat-dialog-title style="text-align:center;">Admin Login 
+  <mat-icon (click)="closeDialogCancel()" class="close">close</mat-icon></h1>
+<div mat-dialog-content [style.opacity]="submitting?'0.5':'1'">
+  <p>Please enter your admin details</p>
+  <mat-form-field class="full-width" appearance="outline">
+    <mat-label>Admin Email</mat-label>
+    <input type="email" autocomplete="off" matInput [(ngModel)]="data.userName" #adminUserName="ngModel" 
+    required maxlength="50" pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$">
+    <mat-error *ngIf="adminUserName['errors']">{{showUserNameErrors()}}</mat-error>
+  </mat-form-field>
+  <mat-form-field class="full-width" appearance="outline">
+    <mat-label>Password</mat-label>
+    <input #adminPsd="ngModel" maxlength="50" type="password" matInput [(ngModel)]="data.password" autocomplete="off"
+      required>
+    <mat-error *ngIf="adminPsd['errors']">{{showPasswordErrors()}}</mat-error>
+  </mat-form-field>
+</div>
+<p class="red" *ngIf="errorMsg">{{errorMsg}}</p>
+<div mat-dialog-actions align="end">
+  <button class="btn" [ngClass]="{'cursor-not-allowed':(!adminUserName?.value || !adminPsd?.value)}"  
+  mat-button (click)="submit()" type="button"
+  [disabled]="submitting || (!adminUserName?.value || !adminPsd?.value)" [style.background]="submitting?'#ccc':'#37a69b'"> 
+    <img *ngIf="submitting" class="loader" [src]="loader"> LOGIN</button>
+</div>

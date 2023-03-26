@@ -1,0 +1,114 @@
+<div #top></div>
+<div style="height: 100%;">
+  <mat-toolbar color="primary" class="header-box-shadow secondToolbar"
+    [ngClass]="{'mat-elevation-z5' : true, 'sticky' : isSticky,
+    'disable-click':isShowingRouteLoadIndicator}"
+    class="tool-bar">
+    <div class="logo" fxHide.gt-lg matRipple>
+        <img title="go to home" src="assets/logo.jpeg" (click)="gotoHome()" class="logo-img" />
+    </div>
+    <div class="capitalize ml-10" fxShow="true" fxHide.lt-md="true" *ngIf="isUserLoggedIn">
+      <!-- {{business?.name?.length<15?business?.name+'d':(business?.name | slice:0:13)+'..'}} -->
+        {{loggenUserName}}
+    </div>
+
+    <span class="example-spacer"></span>
+    <div fxShow="true" fxHide.lt-md="true" style='width:100%;text-align:end' hidden>
+      <!-- The following menu items will be hidden on both SM and XS screen sizes -->
+      <mat-nav-list>
+        <a style="padding:0px 12px !important;" href="/login" mat-button>Login/Register FC & WR</a>
+      </mat-nav-list>
+    </div>
+
+    <div fxShow="true" fxHide.lt-md="true" class='list-right'>
+      <!-- The following menu items will be hidden on both SM and XS screen sizes -->
+      <mat-nav-list>
+        <header></header>
+      </mat-nav-list>
+    </div>
+    <span class="spacer"></span>
+    <button *ngIf="isUserLoggedIn" mat-button [matMenuTriggerFor]="menu" #ref="matMenuTrigger" fxShow.lt-md="false"
+      fxShow.gt-sm="true" [style.background]="url=='/setting'?'cornflowerblue':'#3f51b5'">
+      <span class="ml-2">
+          <img class="profile-img" [lazyLoad]="imageSrc" (click)="$event.preventDefault()"
+          *ngIf="logedInUSerAccount?.id" [defaultImage]="defaultImage" 
+          [ngClass]="{'profile-img-border':url == '/setting'}" [errorImage]="cameraIcon">
+      </span>
+    </button>
+    <button [disabled]="true" *ngIf="!isUserLoggedIn" mat-button fxShow.lt-md="false"
+    fxShow.gt-sm="true" [style.background]="url=='/setting'?'cornflowerblue':'#3f51b5'">
+    <img class="profile-img" [src]="imageSrc" *ngIf="imageSrc">
+  </button>
+    <mat-menu #menu="matMenu" overlapTrigger="false" xPosition="before" >
+      <a *ngIf="isUserLoggedIn" style="text-align: center;" routerLink="/setting" mat-menu-item>
+        <i class="bi bi-gear-fill"></i>
+        Settings
+      </a>
+      <a *ngIf="isUserLoggedIn" (click)="newLogin()" style="text-align: center;" mat-menu-item routerLink="/login">
+        <i class="bi bi-power ml"></i>
+        Log off
+      </a>
+    </mat-menu>
+
+
+    <div class="title" fxShow="true" fxHide.gt-sm="true">
+      <button (click)="sidenav.toggle()" type="menu" class="padding mat-raised-button mat-primary">
+        <span class="menu">{{sidenav['opened']?'&#10005;':'&#9776;'}}</span>
+      </button>
+      <u style="padding-left:1em;">{{pageTitle}}</u>
+      <span class="margin capitalize">{{loggenUserName}}</span>
+    </div>
+  </mat-toolbar>
+  <div class="demo-container" *ngIf="isShowingRouteLoadIndicator">
+    <div class="progress-bar">
+      <div class="progress-bar-value"></div>
+    </div>
+  </div>
+
+  <mat-sidenav-container fxFlexFill class="example-container" 
+  style="padding-top: 15px; position: relative;">
+    <mat-sidenav #sidenav fxLayout="column" class="nav-list" [autoFocus]="false">
+      <div fxLayout="column" class="a-links">
+        <a (click)="sidenav.toggle()" mat-button>
+        </a>
+        <a (click)="sidenav.toggle()" routerLink="/home" mat-button
+          [ngStyle]="{'background-color': colorHome}">Home 
+          <mat-icon>home</mat-icon></a>
+        <a (click)="sidenav.toggle()" routerLink="/profile" mat-button
+        [ngStyle]="{'background-color': colorProfile}">Profile 
+        <mat-icon>person</mat-icon></a>
+        <a (click)="sidenav.toggle()" routerLink="/add-new-auction" mat-button
+        [ngStyle]="{'background-color':  colorBidding}">Add New Auction &#10010;</a>
+        <a (click)="sidenav.toggle()" routerLink="/contact-us" mat-button
+        [ngStyle]="{'background-color':  colorContactUs}">Contact Us 
+        <i class="bi bi-envelope-check-fill"></i></a>
+        <a (click)="sidenav.toggle()" routerLink="/about-us" mat-button
+        [ngStyle]="{'background-color':  colorAboutUs}">About Us</a>
+        <a (click)="sidenav.toggle()" routerLink="/admin" mat-button
+        [ngStyle]="{'background-color':  colorAdmin}">Admin 
+        <mat-icon>admin_panel_settings</mat-icon>
+      </a><!--conditional-->
+        <a *ngIf="!isUserLoggedIn" (click)="sidenav.toggle()" routerLink="/login" mat-button
+        [ngStyle]="{'background-color':  colorLogin}">Login 
+        <i class="bi bi-person-check"></i></a>
+        <a *ngIf="isUserLoggedIn" (click)="sidenav.toggle()" routerLink="/setting" mat-button
+        [ngStyle]="{'background-color':  colorSetting}">Settings 
+        <mat-icon>settings</mat-icon></a> 
+        <a  [disabled]="true" *ngIf="!isUserLoggedIn" mat-button
+        [ngStyle]="{'background-color':  colorSetting}">Settings 
+        <mat-icon>settings</mat-icon></a>
+        <a *ngIf="isUserLoggedIn" (click)="sidenav.toggle();newLogin()"
+        routerLink="/login" mat-button>
+          Log off
+          <mat-icon>settings_power</mat-icon>
+        </a>
+
+      </div>
+    </mat-sidenav>
+    <mat-sidenav-content fxFlexFill>
+      <router-outlet></router-outlet>
+      <!-- <i (click)="goToTop()" title="Goto top" class="go-to bi bi-arrow-up-circle"></i> -->
+      <footer-comp (goToTopEventEmit)="goToTop($event)"></footer-comp>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>

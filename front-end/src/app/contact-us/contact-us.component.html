@@ -1,0 +1,92 @@
+<mat-card>    
+    <!-- Title of an Card -->    
+    <mat-card-title>    
+       Contact Us.    
+    </mat-card-title>
+    <mat-card-subtitle>
+        This will send a text to our team wokring actively and will soon reply.
+    </mat-card-subtitle>    
+    
+    <mat-card-content>    
+        <form [formGroup]="contactUsForm">    
+            <table>    
+                <tr>    
+                    <td colspan="2">    
+                        <mat-form-field class="demo-full-width">
+                            <mat-icon matSuffix>person</mat-icon>
+                            <input formControlName="name" matInput placeholder="Full Name">    
+                        </mat-form-field>    
+                    </td>    
+                </tr>    
+                <tr>    
+                    <td colspan="2">    
+                        <mat-form-field class="demo-full-width"> 
+                            <mat-icon matSuffix>location_city</mat-icon>   
+                            <textarea formControlName="address" matInput placeholder="Address" matTextareaAutosize matAutosizeMinRows="2" matAutosizeMaxRows="5"></textarea>    
+                        </mat-form-field>    
+                    </td>    
+                </tr>   
+                <tr>    
+                    <td colspan="2">    
+                        <mat-form-field class="demo-full-width"> 
+                            <mat-icon matSuffix>contact_phone</mat-icon>   
+                            <textarea formControlName="phone" matInput placeholder="Phone Number" 
+                            matTextareaAutosize matAutosizeMinRows="2" matAutosizeMaxRows="5"></textarea>    
+                            <mat-error *ngIf="form['phone'].invalid">{{PhoneErrors()}}</mat-error>
+                        </mat-form-field>    
+                    </td>    
+                </tr>   
+                <tr>    
+                    <td colspan="2">    
+                        <mat-form-field class="demo-full-width"> 
+                            <mat-icon matSuffix>contact_mail</mat-icon>   
+                            <input formControlName="email" matInput placeholder="Email">    
+                        </mat-form-field>    
+                    </td>    
+                </tr>   
+                <tr>    
+                    <td colspan="2">    
+                    <div [style.color]="(form['gender'].touched && !form['gender'].value)?'red':'initial'">
+                        <label style="color:initial;">Gender</label>
+                        <mat-radio-group formControlName="gender">
+                            <mat-radio-button value="Male">Male</mat-radio-button>    
+                            <mat-radio-button value="Female">Female</mat-radio-button>  
+                            <mat-radio-button value="Other">Other</mat-radio-button>  
+                        </mat-radio-group>
+                        <br>
+                        <p *ngIf="form['gender'].touched && !form['gender'].value" style="color:red;">
+                            Please select your gender</p>
+                      </div>
+                    </td> 
+                </tr>     
+                <tr>    
+                    <td colspan="2">    
+                        <mat-form-field  class="demo-full-width">
+                            <mat-label>Write here</mat-label>
+                            <mat-icon matSuffix>message</mat-icon>
+                            <textarea placeholder="type your query and press submit" formControlName="comments" matInput></textarea>
+                            <mat-error *ngIf="form['comments']?.invalid">{{commentsErrors()}}</mat-error>
+                          </mat-form-field>
+                    </td>    
+                </tr>    
+                <tr>
+                    <td colspan="2">
+                        <mat-slide-toggle color="primary" formControlName="acceptTermsAndConditions">
+                          <a class="terms-conditions">
+                            I agree and accept terms and conditions</a></mat-slide-toggle>
+                    </td>
+                </tr>   
+                <tr>    
+                    <td colspan="2" class="content-center">    
+                        <button [disabled]="!form['acceptTermsAndConditions']?.value|| isEmailSending" 
+                        mat-raised-button color="primary" (click)="submit()">
+                            <img  *ngIf="isEmailSending" class="loader" [src]="loader"> 
+                            Submit</button> 
+                        &nbsp;   &nbsp;   &nbsp;   
+                        <button (click)="clear()" mat-flat-button color="warn">Clear</button>    
+                    </td>    
+                </tr> 
+            </table>    
+        </form>    
+    </mat-card-content>    
+</mat-card>  

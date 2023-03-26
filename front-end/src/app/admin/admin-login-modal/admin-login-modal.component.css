@@ -1,0 +1,27 @@
+.full-width {
+  width: -webkit-fill-available;
+  font-size: 15px;
+}
+
+.btn {
+  width: 100%;
+  background-color: #37a69b;
+  color: #fff;
+}.full-width {
+  width: -webkit-fill-available;
+  font-size: 15px;
+}
+
+.btn {
+  width: 100%;
+  background-color: #37a69b;
+  color: #fff;
+}
+.close{
+  float: right;
+  color: darkgray;
+  cursor: pointer;
+}
+.close:hover{
+  color: #333;
+}

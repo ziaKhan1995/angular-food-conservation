@@ -1,0 +1,429 @@
+% This file was created with JabRef 2.5.
+% Encoding: Cp1252
+
+@STANDARD{isaar,
+  title = {International Standard Archival Authority Record For Corporate Bodies,
+	Persons and Families},
+  organization = {International Council on Archives},
+  institution = {Committee on Descriptive Standards},
+  author = {ISAAR (CPF)},
+  month = {April},
+  year = {2004},
+  owner = {Panther},
+  timestamp = {2009.04.30}
+}
+
+@BOOK{ltpdd06,
+  title = {Long-Term Preservation of Digital Documents: Principles and Practices},
+  publisher = {Springer-Verlag New York, Inc.},
+  year = {2006},
+  author = {Borghoff,, U. M. and R\"{o}dig,, P. and Scheffczyk,, J. and Schmitz,,
+	L.},
+  address = {Secaucus, NJ, USA},
+  isbn = {3540336397},
+  owner = {Panther},
+  timestamp = {2009.05.08}
+}
+
+@INPROCEEDINGS{dbtsp07,
+  author = {Peter Buneman},
+  title = {Why current database technology does not support preservation},
+  year = {2007},
+  address = {National E-Science Center, Edinburgh, University of Edinburgh, UK},
+  month = {March},
+  owner = {Panther},
+  timestamp = {2009.05.07}
+}
+
+@INPROCEEDINGS{cd08,
+  author = {Buneman, Peter and Cheney, James and Tan, Wang-Chiew and Vansummeren,
+	Stijn},
+  title = {Curated databases},
+  booktitle = {PODS '08: Proceedings of the twenty-seventh ACM SIGMOD-SIGACT-SIGART
+	symposium on Principles of database systems},
+  year = {2008},
+  pages = {1-12},
+  address = {New York, NY, USA},
+  doi = {http://doi.acm.org/10.1145/1376916.1376918},
+  owner = {Panther},
+  timestamp = {2009.12.10}
+}
+
+@ARTICLE{ccwf09,
+  author = {Peter Buneman and Heiko M\"{u}ller and Chriss Rusbridge},
+  title = {Curating the {CIA} World Factbook},
+  journal = {International Journal of Digital Curation, Vol 4, No 3},
+  year = {2009},
+  owner = {Panther},
+  timestamp = {2009.12.10},
+  url = {http://ijdc.net/index.php/ijdc/article/view/132}
+}
+
+@STANDARD{oais,
+  title = {Reference Model for an Open Archival Information System {(OAIS)}},
+  institution = {Consultative Committee for Space Data Systems},
+  author = {CCSDS},
+  address = {Washington, DC 20546, USA},
+  year = {2002},
+  url = {http://public.ccsds.org/publications/archive/650x0b1.pdf},
+  owner = {Panther},
+  timestamp = {2009.05.04}
+}
+
+@STANDARD{isad,
+  title = {International Standard Archival Description (General)},
+  organization = {Committee on Descriptive Standards},
+  institution = {International Council on Archives},
+  author = {CDS},
+  address = {14th International Congress on Archives in Seville, Spain},
+  month = {September},
+  year = {2000},
+  owner = {Panther},
+  timestamp = {2009.04.30}
+}
+
+@BOOK{dspadim01,
+  title = {Database Systems: A Practical Approach to Design, Implementation,
+	and Management},
+  publisher = {Addison-Wesley Longman Publishing Co., Inc.},
+  year = {2001},
+  author = {Connolly, Thomas M. and Begg, Carolyn},
+  address = {Boston, MA, USA},
+  isbn = {0201708574},
+  owner = {Panther},
+  timestamp = {2010.05.12}
+}
+
+@BOOK{idbs91,
+  title = {An Introduction to Database Systems},
+  publisher = {Addison-Wesley Longman Publishing Co., Inc.},
+  year = {1991},
+  author = {C. J. Date},
+  address = {Boston, MA, USA},
+  owner = {Panther},
+  timestamp = {2010.02.17}
+}
+
+@BOOK{dddva05,
+  title = {Database Design and Development: A Visual Approach},
+  publisher = {Prentice-Hall, Inc.},
+  year = {2005},
+  editor = {Robert Horan},
+  author = {Raymond Frost and John Day and Craig Van Slyke},
+  address = {Upper Saddle River, NJ, USA},
+  owner = {dbpreserve},
+  timestamp = {2010.04.08}
+}
+
+@MISC{siard,
+  author = {Stephan Heuscher},
+  title = {Technical Aspects of SIARD},
+  howpublished = {Erpanet},
+  year = {2003},
+  owner = {Panther},
+  timestamp = {2009.05.09}
+}
+
+@CONFERENCE{pal04,
+  author = {Stephan Heuscher and Stephan J{\"a}rmann and Peter Keller-Marxer
+	and Frank M{\"o}hle},
+  title = {Providing Authentic Long-term Archival Access to Complex Relational
+	Data},
+  booktitle = {Ensuring Long-Term Preservation and Adding Value to Scientific and
+	Technical Data},
+  year = {2004},
+  organization = {European Space Agency},
+  owner = {Panther},
+  timestamp = {2009.05.06}
+}
+
+@STANDARD{moreq2,
+  title = {Model requirements for the management of electronic records (MoReq2)},
+  institution = {Office for Official Publications of the European Communities},
+  author = {IDABC},
+  address = {Bruxelles - Luxembourg},
+  month = {02},
+  year = {2008},
+  url = {http://www.cornwell.co.uk/moreq2/MoReq2_appendix_9_v1.0.pdf},
+  owner = {dbpreserve},
+  timestamp = {2010.03.02}
+}
+
+@STANDARD{moreq,
+  title = {Model Requirements for the Management of Electronic Records (MoReq)},
+  organization = {Cornwell Management Consultants plc},
+  institution = {Interoperable Delivery of European E-Government Services to public
+	Administrations, Businesses and Citizens},
+  author = {IDABC},
+  year = {2001},
+  owner = {Panther},
+  timestamp = {2009.04.30}
+}
+
+@BOOK{mdwdrdt03,
+  title = {Mastering Data Warehouse Design: Relational and Dimensional Techniques},
+  publisher = {Joe Wikert},
+  year = {2003},
+  editor = {Robert Elliott},
+  author = {Claudia Imhoff and Nicholas Galemmo and Jonathan G. Geiger},
+  owner = {Panther},
+  timestamp = {2010.05.12}
+}
+
+@BOOK{bdwh05,
+  title = {Building the data warehouse},
+  publisher = {QED Information Sciences, Inc.},
+  year = {2005},
+  author = {Inmon, W. H.},
+  pages = {543},
+  address = {Wellesley, MA, USA},
+  edition = {4th},
+  isbn = {0-89435-404-3},
+  owner = {Panther},
+  timestamp = {2010.01.07}
+}
+
+@BOOK{dwlt98,
+  title = {The Data Warehouse Lifecycle Toolkit: Expert Methods for Designing,
+	Developing and Deploying Data Warehouses},
+  publisher = {John Wiley \& Sons, Inc.},
+  year = {1998},
+  author = {Kimball, Ralph and Reeves, Laura and Thornthwaite, Warren and Ross,
+	Margy and Thornwaite, Warren},
+  address = {New York, NY, USA},
+  isbn = {0471255475},
+  owner = {Panther},
+  timestamp = {2009.12.15}
+}
+
+@MISC{diva,
+  author = {Eva M\"uller and Uwe Klosa and Stefan Andersson and Peter Hansson},
+  title = {The DiVA Project - Development of an Electronic Publishing System},
+  howpublished = {D-Lib Magazine, Electronic Publishing Centre, Uppsala University,
+	Sweden},
+  month = {November},
+  year = {2003},
+  owner = {Panther},
+  timestamp = {2009.05.18}
+}
+
+@INPROCEEDINGS{pdmt95,
+  author = {Andreas Meier},
+  title = {Providing Database Migration Tools - A Practicioner's Approach},
+  booktitle = {VLDB '95: Proceedings of the 21th International Conference on Very
+	Large Databases},
+  year = {1995},
+  pages = {635--641},
+  address = {San Francisco, CA, USA},
+  publisher = {Morgan Kaufmann Publishers Inc.},
+  isbn = {1-55860-379-4},
+  owner = {Panther},
+  timestamp = {2009.12.15}
+}
+
+@ARTICLE{hrdm94,
+  author = {Meier, Andreas and Dippold, Rolf and Mercerat, Jacky and Muriset,
+	Alex and Untersinger, Jean-Claude and Eckerlin, Robert and Ferrara,
+	Flavio},
+  title = {Hierarchical to Relational Database Migration},
+  journal = {IEEE Softw.},
+  year = {1994},
+  volume = {11},
+  pages = {21--27},
+  number = {3},
+  address = {Los Alamitos, CA, USA},
+  doi = {http://dx.doi.org/10.1109/52.281714},
+  issn = {0740-7459},
+  owner = {Panther},
+  publisher = {IEEE Computer Society Press},
+  timestamp = {2009.12.15}
+}
+
+@TECHREPORT{eva03,
+  author = {Eva Muller and Uwe Klosa and Peter Hansson},
+  title = {Using {XML} for Long-Term Preservation - Experience from the {DiVA}
+	Project},
+  institution = {Uppsala University Library, Electronic Publishing Center},
+  year = {2003},
+  owner = {Panther},
+  timestamp = {2010.05.12}
+}
+
+@MISC{daltd06,
+  author = {Caraig S. Mullins},
+  title = {Database Archiving for Long-Term Data Retention},
+  howpublished = {www.tdan.com},
+  month = {Oct},
+  year = {2006},
+  owner = {Panther},
+  timestamp = {2009.04.21},
+  url = {http://www.tdan.com/print/4591}
+}
+
+@BOOK{dwfcgitp,
+  title = {Data Warehousing Fundamentals: A Comprehensive Guide for IT Professionals},
+  publisher = {John Wiley \& Sons, Inc.},
+  year = {2001},
+  author = {Paulraj Ponniah},
+  month = {August},
+  owner = {Panther},
+  timestamp = {2009.12.15}
+}
+
+@TECHREPORT{eccs03,
+  author = {Dutch Archives Testbed Project},
+  title = {Digital Preservation Testbed White Paper Emulation: Context and Current
+	Status},
+  institution = {Dutch National Archives, Digital Preservation Testbed Project},
+  year = {2003},
+  address = {ICTU, Nieuwe Duinweg 24-26, 2587 AD Den Haag,},
+  month = {June},
+  owner = {Panther},
+  timestamp = {2010.01.04}
+}
+
+@CONFERENCE{mmadbp10,
+  author = {Arif Ur Rahman and Gabriel David and Cristina Ribeiro},
+  title = {Model Migration Approach for Database Preservation},
+  booktitle = {International Conference on Asian Digital Libraries (ICADL)},
+  year = {2010 \\ (Won Best Student Paper Award)},
+  volume = {6102},
+  pages = {81-90},
+  address = {Springer-Verlag Berlin Heidelberg},
+  owner = {dbpreserve},
+  timestamp = {2010.04.20}
+}
+
+@CONFERENCE{mmadbp09,
+  author = {Arif Ur Rahman and Gabriel David and Cristina Ribeiro},
+  title = {Model Migration Approach for Database Preservation},
+  booktitle = {5th International Digital Curation Conference, London},
+  year = {2009},
+  month = {2-4 December},
+  owner = {Panther},
+  timestamp = {2009.05.06},
+  url = {http://www.dcc.ac.uk/events/dcc-2009/programme/posters/MMADBP12-Arif.pdf}
+}
+
+@INPROCEEDINGS{rdpxm07,
+  author = {Jos\'e Carlos Ramalho and Miguel Ferreira and Lu\'is Faria and Rui
+	Castro},
+  title = {Relational Database Preservation through {XML} Modeling},
+  booktitle = {Extreme Markup Languages},
+  year = {2007},
+  address = {Montreal Quebec},
+  month = {August},
+  organization = {Department of Informatics, University of Minho, Portugal},
+  owner = {Panther},
+  timestamp = {2009.12.11}
+}
+
+@MISC{dbp09,
+  author = {Cristina Ribeiro and Gabriel David},
+  title = {Database Preservation},
+  howpublished = {Digital Preservation Europe},
+  year = {2009},
+  owner = {Panther},
+  timestamp = {2009.04.16}
+}
+
+@TECHREPORT{siardfd08,
+  author = {SFA},
+  title = {{SIARD} Format Description},
+  institution = {Swiss Federal Archives},
+  year = {2008},
+  address = {Berne},
+  month = {September},
+  owner = {Panther},
+  timestamp = {2009.12.15}
+}
+
+@STANDARD{erkss05,
+  title = {Electronic RecordKeeping Systems Standard},
+  organization = {Archives New Zealand},
+  author = {Adam Stapleton},
+  year = {2005},
+  url = {http://continuum.archives.govt.nz/files/file/standards/s5.pdf},
+  owner = {Panther},
+  timestamp = {2010.02.22}
+}
+
+@TECHREPORT{tbpd03,
+  author = {Digital Preservation Testbed},
+  title = {From Digital Volatility to Digital Permanence: Preserving Databases},
+  institution = {National Library of Australia, Dutch National Archives},
+  year = {2003},
+  owner = {Panther},
+  timestamp = {2009.05.06}
+}
+
+@INCOLLECTION{cmm03,
+  author = {Riccardo Torlone},
+  title = {Conceptual Multidimensional Models},
+  booktitle = {Multidimensional Databases},
+  publisher = {Idea Group},
+  year = {2003},
+  pages = {69-90},
+  owner = {Panther},
+  timestamp = {2009.12.15}
+}
+
+@MISC{dpidpt03,
+  author = {Remco Verdegem},
+  title = {Database Preservation Issues},
+  howpublished = {Long-Term Preservation of Databases, Digital Preservation Testbed,
+	Dutch National Archives},
+  year = {2003},
+  owner = {Panther},
+  timestamp = {2009.04.16}
+}
+
+@STANDARD{vers03,
+  title = {Management of Electronic Records PROS 99/007 (Version 2)},
+  organization = {Vectorian Electronic Record Strategy},
+  institution = {Department of Victorian Communities},
+  author = {VERS},
+  month = {Jul},
+  year = {2003},
+  owner = {Panther},
+  timestamp = {2009.05.04}
+}
+
+@TECHREPORT{mg06,
+  author = {Martin Waller and Robert Sharpe},
+  title = {Mind the Gap: Assessing Digital Preservation Needs in the UK},
+  institution = {Digital Preservation Coalition},
+  year = {2006},
+  address = {\url{http://www.dpconline.org/docs/reports/uknamindthegap.pdf}},
+  owner = {Panther},
+  timestamp = {2010.10.08}
+}
+
+@TECHREPORT{spr07,
+  author = {Andrew Wilson},
+  title = {Significant Properties Report},
+  institution = {InSPECT},
+  year = {2007},
+  month = {April},
+  owner = {Panther},
+  timestamp = {2009.12.15},
+  url = {http://www.significantproperties.org.uk/documents/wp22_significant_properties.pdf}
+}
+
+@INPROCEEDINGS{sokcra08,
+  author = {Menzo Windhouwer and Alex Dimitriadis},
+  title = {Sustainable Operability: Keeping Complex Resources Alive},
+  year = {2008},
+  organization = {University of Amsterdam, Utrecht Institute of Linguistics OTS},
+  owner = {dbpreserve},
+  timestamp = {2010.04.16}
+}
+
+@comment{jabref-meta: selector_publisher:}
+
+@comment{jabref-meta: selector_author:}
+
+@comment{jabref-meta: selector_journal:}
+
+@comment{jabref-meta: selector_keywords:}
+

@@ -1,0 +1,55 @@
+.mat-card {
+    text-align: -webkit-center;
+}
+
+.demo-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+}
+textarea{
+    resize: none !important;
+}
+table {
+    width: 44%;
+}
+
+.demo-full-width {
+    width: 100%;
+}
+.terms-conditions{
+    text-decoration: none;
+}
+.terms-conditions:hover{
+    font-weight: 700;
+}
+mat-card {
+    max-width: 80%;
+    margin: 2em auto;
+    text-align: center;
+}
+
+
+.done {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    color: white;
+}
+
+.content-center {
+    text-align: -webkit-center;
+}
+
+.mat-radio-button {
+    margin: 0 20px;
+}
+
+@media (max-width: 767px) {
+    .mat-radio-button {
+        margin: 0 8px;
+    }
+    mat-card {
+        max-width: 99%;
+    }
+}

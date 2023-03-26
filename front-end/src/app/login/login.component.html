@@ -1,0 +1,54 @@
+<mat-card class="mat-elevataion-z8">
+    <mat-card-title>LOGIN</mat-card-title>
+    <mat-card-content>
+        <form [formGroup]="form" (ngSubmit)="submit()">
+            <div *ngIf="showAlert" class="alert {{alertType}}" style="margin-bottom:25px;">
+                <div class="alert--icon">
+                    <!--alertt icon types
+                    fa-bell fa-check-circle fa-times-circle fa-exclamation-circle	 fa-exclamation-triangle-->
+                    <i class="fas {{alertTypeIcon}}"></i>
+                </div>
+                <div class="alert--content">
+                    {{alertMessage}}
+                </div>
+                <div class="alert--close" (click)="showAlert=!showAlert">
+                    <i class="far fa-times-circle"></i>
+                </div>
+            </div>
+            <div *ngIf="isUserLoggedIn" style="margin-bottom:10px;">
+                Please head to <a routerLink="/home">Home</a> page and check 
+                 available currently in bidding products or 
+                 <a (click)="newLogin()" class="new-login">Sign In</a> 
+                 with another account
+            </div>
+            <p [ngClass]="{'disable':isUserLoggedIn}">
+                <mat-form-field appearance="outline">
+                    <mat-label style="font-size: 15px;">Email addresse </mat-label>
+                    <input cdkInitialFocus matInput placeholder="zia@gmail.com" formControlName="userEmail">
+                    <mat-error *ngIf="f['userEmail']?.invalid">{{emailErrors()}}</mat-error>
+                </mat-form-field>
+            </p>
+
+            <p [ngClass]="{'disable':isUserLoggedIn}">
+                <mat-form-field appearance="outline">
+                    <mat-label style="font-size: 15px;">Password </mat-label>
+                    <input type="password" matInput placeholder="Password" formControlName="password">
+                    <mat-error *ngIf="f['password']?.invalid">This field must be filled out</mat-error>
+                </mat-form-field>
+            </p>
+
+            <mat-dialog-actions [ngClass]="{'disable':isUserLoggedIn}">
+                <div class="button">
+                    <button type="submit" [disabled]=isSubmitted mat-button class="mat-raised-button mat-primary">
+                        <img *ngIf="isSubmitted" src="assets/loading.gif" class="loader">
+                        Login</button>
+                    <a routerLink="/register" class="btn-link" title="Register as new user">
+                        Register</a>
+                    <a routerLink="/forgot-password" class="btn-link">
+                        Forgot Password</a>
+                </div>
+            </mat-dialog-actions>
+        </form>
+
+    </mat-card-content>
+</mat-card>

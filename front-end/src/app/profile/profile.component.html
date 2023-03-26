@@ -1,0 +1,288 @@
+<div #top></div>
+<div [ngClass]="{ 'top-div-pads': showAlert || isUserLoggedIn }">
+    <div *ngIf="showAlert" class="alert {{ alertType }}" style="margin-bottom: 5px">
+        <div class="alert--icon">
+            <!--alertt icon types
+        fa-bell fa-check-circle fa-times-circle fa-exclamation-circle	 fa-exclamation-triangle-->
+            <i class="fas {{ alertTypeIcon }}"></i>
+        </div>
+        <div class="alert--content">
+            {{ alertMessage }}
+        </div>
+        <!-- <div class="alert--close" (click)="showAlert = !showAlert">
+            <i class="far fa-times-circle"></i>
+        </div> -->
+    </div>
+    <br />
+    <div *ngIf="!isUserLoggedIn" class="hints-div">
+        You must have an appropriate valid account on this
+        <b>FCWR- online surplus food bidding website</b> to view your
+        <b>purchase </b> history or<b> sale</b> history on your profile or even
+        participate in Bidding or sell your product on bidding. Kindly goto to
+        <a class="new-login" (click)="gotoFrom('/register')"> Registration</a> page
+        and sign in with your valid details or goto
+        <a class="new-login" (click)="gotoFrom('/login')">LOGIN</a> if you have already
+        an account.
+    </div>
+</div>
+<div *ngIf="isUserLoggedIn" style="background: #fff;margin-top: -28px;overflow-y: auto">
+    <div class="margin">
+        <div *ngIf="isApproved" class="alert alert_success" style="margin-bottom: 35px">
+            <div class="alert--icon">
+                <i class="fas fa-check-circle"></i>
+            </div>
+            <div class="alert--content">
+                Success! Congratulations you have sold the item. Kindly wait for the
+                bidder to pay for your product.
+            </div>
+            <div class="alert--close" (click)="isApproved = !isApproved">
+                <i class="far fa-times-circle "></i>
+            </div>
+        </div>
+        <p class="heading" *ngIf="!isUserPurchaseHistoryLoading">User Account 
+            <strong>Purchase History</strong>
+            <mat-icon (click)="getCurrenSignedInUserPurchaseHistory()" matRipple matTooltip="Refresh"
+            class="medium vam ml-10 grey mat-icon-initials" matTooltipPosition="above" 
+            matTooltipClass="tooltip-class">sync</mat-icon>
+            </p>
+        <!--Purchase History: Show on LARGE devices and hide on SMALL DEVICES-->
+            <ng-container *ngIf="isUserPurchaseHistoryLoading"><!--Loader while loading data-->
+                <p class='yellow large'> Purchase History Loading...</p>
+                <ngx-shimmering-loader [style]="shimmarStyle" [isVisible]="isUserPurchaseHistoryLoading" [elemCount]="1">
+                </ngx-shimmering-loader>
+              </ng-container>
+        <div *ngIf="(purchaseHistory && purchaseHistory?.length>0 && !isUserPurchaseHistoryLoading)" class="table">
+            <div class="tableRow">
+                <div class="tableHead">S#</div>
+                <div class="tableHead">Name/title</div>
+                <div class="tableHead">My Bid Amount(RS)</div>
+                <div class="tableHead">Closing Date</div>
+                <div class="tableHead">Status</div>
+            </div>
+            <div class="tableRow" *ngFor="let pr of purchaseHistory;let i=index">
+                <div class="tableCell">{{i+1}}</div>
+                <div class="tableCell capitalize">{{pr?.Prod_Name}}</div>
+                <div class="tableCell">{{pr?.bid_price}}</div>
+                <div class="tableCell">{{pr?.Auc_Close_Date | date :'dd-MM-yyyy hh:mm a'}}</div>
+                <div class="tableCell last-child" [style.color]="getBidColor(pr?.bidStatus)">
+                    <button mat-button *ngIf="pr?.bidStatus!='2'">
+                        <mat-icon>{{getBidEmoji(pr?.bidStatus)}}</mat-icon>
+                        {{getBidText(pr?.bidStatus)}}
+                    </button>
+                    <button *ngIf="pr?.bidStatus==2" mat-button (click)="proceedBid(pr)">
+                        <div class="activity">
+                            <div [ngClass]="{'blink':showBlinker}">
+                                <mat-icon class="vam">thumb_up</mat-icon>
+                                Congrats! You win. click to proceed
+                            </div>
+                        </div>
+                    </button>
+                    <div (click)="openFeedBackDialog(pr)" matRipple class="feedback" *ngIf="pr?.bidStatus==3">Feedback
+                        <mat-icon class="vam">feedback</mat-icon>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--message if no Purchase History-->
+        <div class="large red mtb-10" *ngIf="!purchaseHistory?.length && !isUserPurchaseHistoryLoading">
+            <i class="fas fa-bell"></i> You have not placed any bids against a product.
+            Go to <a class="show-like" routerLink="/home"> Home </a>
+            Page, <p style="padding-left:20px;margin-top:6px;">chose and participate in bidding
+                by clicking <a class="show-like">
+                    Submit a Bid</a> button </p>
+        </div>
+        <!--Purchase History: Row 1: Show on SMALL DEVICES and hide on LARGE-->
+        <div *ngIf="(purchaseHistory && purchaseHistory?.length>0 && !isUserPurchaseHistoryLoading)">
+            <div class="show-sm" *ngFor="let prsm of purchaseHistory;let j=index">
+                <button class="one">{{j+1}}</button>
+                <div fxLayout="row wrap" style="padding-top: 5px">
+                    <div class="child-1" fxFlex="50">
+                        <span class="property">Product</span>:
+                        <span class="value capitalize">{{prsm?.Prod_Name}}</span>
+                    </div>
+                    <div class="child-2" fxFlex="50">
+                        <span class="property">My Bid Amount</span>:
+                        <span class="value">{{prsm?.bid_price}}</span>
+                    </div>
+                    <div class="child-3" style="margin-top: 10px" fxFlex="100">
+                        <span class="property">Closing date</span><br />
+                        <span class="value">{{prsm?.Auc_Close_Date | date :'dd-MM-yyyy hh:mm a'}}</span>
+                    </div>
+                    <div matRipple class="child-4" style="margin-top: 10px" fxFlex="100">
+                        <span class="property">Status</span>:
+                        <!-- <span class="value" [style.color]="getBidColor(prsm?.bidStatus)">
+                        <mat-icon class="icon-size">{{getBidEmoji(prsm?.bidStatus)}}</mat-icon>
+                        {{getBidText(prsm?.bidStatus)}}
+                    </span> -->
+                        <button mat-button *ngIf="prsm?.bidStatus!='2'" [style.color]="getBidColor(prsm?.bidStatus)">
+                            <mat-icon>{{getBidEmoji(prsm?.bidStatus)}}</mat-icon>
+                            {{getBidText(prsm?.bidStatus)}}
+                        </button>
+                        <button *ngIf="prsm?.bidStatus=='2'" mat-button (click)="proceedBid(prsm)">
+                            <span class="activity">
+                                <span [ngClass]="{'blink':showBlinker}">
+                                    <mat-icon class="vam">thumb_up</mat-icon>
+                                    Congrats! You win. click to proceed
+                                </span>
+                            </span>
+                        </button>
+                    </div>
+                    <div *ngIf="prsm?.bidStatus==3" class="child-5" style="margin-top: 10px" fxFlex="100">
+                        <span class="property">Your Feedback matter</span>
+                        <div matRipple (click)="openFeedBackDialog(prsm)" class="border-blue">
+                            <span class="value show-like">Feedback </span>
+                            <mat-icon class="vam">feedback</mat-icon>
+                        </div>
+
+                    </div>
+                </div>
+                <br />
+            </div>
+        </div>
+        <br>
+        <!---
+            Sale History section
+        ******************>
+        ***************>
+        *************>
+        -->
+        <p class="heading sale-loading" *ngIf="!isUserSaleHistoryLoading">User Account 
+            <strong>Sale History</strong> 
+            <mat-icon matTooltip="Refresh" matTooltipPosition="above" matTooltipClass="tooltip-class"  
+            (click)="getCurrenSignedInUserSaleHistory()" matRipple
+            class="medium vam ml-10 grey mat-icon-initials">sync</mat-icon>
+        </p>
+        <!--Sale History: Show on LARGE devices and hide on SMALL DEVICES-->
+        <ng-container *ngIf="isUserSaleHistoryLoading"><!--Loader while loading data-->
+            <p class='yellow large'>Sale History Loading...</p>
+            <ngx-shimmering-loader [style]="shimmarStyle" [isVisible]="isUserSaleHistoryLoading" [elemCount]="1">
+            </ngx-shimmering-loader>
+          </ng-container>
+        <div *ngIf="saleHistory?.length>0 && !isUserSaleHistoryLoading" class="table">
+            <div class="tableRow">
+                <div class="tableHead">S#</div>
+                <div class="tableHead">Name/title</div>
+                <div class="tableHead">Auction/purchase Price(RS)</div>
+                <div class="tableHead">Closing Date</div>
+                <div class="tableHead">Total Bids</div>
+                <div class="tableHead" [matTooltip]="msg" matTooltipTouchGestures="on" 
+                matTooltipPosition="above" matTooltipClass="tooltip-class">Status</div>
+                <div class="tableHead">Action</div>
+            </div>
+            <div *ngFor="let auction of saleHistory;let k=index" class="tableRow"
+                [ngClass]="{'clicked-row':auctionSelectd?.ID==auction?.ID}">
+                <div class="tableCell">{{k+1}}</div>
+                <div class="tableCell capitalize">{{auction?.Prod_Name}}</div>
+                <div class="tableCell">{{auction?.Prod_Start_Bid_Amount}}</div>
+                <div class="tableCell">{{auction?.Auc_Close_Date | date :'dd-MM-yyyy hh:mm a'}}</div>
+                <div class="tableCell show-like">
+                    <button (click)="getAllBidsForAuction(auction)" mat-button
+                        [disabled]="auctionbidSLoading || auction?.bidCount<=0">
+                        <!-- <img *ngIf="auctionbidSLoading" [src]="loader" class="loader"> -->
+                        {{auction?.bidCount>1?'Show all '+auction?.bidCount+' bids':''}}
+                        <span *ngIf="auction?.bidCount==1">Show 1 bid</span>
+                        <span *ngIf="auction?.bidCount<=0">No bids placed</span>
+                    </button>
+                </div>
+                <div class="tableCell">{{getAuctionStatus(auction?.status)}}
+                </div>
+                <div class="tableCell">
+                    <div class="tableRow">
+                        <div class="tableCell border-none">
+                            <span class="show-delete-icon" matTooltip="Delete this auction?" matTooltipPosition="before"
+                                (click)="deleteAuction(auction)" matTooltipClass="tooltip-class" matTooltipTouchGestures="on">
+                                <mat-icon color="accent" matRipple>delete</mat-icon>
+                            </span>
+                        </div>
+                        <div class="tableCell border-none">
+                            <span class="show-delete-icon" matTooltip="Edit this auction?" matTooltipPosition="before"
+                                (click)="editAuction(auction)" matTooltipClass="tooltip-class" matTooltipTouchGestures="on">
+                                <mat-icon color="primary" matRipple>edit</mat-icon>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br />
+        </div>
+        <div *ngIf="auctionbidSLoading && auctionSelectd">
+            <div class="progress-bar">
+                <div class="progress-bar-value"></div>
+            </div>
+        </div>
+        <h2 class="mb-0" *ngIf="auctionSelectd && auctionAllBids?.length>0">Bids Table of auction
+            <span style="color:darkslategrey">{{auctionSelectd?.Prod_Name}}</span>
+            <small *ngIf="auctionbidSLoading && auctionSelectd"> (loading...)</small>
+            <span class="float-right close-icon" (click)="auctionSelectd=null;bidSelectd=null">
+                <mat-icon matRipple matTooltip="Close" matTooltipPosition="above" 
+                class="medium close-icon-initials">close</mat-icon>
+            </span>
+        </h2>
+        <div *ngIf="auctionSelectd && auctionAllBids?.length>0 && !auctionbidSLoading" class="table">
+            <div class="tableRow">
+                <div class="tableHead">S#</div>
+                <div class="tableHead">Bidder Name</div>
+                <div class="tableHead">Bid Amount</div>
+                <div class="tableHead">Bid Date & Time </div>
+                <div class="tableHead">Action</div>
+                <div class="tableHead">Comments</div>
+            </div>
+            <div *ngFor="let bidder of auctionAllBids;let y=index" class="tableRow">
+                <div class="tableCell">{{y+1}}</div>
+                <div class="tableCell capitalize">{{bidder?.userFirstName+' '+bidder?.userLastName}}</div>
+                <div class="tableCell">{{bidder?.Bid_Price}}</div>
+                <div class="tableCell">{{bidder?.Bid_Date}} 
+                    {{tConvert(bidder?.Bid_Time)}}
+                </div>
+                <div matRipple class="tableCell cursor"
+                    [ngClass]="{'disable':auctionSelectd?.status!=1 && bidder?.status==1}">
+                    <span [style.color]="getBidColor(bidder?.status)"
+                        (click)="updateBidderBidStatusYesNoDialog(bidder,auctionSelectd,top)">
+                        {{getActionText(bidder?.status)}}
+                    </span>
+                </div>
+                <div class="tableCell last-child" style="width:200px;">
+                    {{bidder?.Bid_Comment}}</div>
+            </div>
+            <br />
+        </div>
+
+        <br />
+
+        <!--Sale History: Show on SMALL DEVICES and hide on LARGE-->
+        <div *ngIf="saleHistory?.length>0 && !isUserSaleHistoryLoading">
+            <div *ngFor="let auctionPd of saleHistory;let p=index" class="show-sm">
+                <button class="one">{{p+1}}</button>
+                <div fxLayout="row wrap" style="padding-top: 5px">
+                    <div class="child-1" fxFlex="50">
+                        <span class="property">Product</span>:
+                        <span class="value">{{auctionPd?.Prod_Name}}</span>
+                    </div>
+                    <div class="child-2" fxFlex="100">
+                        <span class="property">Auction/purchase Price(RS)</span>:
+                        <span class="value capitalize">{{auctionPd?.Prod_Start_Bid_Amount}}</span>
+                    </div>
+                    <div class="child-3" style="margin-top: 10px" fxFlex="100">
+                        <span class="property">Closing date</span><br />
+                        <span class="value">{{auctionPd?.Auc_Close_Date | date :'dd-MM-yyyy hh:mm a'}}</span>
+                    </div>
+                    <div class="child-4" fxFlex="100">
+                        <span class="property">Total Bids</span>:
+                        <button (click)="getAllBidsForAuction(auctionPd)" mat-button
+                            [disabled]="auctionbidSLoading || auctionPd?.bidCount<=0" style="color:dodgerblue;">
+                            <img *ngIf="auctionbidSLoading" [src]="loader" class="loader">
+                            {{auctionPd?.bidCount>1?'Show all '+auctionPd?.bidCount+' bids':''}}
+                            <span *ngIf="auctionPd?.bidCount==1">Show 1 bid</span>
+                            <span *ngIf="auctionPd?.bidCount<=0">No bids placed</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="large red mtb-10" *ngIf="!saleHistory?.length && !isUserSaleHistoryLoading">
+            <i class="fas fa-bell"></i> You have not added any product for bidding.
+            Go to <a class="show-like" routerLink="/add-new-auction">Add New auction </a>
+            Page to create new auction.
+        </div>
+    </div>
+</div>

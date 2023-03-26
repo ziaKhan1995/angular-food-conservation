@@ -1,0 +1,214 @@
+*{
+  overflow: hidden !important;
+}
+
+.title-text {
+  font-size: 2.53em;
+  font-size: 2.53em;
+}
+
+.h1 {
+  display: inline;
+  font-size: 2.53em;
+  font-weight: 700;
+  color: cadetblue;
+}
+
+.h1+span {
+  font-size: 2.53em;
+}
+.align{
+  vertical-align: super;
+}
+form {
+  width: 100%;
+  font-size: 12px;
+}
+
+/* form button,a{
+    font-size: larger;
+} */
+.container-add-new-auction {
+  margin: 1px 100px;
+}
+
+.example-container .mat-form-field+.mat-form-field {
+  margin-left: 8px;
+}
+.delete-img{
+  color: #ff4081;
+  vertical-align: middle;
+  margin-left: 4px;
+  cursor: pointer;
+}
+/*   
+  .example-container .mat-form-field {
+    width: 220px;
+  } */
+.example-card {
+  max-width: 900px;
+  margin: initial 20px;
+}
+
+.example-container .mat-form-field+.mat-form-field {
+  margin-left: 8px;
+}
+
+.example-button-row {
+  display: table-cell;
+  width: 490px;
+}
+.pic-btn+button{
+  vertical-align: super;
+}
+.example-container form>* {
+  margin: 5px 0;
+}
+
+.example-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.example-full-width {
+  width: 100%;
+}
+
+.example-container .mat-radio-button {
+  margin: 0 12px;
+}
+
+
+.mat-card {
+  padding: 5px !important;
+}
+
+.fullinput {
+  width: 100%;
+}
+
+.currency {
+  text-transform: uppercase;
+}
+
+.country {
+  text-transform: capitalize;
+}
+
+.mat-card:not([class*=mat-elevation-z]) {
+  box-shadow: none !important;
+}
+
+.highlight {
+  font-weight: bold;
+}
+
+/* .no-data {
+    pointer-events: none;
+  } */
+
+.mat-focused .mat-form-field-label {
+  color: #3f51b5 !important;
+}
+
+.mat-form-field-appearance-legacy .mat-form-field-underline {
+  background-color: #3f51b5;
+}
+
+ /* .mat-input-element {
+ max-width: 83.7%; 
+}*/
+
+.btn-circle {
+  border-radius: 50%;
+  border: 1.6px solid #ccc;
+  height: 20px;
+  margin-left: 20px;
+  width: 20px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.tooltip-class {
+  background: lightseagreen;
+  font-size: 14px;
+  text-align: justify;
+}
+
+.mat-tooltip {
+  /* your own custom styles here */
+  /* e.g. */
+  color: #ffffff !important;
+}
+
+.bid-img {
+  width: 45px;
+  vertical-align: middle;
+  margin-right: 7px;
+}
+
+.hints {
+  margin-top: -13px;
+  margin-left: 49px;
+  display: block;
+}
+
+.padding {
+  padding: 1.5px 30px;
+}
+
+div.padd .mat-card {
+  padding: 0px;
+}
+
+.pic-btn {
+  padding: 0px 15px;
+  color: #1a73e8 !important;
+  margin-bottom: 3px;
+  margin-right: 3px;
+}
+
+.profile-pic+.center {
+  text-align: center;
+  display: block;
+}
+.profile-pic img{
+  border-radius: 2px !important;
+}
+button .bi {
+  vertical-align: super;
+  font-size: 15px;
+}
+textarea{
+  resize: none !important;
+}
+.input-container input {
+  border: none;
+  box-sizing: border-box;
+  outline: 0;
+  padding: .75rem;
+  position: relative;
+  width: 100%;
+}
+input[type="datetime-local"]::-webkit-calendar-picker-indicator {
+  background: transparent;
+  bottom: 0;
+  color: transparent;
+  cursor: pointer;
+  height: auto;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: auto;
+}
+.hints-div{
+  margin-bottom:10px;
+  font-size: 16px;
+}
+@media (max-width: 767px) {
+  .container {
+    margin: 20px 20px;
+  }
+}

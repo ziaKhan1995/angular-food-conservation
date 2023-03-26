@@ -1,0 +1,86 @@
+<div #topElement></div>
+<div style="margin:20px">
+    <div *ngIf="isSubmitted" class="alert alert_success" style="margin-bottom:35px;">
+        <div class="alert--icon">
+            <i class="fas fa-check-circle"></i>
+        </div>
+        <div class="alert--content">
+            Success! Order placed successfully.
+        </div>
+    </div>
+
+    <h2><a routerLink="/profile">Profile</a>/<a>checkout</a>
+        <span *ngIf="!isSubmitted" class="heading" style="color:cadetblue;margin-left:20px;">
+            <span>Checkout</span>
+            <span> Now</span>
+        </span>
+        <span *ngIf="isSubmitted" class="heading" style="color:cadetblue;margin-left:20px;">
+            Visit your Profile to see changes
+        </span>
+    </h2>
+
+    <div *ngIf="!isSubmitted" class="heading" style="font-size:20px;">
+        <span>Your Bids</span>
+        <span> Details</span>
+    </div>
+    <form [formGroup]="checkOutForm" [style.opacity]="isBidSubmitting?'0.6':'1'" 
+    *ngIf="!isSubmitted && checkOutForm">
+        <div fxLayout="row wrap" fxLayoutGap.lt-lg="10px">
+            <div class="child-1" fxFlex="45" fxFlex.lt-sm="100">
+                <label class="xsmallFont">Product Name</label>
+                <input class="input-border large-input" formControlName="name" readonly 
+                [ngClass]="{'border-red':!f['name'].value}" (keypress)="preventInput($event)">
+            </div>
+            <div class="child-2" fxFlex="45" fxFlex.lt-sm="100">
+                <label class="xsmallFont">Your bid/auctioned Amount</label>
+                <input [ngClass]="{'border-red':!f['auctionProductPrice'].value}" 
+                class="input-border large-input" (keypress)="preventInput($event)"
+                formControlName="auctionProductPrice" readonly>
+            </div>
+            <div class="child-4" fxFlex="99" fxFlex.lt-sm="100">
+                <label class="xsmallFont">You can change Your address if needed</label>
+                <textarea [ngClass]="{'border-red':!f['address'].value}" class="input-border" 
+                rows="2" formControlName="address"></textarea>
+            </div>
+        </div>
+        <div class="heading mt-5">
+            <span>Provide Payment </span>
+            <span>Details</span>
+        </div>
+        <div fxLayout="row wrap">
+            <div class="child-1" fxFlex="91" fxFlex.lt-sm="96">
+                <div class="input-group" [ngClass]="{'focused':isFocused}">
+                    <div class="input-group-area">
+                        <label class="xsmallFont">Card Number</label>
+                        <input (keypress)="onInput()" formControlName="creditCard" 
+                        (focus)="isFocused=true" (focusout)="isFocused=false" (input)="onInputIcon()"></div>
+                    <div class="input-group-icon"><img class="img" *ngIf="imgSrc" [src]="imgSrc"></div>
+                </div>
+                <div *ngIf="f['creditCard'].touched" class="red">
+                    {{showCardErrors(f['creditCard'].value)}}</div>
+            </div>
+        </div>
+        <div fxLayout="row wrap" fxLayoutGap.lt-lg="10px">
+            <div class="child-1" fxFlex="45" fxFlex.lt-sm="47">
+                <label class="xsmallFont">Month/year of Expiration</label>
+                <input class="input-border large-input" formControlName="creditCardDate">
+                <div *ngIf="f['creditCardDate'].touched" class="red">
+                    {{showDateErrors(f['creditCardDate'].value)}}</div>
+            </div>
+            <div class="child-2" fxFlex="45" fxFlex.lt-sm="47">
+                <label class="xsmallFont">CVV/CVC</label>
+                <input class="input-border large-input" formControlName="creditCardCvv">
+                <div *ngIf="f['creditCardCvv'].touched" class="red">
+                    {{showCVVErrors(f['creditCardCvv'].value)}}</div>
+            </div>
+        </div>
+        <div class="section">
+            <button [disabled]="isSubmitted" class="bid-btn mr" mat-raised-button 
+            (click)="cancel()">Cancel </button>
+            <button (click)="confirmPaymentDialog(topElement)" [disabled]="isSubmitted" 
+            class="bid-btn" mat-raised-button>
+                <img *ngIf="isBidSubmitting" class="loader" [src]="loader">
+                Confirm Checkout </button>
+        </div>
+    </form>
+</div>

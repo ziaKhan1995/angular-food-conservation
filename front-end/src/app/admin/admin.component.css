@@ -1,0 +1,189 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial;
+    padding: 10px;
+    background: #f1f1f1;
+  }
+  .img-width{
+    width: -webkit-fill-available;
+    border: none;
+    outline: 1.2px solid #ccc;
+    border-radius: 2px;
+  }
+  /* Header/Blog Title */
+  .header {
+    padding: 10px 2px;
+    text-align: center;
+    background: white;
+  }
+  
+  .header h1 {
+    font-size: 30px;
+    line-height: 1;
+  }
+ 
+  .example-container {
+    height: 100%;
+  }
+  ul li{
+    color: #716d6d;
+    padding-bottom: 7px;
+    cursor: pointer;
+  }
+  ul li:hover{
+    color: black !important;
+    text-decoration: underline !important;
+  }
+  ul li .mat-icon{
+    vertical-align: middle !important;
+  }
+  .example-sidenav-content {
+    /* display: flex; */
+    height: 100%;
+    padding: 20px;
+  }
+  .filter-list-icon{
+    vertical-align: middle;
+    margin-right: 10px;
+    color: dimgrey;
+  }
+  .example-sidenav {
+    padding: 20px;
+  }
+  
+  
+  /* Style the top navigation bar */
+  .topnav {
+    overflow: hidden;
+    background-color: #333;
+  }
+  
+  /* Style the topnav links */
+  .topnav a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  /* Change color on hover */
+  .topnav a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+  .click-btn{
+    padding: 4px 8px;
+    background: #444;;
+    color: #fff;
+    font-size: 20px;
+    }
+    .section{
+      text-align: center;
+      height: 40%;
+    }
+  /* Create two unequal columns that floats next to each other */
+  /* Left column */
+  .leftcolumn {   
+    float: left;
+    width: 75%;
+  }
+  
+  /* Right column */
+  .rightcolumn {
+    float: left;
+    width: 25%;
+    background-color: #f1f1f1;
+    padding-left: 20px;
+  }
+  
+  /* Fake image */
+  .fakeimg {
+    background-color: #aaa;
+    width: 100%;
+    padding: 20px;
+  }
+  table tr td:last-child{
+    color: grey;
+  }
+  table tr td:last-child:hover{
+    color: black;
+    filter: brightness(150%);
+  }
+
+  /* Add a card effect for articles */
+  .data-card {
+    background-color: white;
+    padding: 20px;
+    margin-top: 20px;
+  }
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  /* Footer */
+  .footer {
+    padding: 20px;
+    text-align: center;
+    background: #ddd;
+    margin-top: 20px;
+  }
+  
+  /* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+  @media screen and (max-width: 800px) {
+    .leftcolumn, .rightcolumn {   
+      width: 100%;
+      padding: 0;
+    }
+  }
+  
+  /* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+  @media screen and (max-width: 400px) {
+    .topnav a {
+      float: none;
+      width: 100%;
+    }
+  }
+  table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+.loader-filter-img{
+  width: 15px;
+  vertical-align: middle;
+}
+.product-name-search{
+  border: none; 
+  outline: 2px solid #797d7f3d;
+  padding: 3px;
+  border-radius: 2px;
+  width: 120px;
+}
+.product-category-search{
+  padding: 3px;
+}
+.product-name-search:focus,.product-category-search:focus{
+  outline: 2px solid #2196f33d;
+}
+tr:nth-child(even) {
+  background-color:#fafafa;
+}
+.search-button{
+width: auto !important;
+background-color: #fff;
+}

@@ -1,0 +1,61 @@
+@import "compass";
+//
+// Sidemenu Variables
+//
+
+
+// Top bar nav for lookbooks
+//
+// Logo | name    [up | down(optional)] | tweet(optional)
+
+$topbar_height: 40px;
+$staticHost: "//d2k21z21l53iby.cloudfront.net";
+$imageHost: "//dy6g3i6a1660s.cloudfront.net";
+
+.lookbookNav {
+  background-color: #fff;
+  border-bottom: 1px solid #dcddde;
+  height: $topbar_height;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+// Logo
+.lookbookNav_logo {
+  display: inline-block;
+  width: 180px;
+}
+
+.lookbookNav_logo {
+  display: inline-block;
+  padding: 10px;}
+.lookbookNav_logo a {
+    background: #fff url($imageHost + '/NVTfjkqb8aYeCOrNzwmRKgIIAEI/src.png') no-repeat right center;
+    background-size: 148px 20px;
+    display: block;
+    height: 20px;
+    text-indent: -9999px;
+}
+
+.ph5 {padding-left: 5px; padding-right: 5px; display: inline-block; vertical-align: top;}
+.mr10 {margin-right: 10px} 
+.mt40 {margin-top: 40px;}
+.prel {position: relative;}
+.pabs {position: absolute}
+.mwi {width :100%;}
+.fwb {font-weight: bold}
+.txt_c { text-align: center; }
+.bb1_wisp {border-bottom: 1px solid rgba(0,0,0,.07);}
+.bt1_wisp {border-top: 1px solid rgba(0,0,0,.07);}
+
+.paymentIcon {
+  height: 48px;
+  width: 80px;
+  display: inline-block;
+}
+
+.half_pint .paymentIcon {
+    height: 24px;
+  width: 40px;
+  display: inline-block;
+}

@@ -1,0 +1,14 @@
+<section fxLayout="column wrap" fxLayoutGap="60px" fxLayoutAlign="center center">
+    <div fxFlex>
+      404 We are searching for your page...
+    </div>
+      <div class="demo-container" *ngIf="true">
+        <div class="progress-bar">
+          <div class="progress-bar-value"></div>
+        </div>
+      </div>
+    <div fxFlex>
+      ... But we can not find it.
+    </div>
+    <button mat-stroked-button color="primary" routerLink="/login">Goto Login</button>
+  </section>

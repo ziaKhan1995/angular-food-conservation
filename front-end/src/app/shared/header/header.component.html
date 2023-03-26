@@ -1,0 +1,22 @@
+<button mat-button class="my-btn" [ngStyle]="{'background-color':  colorHome}" routerLink="/home">  
+    {{homeBtnText}}
+</button>
+<button mat-button class="my-btn" [ngStyle]="{'background-color':  colorProfile}" routerLink="/profile">  
+   Profile
+</button>
+<button mat-button class="my-btn" [ngStyle]="{'background-color':  colorBidding}" routerLink="/add-new-auction">  
+    Add New Auction 
+</button>
+<button mat-button class="my-btn" [ngStyle]="{'background-color':  colorContactUs}" routerLink="/contact-us">  
+    Contact Us
+</button>
+<button mat-button class="my-btn" [ngStyle]="{'background-color':  colorAboutUs}" routerLink="/about-us">  
+    About Us
+</button>
+<button mat-button class="my-btn" [ngStyle]="{'background-color':  colorAdmin}" routerLink="/admin">  
+    Admin<!--Conditional for admins-->
+</button>
+<button *ngIf="!isUserLoggedIn" mat-button class="my-btn" [ngStyle]="{'background-color':  colorLogin}" routerLink="/login">  
+        Login
+</button>
+

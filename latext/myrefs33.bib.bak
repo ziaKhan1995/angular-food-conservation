@@ -1,0 +1,103 @@
+%bibtex entries 
+
+@BOOK{kn:PP05,
+ AUTHOR={Estelle M. Philips and Derek S. Pugh},
+ TITLE={How to Get a {PhP}},
+ PUBLISHER={Open University Press},
+ EDITION={{F}ourth},
+ YEAR={2005},
+ ISBn={0-335-21684-6}
+}
+
+@TECHREPORT{kn:Mat93,
+ AUTHOR={Manuel A. Matos},
+ TITLE={Normas para Apresentação de Dissertações, Bases Essenciais},
+ INSTITUTION={Faculdade de Engenharia da Universidade do Porto},
+ YEAR={1993},
+ MONTH={Maio}
+}
+
+@ARTICLE{kn:ZPMD97,
+ AUTHOR={Debora J. Zukowski and Apratim Purakayastha and Ajay Mohindra and Murthy Devarakonda},
+ TITLE={Metis: A Thin-Client Application Framework},
+ ORGANIZATION={Usenix Association},
+ JOURNAL={Proceedings of the Third Conference on Object-Oriented Technologies and Systems}, 
+ PAGES={103--114},
+ MONTH={Junho},
+ YEAR=1997
+}
+
+@INPROCEEDINGS{kn:MVL06-xata,
+ AUTHOR={Filipe Marinho and Paulo Viegas and J. Correia Lopes},
+ TITLE={{SVG} na Visualização de Sinópticos},
+ PAGES={99-112},
+ BOOKTITLE={{XATA2006}, XML: Aplicações e Tecnologias Associadas (Portalege, 9 e 10 de Fevereiro de 2006)},
+ EDITOR={José Carlos Ramalho and J. Correia Lopes and Alberto Simões},
+ PUBLISHER={Universidade do Minho},
+ MONTH={},
+ YEAR=2006
+}
+
+@MISC{kn:Tha01,
+ AUTHOR={Ming Tham},
+ TITLE={Writing Research Theses or Dissertations},
+ NOTE={University of Newcastle Upon Tyne, disponível em \url{http://lorien.ncl.ac.uk/ming/dept/Tips/writing/thesis/thesis-intro.htm}},
+ MONTH={Maio},
+ YEAR={2001}
+}
+
+@MISC{kn:Lip08,
+ AUTHOR={Lipsum},
+ TITLE={Lorem Ipsum},
+ NOTE={Disponível em \url{http://www.lipsum.com/}, acedido a última vez em 19 de Maio de 2008},
+ YEAR={2008}
+}
+ 	  	 
+@MISC{kn:svgbatik,
+ AUTHOR={Apache},
+ TITLE={Batik {SVG} {T}oolkit},
+ NOTE={\url{http://xml.apache.org/batik/}},
+ MONTH={Junho},
+ YEAR=2005
+}
+
+@MISC{kn:svgibm,
+ AUTHOR={IBM},
+ TITLE={Program with {SVG}},
+ NOTE={\url{http://www-128.ibm.com/developerworks/xml/library/x-matters40/}},
+ MONTH={Maio},
+ YEAR=2005
+}
+
+@MISC{kn:svgw3c,
+ AUTHOR={{W3C} --- {World Wide Web Consortium}},
+ TITLE={{W3C} --- {About SVG}},
+ NOTE={\url{http://www.w3.org/TR/SVG/intro.html/}},
+ MONTH={Abril},
+ YEAR=2005
+}
+
+@MISC{kn:svgdoc,
+ AUTHOR={{W3C} --- {World Wide Web Consortium}},
+ TITLE={{W3C SVG Specification}},
+ MONTH={Junho},
+ YEAR=2005,
+ NOTE={\url{http://www.w3.org/TR/SVG11/}}
+}
+
+@MISC{kn:svgscada,
+ AUTHOR={Rodrigo García García},
+ TITLE={\svg{} for {SCADA}},
+ NOTE={Swiss Federal Institute of Technology Lausanne (EPFL)},
+ NOTE={\url{http://www.svgopen.org/2004/papers/SVGforSCADA/}},
+ MONTH={Abril},
+ YEAR=2005
+}
+
+@MISC{kn:batik,
+ AUTHOR={Apache},
+ TITLE={Batik \svg{} {T}oolkit {A}rchitecture},
+ NOTE={\url{http://xml.apache.org/batik/architecture.html\#coreComponents}},
+ MONTH={Junho},
+ YEAR=2005
+}

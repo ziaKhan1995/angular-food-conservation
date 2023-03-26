@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Food Conservation</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets//apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets//favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets//favicon-16x16.png">
+  <link rel="manifest" crossorigin="use-credentials" href="manifest.json"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" 
+     href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" 
+     integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" 
+     crossorigin="anonymous">
+  <style>
+    /* Demo styling */
+
+    .cart-icon {
+      position: relative;
+    }
+
+    .cart-icon svg path,
+    .cart-icon svg circle {
+      animation: cartColor 3s infinite linear;
+    }
+
+    .total {
+      animation: show-total 750ms cubic-bezier(.5, 1.66, .25, .66) forwards;
+      display: inline-block;
+      position: absolute;
+      font-family: Helvetica, Sans-serif;
+      color: #eef;
+      font-size: 82px;
+      z-index: 1;
+      right: -10px;
+      top: -10px;
+      width: 110px;
+      height: 110px;
+      text-align: center;
+      line-height: 110px;
+    }
+
+    @keyframes show-total {
+      from {
+        transform: scale(0);
+      }
+
+      to {
+        transform: scale(1);
+      }
+    }
+
+    .total::before {
+      border-radius: 50%;
+      content: "";
+      z-index: -1;
+      background: green;
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      border: 10px solid #eef;
+    }
+
+    /* General layout stuff */
+
+    body {
+      background: #eef;
+      margin: 0;
+      color: #333;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    .container {
+      display: flex;
+    }
+
+    .demo {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Paytone One', sans-serif;
+      height: 100vh;
+      width: 100%;
+    }
+  </style>
+</head>
+
+<body class="mat-typography">
+  <app-root>
+  <article class="container">
+    <div class="demo">
+      <div class="cart-icon">
+        <svg width="256px" height="256px" viewBox="0 0 18 18" version="1.1" xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink">
+          <g id="cart" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+            <path d="M0.186291501,5.8137085 L8.31801948,11.8241161" id="Line" stroke="#333333" stroke-width="1.34736842"
+              stroke-linecap="round"
+              transform="translate(4.636039, 8.656854) rotate(-315.000000) translate(-4.636039, -8.656854) "></path>
+            <path d="M9,10.5 L9,18" id="Line-Copy" stroke="#333333" stroke-width="1.34736842" stroke-linecap="round"
+              transform="translate(8.500000, 14.000000) rotate(-90.000000) translate(-8.500000, -14.000000) "></path>
+            <circle id="Oval" fill="#333333" cx="5.5" cy="15.5" r="1.5"></circle>
+            <circle id="Oval-Copy" fill="#333333" cx="12.5" cy="15.5" r="1.5"></circle>
+            <path d="M10.5,0.5 L10.5,11.5" id="Line-Copy-2" stroke="#333333" stroke-width="1.34736842"
+              stroke-linecap="round"
+              transform="translate(10.000000, 6.000000) rotate(-90.000000) translate(-10.000000, -6.000000) "></path>
+            <path d="M2.5,2.5 L2.5,4.5" id="Line-Copy-5" stroke="#333333" stroke-width="1.34736842"
+              stroke-linecap="round"
+              transform="translate(2.500000, 3.500000) rotate(-90.000000) translate(-2.500000, -3.500000) "></path>
+            <path d="M8.5,5.63603897 L9.5,15" id="Line-Copy-3" stroke="#333333" stroke-width="1.34736842"
+              stroke-linecap="round"
+              transform="translate(9.000000, 10.000000) rotate(-90.000000) translate(-9.000000, -10.000000) "></path>
+            <path d="M14.7481684,5.46699703 L14.9303356,9.73511314" id="Line-Copy-4" stroke="#333333"
+              stroke-width="1.34736842" stroke-linecap="round"
+              transform="translate(15.042977, 7.331184) rotate(23.000000) translate(-15.042977, -7.331184) "></path>
+          </g>
+        </svg>
+        <div class="total-container">
+          <span class="total">0</span>
+        </div>
+      </div>
+    </div>
+  </article>
+</app-root>
+
+  <script>
+    const totalContainer = document.querySelector('.total-container');
+    setInterval(() => {
+      const total = document.querySelector('.total');
+      const totalValue = parseInt(total?.innerText);
+      const newTotal = totalValue >= 9 ? 0 : totalValue + 1;
+      const newTotalHTML = `<span class="total">${newTotal}</span>`
+      totalContainer.innerHTML = newTotalHTML
+    }, 1200);
+  </script>
+</body>
+
+</html>

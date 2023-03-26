@@ -1,0 +1,487 @@
+% BUI THESIS STYLE for LaTeX2e
+% BUI, badwanpk, Tue March 10 18:53:15 2015
+%
+% PLEASE send improvements to badwanpk at bui dot edu dot pk
+%
+% USAGE:
+% \documentclass[oneside,11pt,a4paper]{report}
+% \usepackage[utf8]{inputenc}
+% \usepackage[portuges]{babel}
+% \usepackage[portuges]{feupteses}
+  
+\NeedsTeXFormat{LaTeX2e}
+\def \filename {buics.sty}
+\def \filedate {2015/03/10}
+\def \fileversion {0.9f}
+\ProvidesPackage {buics}[\filedate\space\fileversion\space]
+\typeout {Document Style `BUICS Thesis' \fileversion\space <\filedate>}
+
+% Option for Portuguese
+\newif\if@portugues
+\@portuguesfalse
+\DeclareOption{portuges}{\@portuguestrue}
+
+% Option for Provisional
+\newif\if@provisional
+\@provisionalfalse
+\DeclareOption{provisional}{\@provisionaltrue}
+
+% Option for numeric references (citation order)
+\newif\if@numericrefs
+\@numericrefsfalse
+\DeclareOption{numericrefs}{\@numericrefstrue}
+
+% Option for alpha references
+\newif\if@alpharefs
+\@alpharefsfalse
+\DeclareOption{alpharefs}{\@alpharefstrue}
+
+% Option for print on paper
+\newif\if@print
+\@printfalse
+\DeclareOption{print}{\@printtrue}
+
+\ProcessOptions\relax
+
+% First thing we do is make sure that report has been loaded.  A
+% common error is to try to use thesis as a documentstyle.
+\@ifundefined{chapter}{\@latexerr{The `buics' option should be used
+with the `report' document style}{}}{}
+
+\RequirePackage{ifpdf}
+\ifpdf
+  \relax
+\else
+  \@latexerr{The 'buics' package may only be used with
+    pdflatex}{Please process this file with pdflatex.}
+\fi
+
+% Disallow page breaks at hyphens (this will give some underfull vbox's,
+% so an alternative is to use \brokenpenalty=100 and manually search
+% for and fix such page breaks)
+%\brokenpenalty=10000
+\brokenpenalty=9000
+
+%% Ensure correct font encoding
+\usepackage[T1]{fontenc}
+
+%% Global layout of the document
+
+% geometry package
+\RequirePackage[outer=25mm,inner=35mm,vmargin=20mm,includehead,includefoot,headheight=15pt]{geometry}
+
+%\columnsep 10pt
+%\columnseprule 0pt
+%\footnotesep 7.7pt
+
+% avoid widows and orphans
+\clubpenalty=6000
+\widowpenalty=6000
+
+\RequirePackage{mathptmx}	   % font times
+\RequirePackage[scaled]{couriers}  % font courier
+\RequirePackage[scaled]{helvet}    % font helvetica
+%\RequirePackage[pdftex]{graphicx}
+\RequirePackage{url}
+\RequirePackage{setspace}
+\RequirePackage{makeidx}
+\RequirePackage[tableposition=top]{caption}
+\RequirePackage{lipsum}
+
+\if@numericrefs
+  \newcommand{\citet}{\cite}
+  \newcommand{\citep}{\cite}
+\else
+  \if@alpharefs
+     \newcommand{\citet}{\cite}
+     \newcommand{\citep}{\cite}
+  \else
+     \RequirePackage[round]{natbib}
+  \fi
+\fi
+
+\usepackage[hyperpageref]{backref}
+\renewcommand*{\backref}[1]{}% for backref < 1.33 necessary
+\renewcommand*{\backrefalt}[4]{%
+\ifcase #1 %
+No Citations.%
+\or
+{\tt Cited on p. #2.}%
+\else
+{\tt Cited on pp. #2.}%
+\fi
+}
+
+    \usepackage[ pdftex, plainpages = false, pdfpagelabels, 
+                 pdfpagelayout = OneColumn, % display single page, advancing flips the page - Sasa Tomic
+                 bookmarks,
+                 bookmarksopen = true,
+                 bookmarksnumbered = true,
+                 breaklinks = true,
+                 linktocpage,
+                 pagebackref,
+                 colorlinks = true,
+                 linkcolor = blue,
+                 urlcolor  = blue,
+                 citecolor = red,
+                 anchorcolor = green,
+                 hyperindex = true,
+                 hyperfigures
+                 ]{hyperref} 
+
+%% Define all the pieces that go on the title page and the committeepage.
+% \title and \author already exist
+%% School Information
+%%\gdef\@school{Department of Computer Science, Bahria University, Islamabad}
+\gdef\@school{Bachelor of Science in\\{\vskip 10pt}Computer Science{\vskip 40pt}}
+\def\school#1{\gdef\@school{#1}}
+
+\def\logo#1{\gdef\@logo{#1}}
+%\def\mapilogo#1{\gdef\@mapilogo{#1}}
+
+\gdef\@thesisdate{\today}
+\def\thesisdate#1{\gdef\@thesisdate{#1}}
+
+\gdef\@degreedate{\thesisdate}
+\def\degreedate#1{\gdef\@degreedate{#1}}
+
+% If you are getting two degrees, use \and between the names.
+\gdef\@degree{Put Your Degree here!}
+\def\degree#1{\gdef\@degree{#1}}
+
+
+
+\def\department#1{\gdef\@department{#1}}
+
+% Members of the committee (viva)
+\newbox\@vivatext 
+
+% add initial text
+\def\committeetext#1{%
+  \setbox\@vivatext\vbox
+  {\Large\noindent #1
+  \par\vskip 0.5\baselineskip}}
+
+% since there can be more than one member of the committee,
+% the user makes multiple calls to \committeemember
+% Usage: \committeemember{role}{name}{title}
+
+% add a member
+\def\committeemember#1#2#3{%
+  \setbox\@vivatext\vbox
+  {\unvbox\@vivatext
+  \vskip 0.5\baselineskip%
+  \par%
+  {\noindent\large #1: #2 #3}}}
+
+% add a line for signature
+\def\signature{%
+  \setbox\@vivatext\vbox
+  {\unvbox\@vivatext
+  \vskip 1.5\baselineskip%
+  {\hfill \rule{0.75\linewidth}{0.2mm}}
+  \vskip 0.5\baselineskip}}
+
+% add the date
+\def\committeedate#1{%
+  \setbox\@vivatext\vbox
+  {\unvbox\@vivatext
+  \vskip 2\baselineskip%
+  \par%
+  {\noindent\large #1}}}
+
+% since there can be more than one supervisor,
+% the user makes multiple calls to \supervisor
+% Usage: \supervisor{role}{name}{title}
+
+\newbox\@supervisorstext 
+
+\def\supervisor#1#2#3{%
+  \setbox\@supervisorstext\vbox
+  {\unvbox\@supervisorstext
+  \vskip 0.5\baselineskip%
+  \par%
+  \center{\noindent\large #1: #2 #3}}}
+
+\if@provisional
+   \if@portugues
+      \def\@provisionaltext{Vers\~{a}o Provis\'{o}ria}
+   \else
+      \def\@provisionaltext{Provisional Version}
+   \fi
+\else
+   \def\@provisionaltext{\@empty}
+\fi
+
+% Copyrights
+% define a permissions to go with copyright
+\gdef\@permission{\null}
+\def\permission#1{\gdef\@permission{#1}}
+% define a copyrightnotice variable and initialize it
+\gdef\@copyrightnotice{}
+\def\copyrightnotice#1{\gdef\@copyrightnotice{\copyright\ #1\par\@permission}}
+
+\def\maketitle{%
+\newbox\@crestbox
+
+%% TITLE page
+%5mm
+%Logo
+%10mm
+%author
+%5mm
+%title
+%10mm
+%logo
+%5mm
+%dept
+%date
+
+\begin{titlepage}
+%{\vspace{-15mm}\Large\bf \textsc{\@school}}
+\vskip 5mm
+\hbox to \textwidth{%
+  \setbox\@crestbox=\vbox{\includegraphics[scale=0.20]{\@logo}}%
+\box\@crestbox%
+}
+\vskip 15mm%
+{\Large\bf \@author}%
+
+\vskip 19mm%
+{\def\baselinestretch{1.2}\Huge\bf \@title \par}
+\vskip 10mm%
+{\Large\textsc \@provisionaltext}
+\vfill%
+{\@degree}%
+\vskip 10mm
+\unvbox\@supervisorstext
+%\hbox to \textwidth{%
+  %\setbox\@crestbox=\vbox{\includegraphics[scale=1.0]{\@mapilogo}}%
+%\box\@crestbox%
+%}
+\vskip 10 mm
+{\large \@department}%
+\vskip 1mm
+\@thesisdate
+\end{titlepage}%
+
+%copyright page
+\ifx\@copyrightnotice\@empty
+  \relax
+\else
+  \vspace*{\fill}
+  \par
+  \begin{center}
+    \@copyrightnotice
+  \end{center}
+\fi
+\clearpage
+}
+
+\gdef\@certificatetext{Put certificate text here!}
+\def\certificatetext#1{\gdef\@certificatetext{#1}}
+
+\usepackage[letterspace=150]{microtype}
+
+%% SECOND page
+\def\committeepage{%
+\cleardoublepage
+\large
+\thispagestyle{empty}
+\begin{center}%
+\null\vskip 12mm
+{\LARGE\bf \lsstyle Certificate}\\[20mm]
+\par\vskip 16mm
+\end{center}
+\@certificatetext
+\vfill
+\unvbox\@supervisorstext
+\vfill
+\unvbox\@vivatext
+}
+
+% You can use the titlepage environment to do it all yourself if you
+% don't want to use \maketitle.  If the titlepage environment, the
+% paragraph skip is infinitely stretchable, so if you leave a blank line
+% between lines that you want space between, the space will stretch so
+% that the title page fills up the entire page.
+\def\titlepage{\cleardoublepage\centering
+  \thispagestyle{empty}
+  \parindent 0pt \parskip 10pt plus 1fil minus 1fil
+  \def\baselinestretch{1}\@normalsize\vbox to \vsize\bgroup\vbox to 9in\bgroup}
+% The \kern0pt pushes any depth into the height.  Thanks to Richard Stone.
+\def\endtitlepage{\par\kern 0pt\egroup\vss\egroup\clearpage}
+
+%% versioning
+\newif\if@noversion
+\@noversionfalse % set to true to disable version numbers
+\let\noversiontrue=\@noversiontrue % easier to type!
+\def\@version{\relax}
+
+\if@portugues
+\def\version#1{\gdef\@version{\sl Vers\~{a}o #1 (\today)}}
+\else
+\def\version#1{\gdef\@version{\sl Version #1 (\today)}}
+\fi
+\if@provisional
+   \typeout {Using version annotation because the document is provisional}
+\else
+   \noversiontrue
+\fi
+
+%% Headers and footers
+\RequirePackage{fancyhdr}
+\pagestyle{fancy}
+
+%remember chapter title
+\renewcommand{\chaptermark}[1] %
+             {\markboth{#1}{#1}}
+%section number and title
+\renewcommand{\sectionmark}[1] %
+             {\markright{{\ifnum \c@secnumdepth >\z@ \thesection\ \fi #1}}}
+\if@twoside
+  \lhead[\fancyplain{}{\rm\thepage}]{\fancyplain{}{\sl\rightmark}}
+  \chead{}
+  \rhead[\fancyplain{}{\sl\leftmark}]{\fancyplain{}{\rm\thepage}}
+  \lfoot[\if@noversion{}\else\@version\fi]{}
+  \cfoot{\fancyplain{\rm\thepage}{}}
+  \rfoot[]{\if@noversion{}\else\@version\fi}
+\else
+  %\lhead[\fancyplain{}{\sl\leftmark}]{\fancyplain{}{\sl\rightmark}}
+  \lhead{\fancyplain{}{\sl\ifodd\c@page\rightmark\else\leftmark\fi}}
+  \chead{}
+  \rhead[]{\fancyplain{}{\rm\thepage}}
+  \lfoot{}
+  \cfoot{\fancyplain{\rm\thepage}{}}
+  \rfoot{\if@noversion{}\else\@version\fi}
+\fi
+
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\addtolength{\headheight}{0.5pt}
+%\setlength{\plainfootrulewidth}{0.0pt}
+%\setlength{\plainheadrulewidth}{0.0pt}
+
+% changes to report.sty
+\lineskip 1pt
+\normallineskip 1pt
+\onehalfspacing	% one and a half line spacing
+\setcounter{secnumdepth}{3}      % to number subsubsections
+\setcounter{tocdepth}{2}         % sets the depth of sectional units listed in the toc
+\setcounter{topnumber}{1}        % maximum number of floats at top of page
+%\renewcommand{\topfraction}{0.8} % maximum fraction of the page occupied by floats
+
+%% Fix pagenumbering so that it works even when the \pagenumbering command
+%% is in a file that has not been \include-d
+\def\c@pagenumbering{arabic}
+\def\@pagenumbering#1{\gdef\thepage{\csname @#1\endcsname \c@page}
+  \gdef\c@pagenumbering{#1}}
+
+\def\pagenumbering#1{\global\c@page\@ne \@pagenumbering{#1}}
+
+%\RequirePackage[pdftex,pdfpagelabels,bookmarks,hyperindex,hyperfigures,backref,pagebackref]{hyperref}
+%\RequirePackage[pdftex,pdfpagelabels,bookmarks,hyperindex,hyperfigures]{hyperref}
+
+\if@print
+
+\hypersetup{%
+   plainpages=false, 
+   pdfpagelayout=SinglePage,
+   bookmarksopen=false,
+   bookmarksnumbered=true,
+   breaklinks=true,
+   linktocpage,
+   colorlinks=false,
+   pdfborder=0 0 0
+}
+
+\else
+
+\hypersetup{%
+   plainpages=false, 
+   pdfpagelayout=SinglePage,
+   bookmarksopen=false,
+   bookmarksnumbered=true,
+   breaklinks=true,
+   linktocpage,
+   colorlinks=true,
+   linkcolor=blue,
+   urlcolor=blue,
+   citecolor=blue,
+   anchorcolor=green
+}
+
+\fi
+
+\newcommand{\StartPrelim}{\cleardoublepage\pagenumbering{roman}\setcounter{page}{1}\pagestyle{fancy}}
+\newcommand{\StartBody}{\cleardoublepage\pagenumbering{arabic}\setcounter{page}{1}}
+
+% Language dependent definitions
+
+\if@portugues
+
+\RequirePackage{indentfirst}
+
+\newcommand{\@StartDoc}{%
+  \renewcommand{\appendixname}{Anexo}%
+  \setcounter{page}{-3}%
+  \pagestyle{empty}
+  \pdfbookmark[0]{P\'{a}gina de Rosto}{init}}
+
+\newcommand{\PrintBib}[1]{%
+  \renewcommand{\bibname}{Refer\^{e}ncias}%
+  \if@numericrefs%
+    \bibliographystyle{unsrt-pt}%
+  \else%
+    \if@alpharefs%
+      \bibliographystyle{alpha-pt}%
+    \else%
+      \bibliographystyle{plainnat-pt}%
+    \fi%
+  \fi%
+  \cleardoublepage%
+  \phantomsection%
+  \addcontentsline{toc}{chapter}{Refer\^{e}ncias}%
+  \bibliography{#1}}
+
+\newcommand{\PrintIndex}{%
+  \cleardoublepage%
+  \phantomsection
+  \renewcommand{\indexname}{\'{I}ndice Remissivo}%
+  \addcontentsline{toc}{chapter}{\'{I}ndice Remissivo}%
+  \printindex}
+
+\else
+
+\newcommand{\@StartDoc}{%
+  \setcounter{page}{-3}%
+  \pagestyle{empty}
+  \pdfbookmark[0]{Front Page}{init}}
+
+\newcommand{\PrintBib}[1]{%
+  \renewcommand{\bibname}{References}% 
+  \if@numericrefs%
+    \bibliographystyle{unsrt}%
+  \else%
+    \if@alpharefs%
+      \bibliographystyle{alpha}%
+    \else%
+      \bibliographystyle{plainnat}%
+    \fi%
+  \fi%
+  \cleardoublepage%
+  \phantomsection%
+  \addcontentsline{toc}{chapter}{References}%
+  \bibliography{#1}}
+
+\newcommand{\PrintIndex}{%
+  \cleardoublepage%
+  \phantomsection%
+  \addcontentsline{toc}{chapter}{Index}%
+  \printindex}
+
+\fi
+
+\AtBeginDocument{\@StartDoc}
+
+\endinput

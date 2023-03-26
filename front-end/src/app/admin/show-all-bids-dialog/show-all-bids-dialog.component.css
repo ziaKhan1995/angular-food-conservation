@@ -1,0 +1,46 @@
+
+.close{
+  float: right;
+  color: darkgray;
+  cursor: pointer;
+}
+.close:hover{
+  color: #333;
+}
+.table {
+  display: table;
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.tableRow {
+  display: table-row;
+}
+
+.tableHead {
+  font-weight: 600;
+  background: white;
+  FONT-FAMILY: math;
+}
+.icon-size{
+  font-size: 15px;
+  vertical-align: middle;
+  margin-right: -9px;
+  margin-left: 13px;
+  padding-top: 3px;
+}
+.tableCell,
+.tableHead {
+  display: table-cell;
+  padding: 3px 3px 3px 6px;
+  border: 1px solid grey;
+  text-overflow: word-wrap;
+}
+.last-child{
+  width: 60px;
+  overflow-wrap: break-word;
+}
+.mb-0{
+  margin-bottom: 0px;
+  color: #1a73e8;
+}

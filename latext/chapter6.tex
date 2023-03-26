@@ -1,0 +1,185 @@
+\doublespacing
+\chapter{System Testing And Evaluation}\label{chap:testingEvaluation}
+
+%\version{v1.11.2015}
+
+\section{Evaluation And Testing of the System }
+\doublespacing
+This phase includes testing every interface functionality of the website application. This will help us in executing the results against our requirements specified by going through different scenarios. All of the modules will be tested to know their working and functionalities properly. For this purpose, the modules in our web which are Home, Login, User Account Configuration, Profile, Admin, Contact Us, About Us, and Add New Auctions are tested properly an working as expected.
+\section{Testing Of System GUI}
+\doublespacing
+All parts of the web which are used by site visitors, and visible parts of the site to interact with our web application are tested in this stage of system evaluation. For this purpose, we have implemented interfaces that are easy to understand, with a proper feedback and user engagement techniques. The interfaces are structured in a self-explanatory way. An example is the new user registration interface. If someone visits and just looks for a minute can easily understand the interface. The feedback that we have provided like success messages, error prompts, loaders, buttons,s and sections clicking ripples will know the user position and system status. Other helping materials like icons provided by Bootstrap, Google, and Angular material Io are specialized for user help throughout the process of interacting with the interface.
+\section{Integration Testing Of Web Application}
+\doublespacing
+This stage of system evaluation is the overall testing of modules included in the application in the group in a proper sequence. We have to make sure that there are no errors occurring throughout the integration testing and safe navigation as well as invoking/initializing/instantiating of new modules. For this purpose, we have tested our website by registration of the new user, creating new auctions, listing the home current auction section to buyers aka bidders, list of all bids against an auction, and informing the seller and bidder. On confirming/approving a bid, the bidder is informed and asked to checkout. Once the bidder/buyer pays for the auction the seller is informed and the auction is moved from status In bidding to Sold and the section is changed to finished auctions.Integration testing further explained below:
+\subsection{For Login}
+\doublespacing
+To place a bid or create their own auction the visitor has to log in themselves. The interface will ask them for the user's email address and password. By submitting the user will be verified from the database. On valid details, the user will be navigated to Home Page and in case of invalid details, the user will be informed with error alerts and will not be navigated to any other Page.ck whether he is an authentic logged in user.
+\subsection{Registration Of New Entrants}
+\doublespacing
+This interface is for fresh site visitors. Visitors have to provide all the mandatory fields marked with the * sign and other validators. Each and every input field has its own validator like the name not being null, a minimum length of 3, and a maximum of 30 characters. Password is mandatory, min length of 4 and a maximum of 12 characters. On valid details, all the errors will be hidden and the form status is VALID. On submitting a loader will show for saving into the database and provide feedback to users.
+\section{Compatibility Testing}
+\doublespacing
+Compatibility means the application is working across different platforms. Our project is a web-based application that should be compatible with all browsers. Our web application is compatible with renowned browsers like Google Chrome, Safari, Mozilla Firefox, MS Edge. The language for the development of the front end is Angular which is developed by Google and is undoubtedly compatible across all browsers.
+
+\section{Usability Testing}
+\doublespacing
+This phase of testing the web application is to involve users checking whether it is easy to use or not, easy to learn, or whether users face difficulties. This test is conducted through the following factors:
+\subsection{Easy To Use}
+To judge the application level easiness for users. For this purpose we have used animations, icons, signatures, notifications, and loaders to keep users engaged.
+\subsection{Safe To Use}
+Unintended actions by users will not destroy their whole efforts. An example will help us. Suppose a user is registering and mistakenly click clear all fields instead of submitting the form, the application will ask for user confirmation. After the user confirm his/her actions decisions are made. 
+\subsection{Engaging And Pleasing Users Experience}
+Looks matters. Icons like satisfied emojis, success colors, animations, and the nice look of the interface. All these kinds of stuff will engage and please the user and will use it again and again.
+\subsection{Application Is Memorable}
+Once the user uses the app and revisits it after some time. Users can leave, or return whenever they urge to use the application. Our interfaces are designed in a way that it will remember the users if they revisit after some time.
+\newpage
+\section{Unit Testing}
+\doublespacing
+In our web application, we test every module individually. The module we have tested are below.
+\subsection{Registration Test Successful}
+Registration Test Case Positive is shown in Figure \ref{tt1}.
+\begin{table}[!h]
+    \centering
+    \begin{tabular}{|p{5cm}|p{8cm}|}
+        \hline
+        \textbf{Test ID} & \textbf{TI-1}\\
+        \hline
+        \textbf{Tested Function} &  Successfully user registers. \\
+        \hline
+        \textbf{Initial State of application} & All fields are empty.\\
+        \hline
+        \textbf{Input} & User enter the valid data.\\
+        \hline
+        \textbf{Expected Output} &  Successfully registered in system.\\
+        \hline
+        \textbf{Actual Output} & Successfully registered in system.\\
+         \hline
+         \textbf{Status of the system} & Passed.\\
+         \hline
+    \end{tabular}
+    \caption{Registration Test Successful }
+    \label{tt1}
+\end{table}
+\subsection{Registration Test Unsuccessful}
+Registration Test Case Negative is shown in Figure \ref{tt2}.
+\begin{table}[!h]
+    \centering
+    \begin{tabular}{|p{5cm}|p{8cm}|}
+        \hline
+        \textbf{Test ID} & \textbf{TI-2}\\
+        \hline
+        \textbf{Tested Function} & Unsuccessfully user registrars. \\
+        \hline
+        \textbf{Initial State of application} & All fields are empty.\\
+        \hline
+        \textbf{Input} & User did not enter the valid data.\\
+        \hline
+        \textbf{Expected Output} & Unsuccessfully registered.\\
+        \hline
+        \textbf{Actual Output} & Unsuccessful registered.\\
+         \hline
+         \textbf{Status of the system} & Failed.\\
+         \hline
+    \end{tabular}
+    \caption{Registration Test Unsuccessful}
+    \label{tt2}
+\end{table}
+\newpage
+\subsection{Login Test Successful}
+Login Test Case Positive is shown in Figure \ref{tt3}.
+\begin{table}[!h]
+    \centering
+    \begin{tabular}{|p{5cm}|p{8cm}|}
+        \hline
+        \textbf{Test ID} & \textbf{TI-3}\\
+        \hline
+        \textbf{Tested Function} &  Successful user login. \\
+        \hline
+        \textbf{Initial State of application} & All fields are empty.\\
+        \hline
+        \textbf{Input} & User enter valid data.\\
+        \hline
+        \textbf{Expected Output} &  Successful login.\\
+        \hline
+        \textbf{Actual Output} & Successful login.\\
+         \hline
+         \textbf{Status of the system} & Passed.\\
+         \hline
+    \end{tabular}
+    \caption{Login Test Successful}
+    \label{tt3}
+\end{table}
+\subsection{Login Test Unsuccessful}
+Login Test Case Positive is shown in Figure \ref{tt4}.
+\begin{table}[!h]
+    \centering
+    \begin{tabular}{|p{5cm}|p{8cm}|}
+         \textbf{Test ID} & \textbf{TI-4}\\
+        \hline
+        \textbf{Tested Function} & Unsuccessful user Login. \\
+        \hline
+        \textbf{Initial State of application} & All fields are empty.\\
+        \hline
+        \textbf{Input} & User did not enter the valid data.\\
+        \hline
+        \textbf{Expected Output} & Unsuccessful Login.\\
+        \hline
+        \textbf{Actual Output} & Unsuccessful Login\\
+        \hline
+         \textbf{Status of the system} & Failed.\\
+         \hline
+    \end{tabular}
+    \caption{Login Test Unsuccessful}
+    \label{tt4}
+\end{table}
+\newpage
+\subsection{Bid Test Successful}
+Bid Test Case Positive is shown in Figure \ref{tt5}.
+\begin{table}[!h]
+    \centering
+    \begin{tabular}{|p{5cm}|p{8cm}|}
+        \hline
+        \textbf{Test ID} & \textbf{TI-5}\\
+        \hline
+        \textbf{Function To Be Tested} & Successfully place bid. \\
+        \hline
+        \textbf{Initial State} & Bid page.\\
+        \hline
+        \textbf{Input} & Enter all valid bid data.\\
+        \hline
+        \textbf{Expected Output} & Bid should be placed.\\
+        \hline
+        \textbf{Actual Output} & Bid is placed.\\
+         \hline
+         \textbf{Status of the system} & Pass.\\
+         \hline
+    \end{tabular}
+    \caption{Bid Test Successful}
+    \label{tt5}
+\end{table}
+
+\subsection{Bid Test Unsuccessful}
+Bid Test Case Negative is shown in Figure \ref{tt6}.
+\begin{table}[!h]
+    \centering
+    \begin{tabular}{|p{5cm}|p{8cm}|}
+        \hline
+        \textbf{Test ID} & \textbf{TI-6}\\
+        \hline
+        \textbf{Function To Be Tested} & Place Bid successful. \\
+        \hline
+        \textbf{Initial State} & Bid page.\\
+        \hline
+        \textbf{Input} & Enter invalid bid data.\\
+        \hline
+        \textbf{Expected Output} & Bid should not be placed.\\
+        \hline
+        \textbf{Actual Output} & Bid is not placed.\\
+         \hline
+         \textbf{Status of the system} & Fail.\\
+         \hline
+    \end{tabular}
+    \caption{Bid Test Unsuccessful}
+    \label{tt6}
+\end{table}

@@ -1,0 +1,26 @@
+<h1 [ngClass]="{'disable-without-bg':isBidSubmitting}" mat-dialog-title>Hi {{bidderName}} 
+	<mat-icon matRipple (click)="closeDialogCancel()" class="close">cancel</mat-icon>
+</h1>
+<div mat-dialog-content [ngClass]="{'disable-without-bg':isBidSubmitting}">
+  <p *ngIf="data?.bid?.bidPrice">Your Old Bid Price <b class="green">{{data?.bid?.bidPrice}}</b></p>
+  <p>Enter your <b class="green">{{data?.bid?.id?' NEW':''}}</b> bid price and submit</p>
+  <mat-form-field class="full-width" appearance="outline">
+    <mat-label>Enter Your BID AMOUNT</mat-label>
+    <input type="number" autocomplete="off" matInput [(ngModel)]="bidPrice" (keydown)="onKeyDown($event)" 
+	#customerBidPrice="ngModel" required  pattern="^\d*(\.\d{0,3})?$" min="1" max="1000000"
+	placeholder="The Price will be listed to all bidders and seller">
+	<mat-error *ngIf="customerBidPrice?.invalid">{{showSumErrors()}}</mat-error>
+  </mat-form-field>
+  <p *ngIf="!data?.bid?.id">Say something about your bid amount or product</p>
+  <p *ngIf="data?.bid?.id">You can mention why you are updating bid amount</p>
+  <mat-form-field class="full-width" appearance="outline">
+    <mat-label>Comments</mat-label>
+    <input #commentRef="ngModel" maxlength="100"  matInput [(ngModel)]="comments" 
+	placeholder="write here...">
+	<mat-error *ngIf="commentRef?.invalid">Max 100 characters</mat-error>
+  </mat-form-field>
+</div>
+<div [ngClass]="{'disable-without-bg':isBidSubmitting}" mat-dialog-actions align="end">
+  <button mat-button (click)="closeDialogCancel()">No Thanks</button>
+  <button mat-button (click)="submitBid()" cdkFocusInitial>Submit</button>
+</div>

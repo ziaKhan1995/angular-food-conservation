@@ -1,0 +1,104 @@
+.mat-form-field {
+  display: block;
+}
+
+textarea {
+  height: 100px;
+  resize: vertical;
+}
+.primary-text{
+  color: #007bff;
+    text-decoration: none;
+    background-color: transparent;
+    -webkit-text-decoration-skip: objects;
+}
+.warn-text{
+  color: #ffc107 !important;
+    text-decoration: none;
+    background-color: transparent;
+    -webkit-text-decoration-skip: objects;
+}
+.btn-link{
+  font-weight: 400;
+  color: #007bff;
+  background-color: transparent;
+}
+.btn:not(:disabled):not(.disabled).active, .btn:not(:disabled):not(.disabled):active {
+  background-image: none;
+}
+.btn:not(:disabled):not(.disabled) {
+  cursor: pointer;
+}
+.btn-primary:hover {
+  color: #fff;
+  background-color: #0069d9;
+  border-color: #0062cc;
+}
+.btn:focus, .btn:hover {
+  text-decoration: none;
+}
+.btn {
+  display: inline-block;
+  font-weight: 400;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  border: 1px solid transparent;
+  padding: .315rem .75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: .25rem;
+  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+.btn-primary {
+  color: #fff;
+  background-color: #007bff;
+  border-color: #007bff;
+}
+.btn-success{
+    color: #fff;
+    background-color: #28a745;
+    border-color: #28a745;
+    margin-right: 10px;
+}
+
+.btn-link:hover {
+  color: #0056b3;
+  text-decoration: underline;
+  background-color: transparent;
+  border-color: transparent;
+}
+button:disabled,button[disabled],.btn-primary:disabled,.btn-primary[disabled]{
+  border: 1px solid #999999;
+  background-color: #cccccc;
+  color: #666666;
+}
+.remine-me{
+  cursor: pointer;
+  color:#007bff;
+  margin-left:10px;
+}
+//to color ng count down config
+:host ::ng-deep .custom-style {
+  font-size: 18px;
+  .item {
+    padding-left: 4px;
+    &:nth-child(1) {
+      color: rgb(45, 0, 170);
+    }
+    &:nth-child(2) {
+      color: rgb(207, 7, 147);
+    }
+  }
+}
+
+@media screen and (max-width:767px){
+.btn,.btn-success{
+  margin-bottom: 10px;
+}
+
+}

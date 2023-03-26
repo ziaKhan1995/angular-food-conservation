@@ -1,0 +1,181 @@
+
+<div #top></div>
+<div [ngClass]="{'top-div-pads':(showAlert ||isUserLoggedIn )}">
+  <div *ngIf="showAlert" class="alert {{alertType}}" style="margin-bottom:5px;">
+    <div class="alert--icon">
+        <!--alertt icon types
+        fa-bell fa-check-circle fa-times-circle fa-exclamation-circle	 fa-exclamation-triangle-->
+        <i class="fas {{alertTypeIcon}}"></i>
+    </div>
+    <div class="alert--content">
+        {{alertMessage}}
+    </div>
+    <div *ngIf="isUserLoggedIn" class="alert--close" (click)="showAlert=!showAlert">
+        <i class="far fa-times-circle"></i>
+    </div>
+</div><br>
+<div *ngIf="!isUserLoggedIn" class="hints-div">
+  You must have an appropriate valid account on this <b>FCWR- online surplus food bidding 
+    website</b>  
+  to participate in Bidding or sell your 
+  product on bidding. Kindly goto to <a class="new-login" (click)="gotoFrom('/register')">
+    Registration</a> page and sign in with your valid details or goto 
+     <a class="new-login" (click)="gotoFrom('/login')">LOGIN</a> if you are already logged in.
+</div>
+</div>
+<div class="container-add-new-auction">
+    <form [formGroup]="newAuctionForm" *ngIf="newAuctionForm && isUserLoggedIn">
+      <div style="margin-top:2px;margin-bottom:20px;"> 
+        <img (contextmenu)="$event.preventDefault()" class="bid-img" src="assets/bid.png">
+        <div class="h1">Add New </div><span style="color:grey;">Bid</span><br>
+        <small class="hints">fields marked with <span style="color:red;">*</span> are required</small>
+      </div>
+        <div fxLayout="row wrap" >
+          <mat-card class="child-1" fxFlex fxFlex.lt-sm="100">
+            <mat-form-field class="fullinput" appearance="outline">
+              <mat-label>Product Name</mat-label>
+              <input #input matInput formControlName="prodName" 
+                    minlength="3" maxlength="30" autocomplete="off">
+              <mat-hint [align]="'end'">{{input?.value?.length || 0}}/30</mat-hint>
+              <mat-error *ngIf="ff['prodName']?.invalid">{{getNameErrorMessage()}}</mat-error>
+            </mat-form-field>
+          </mat-card>
+          <mat-card class="child-2" fxFlex fxFlex.lt-sm="50">
+          <mat-form-field class="fullinput" appearance="outline">
+            <mat-label>Auction Product Price({{currency}})</mat-label>
+            <span matPrefix class='align'>{{currency}}&nbsp;&nbsp;</span>
+            <input type="number" (keydown)="onKeyDown($event)" matInput 
+            formControlName="prodStartBidAmount" autocomplete="off">
+            <mat-error *ngIf="ff['prodStartBidAmount']?.invalid">{{getAuctionProductPriceErrorMessage()}}</mat-error>
+          </mat-form-field>
+        </mat-card>
+        <mat-card class="child-3" fxFlex fxFlex.lt-sm="50">
+          <mat-form-field class="fullinput" appearance="outline">
+            <span matPrefix class='align'>{{currency}}&nbsp;&nbsp;</span>
+            <mat-label>Direct Purchase Price({{currency}})</mat-label>
+            <input type="number" (keydown)="onKeyDown($event)" matInput
+            formControlName="aucReservePrice" autocomplete="off">
+            <mat-error *ngIf="ff['aucReservePrice']?.invalid">{{getDirectPurchasePriceErrorMessage()}}</mat-error>
+          </mat-form-field>
+        </mat-card>
+        </div>
+      
+        <div fxLayout="row wrap" >
+          <mat-card class="child-1" fxFlex fxFlex.lt-sm="50">
+            <mat-form-field class="fullinput" appearance="outline">
+              <mat-label>Quantity</mat-label>
+              <input #ittnput matInput formControlName="quantity" 
+              placeholder="200 packs Opler Milk"
+                    minlength="3" maxlength="40" autocomplete="off">
+              <mat-hint [align]="'end'">{{ittnput?.value?.length || 0}}/50</mat-hint>
+              <mat-error *ngIf="ff['quantity']?.invalid">{{getAddQuantityErrorMessage()}}</mat-error>
+            </mat-form-field>
+          </mat-card>
+          </div>
+        <div fxLayout="row wrap" >
+          <mat-card class="child-1" fxFlex fxFlex.lt-sm="50">
+            <mat-form-field class="fullinput" appearance="outline">
+              <mat-label>Add Category</mat-label>
+              <mat-select formControlName="prodCatId">
+                <mat-option *ngFor="let cat of categories" [value]="cat.id">{{cat.prodCatName}}</mat-option>
+              </mat-select>
+              <mat-error *ngIf="ff['prodCatId']?.invalid">{{getAddCategoryErrorMessage()}}</mat-error>
+            </mat-form-field>
+          </mat-card>
+          <mat-card class="child-2" fxFlex fxFlex.lt-sm="50">
+            <mat-form-field class="fullinput" appearance="outline">
+              <mat-label>City</mat-label>
+              <mat-select formControlName="city">
+                <mat-option value="1">Islamabad</mat-option>
+                <mat-option value="2">Rawalpindi</mat-option>
+                <mat-option value="3">Peshawar</mat-option>
+                <mat-option value="4">Lahore</mat-option>
+                <mat-option value="5">Quetta</mat-option>
+                <mat-option value="6">Multan</mat-option>
+                <mat-option value="7">Chitral</mat-option>
+              </mat-select>
+              <mat-error *ngIf="ff['city']?.invalid">{{getCityErrorMessage()}}</mat-error>
+            </mat-form-field>
+          </mat-card>
+          <mat-card class="child-3" fxFlex fxFlex.lt-sm="100">
+            <mat-form-field class="fullinput" appearance="outline" 
+            hintLabel="The date is important for bidders to participate and wins">
+            <mat-icon matSuffix>date_range</mat-icon>
+              <mat-label>Auction Closing <b>Date</b> & <b>TIME</b></mat-label>
+              <input [min]="todayDate" matInput type="datetime-local" placeholder="Click to chose auction Closing date "
+                formControlName="aucCloseDate" autocomplete="off">
+              <mat-error *ngIf="ff['aucCloseDate']?.invalid">{{getAuctionClosingDateErrorMessage()}}</mat-error>
+            </mat-form-field>
+          </mat-card>
+        
+        </div>
+        <div fxLayout="row wrap" >
+          <mat-card class="child-1" fxFlex >
+            <mat-form-field class="fullinput" appearance="outline"
+            [hintLabel]="descHints">
+              <mat-label>Detail Description</mat-label>
+               <textarea  autocomplete="off" formControlName="prodDescription" #description maxlength="400" rows="4" matInput 
+               placeholder="Write a brief description of your product"></textarea>
+             <mat-hint [align]="'end'">{{description?.value?.length || 0}}/400</mat-hint>
+             <mat-error *ngIf="ff['prodDescription']?.invalid">{{getDetailDescriptionErrors()}}</mat-error>
+            </mat-form-field>
+          </mat-card>
+        </div>
+       
+      <!--Section for images -->        
+      <h2 style="margin-top:20px;">Add upto two images of your auction <small *ngIf="isImageSubmiting" 
+        class="grey"> uploading images...</small> </h2>
+      <div fxLayout="row wrap" class="padd" fxLayoutAlign="space-around">
+        <div class="child-1" fxFlex>
+          <div class="profile-pic">
+            <label matRipple class="-label" (click)='displayWebCamera(1);' for="custFile">
+              <span style="text-align: center;">Change</span>
+            </label>
+            <img [src]="(isImageSubmiting && !isUploadedSecond)?loader:auctionPhotoCoverSrc" alt="Product Image" title="Product First Image">
+          </div>
+          <span>
+            <button type="button" class="pic-btn" mat-stroked-button (click)='displayWebCamera(1);'>
+              Change
+            </button> 
+              <button [disabled]="isImageSubmiting || isDataSubmiting" type="button" mat-icon-button color="accent" (click)="deleteProductPhoto1()" 
+              *ngIf="productPhoto1Selected" matTooltip="remove this picture" matTooltipTouchGestures="on" 
+              matTooltipPosition="right" ><mat-icon>delete_forever</mat-icon>
+              </button>
+            <h3 matTooltip="Product Cover Image is required" matTooltipTouchGestures="on" class="green">Cover Photo 
+              <small class="red">required</small></h3>
+          </span>
+        </div>
+        <div class="child-2" fxFlex>
+          <div class="profile-pic">
+            <label class="-label" for="file2">
+              <span style="text-align: center;">Change</span>
+            </label>
+            <img [src]="(isImageSubmiting  && isUploadedSecond)?loader:auctionSecndPhotoCoverSrc"
+             alt="No image" title="Product Second Image" (click)='displayWebCamera(2);'>
+          </div>
+          <span>
+            <button type="button" class="pic-btn" mat-stroked-button (click)='displayWebCamera(2);' 
+             [disabled]="isImageSubmiting || isDataSubmiting" >
+              Change
+            </button> 
+              <button [disabled]="isImageSubmiting" type="button" mat-icon-button color="accent" (click)="deleteProductPhoto2()" 
+              *ngIf="productPhoto2Selected"><mat-icon>delete_forever</mat-icon>
+              </button>
+            <h3>Second Image</h3>
+          </span>
+      
+        </div>
+        <div class="child-3" fxFlex fxFlex.lt-sm="100">
+          <section style="font-size:larger;">
+            <button class="padding" type="button" mat-stroked-button title="Clear all inputs" (click)="reset()">Clear</button> &nbsp;&nbsp;
+            <button class="padding" mat-raised-button title="Click to submit" type="submit" color="primary"
+             (click)="submit(top)" [disabled]="!newAuctionForm.dirty || isDataSubmiting">Submit New Bid </button>
+            &nbsp;&nbsp; 
+          </section>
+        </div>
+      </div>
+       
+      </form>
+
+</div>
+

@@ -1,0 +1,53 @@
+<h1 [ngClass]="{'disable-without-bg':isFeedbackSubmitting}" mat-dialog-title >Hi {{bidderName}} 
+ <span class="large grey"  *ngIf="!isAlreaPlacedFeedbackLoading">
+  {{(alreadyPlacedBid && alreadyPlacedBid?.id)?'Update your':'Give us'}}  feedback</span> 
+  <mat-icon class="close medium" 
+ (click)="closeDialogCancel()">close</mat-icon> </h1>
+ <div mat-dialog-content [ngClass]="{'disable-without-bg':isFeedbackSubmitting}">
+  <ng-container *ngIf="isAlreaPlacedFeedbackLoading">
+    <p class='loading'>Loading...</p>
+    <ngx-shimmering-loader [style]="shimmarStyle" [elemCount]="2" [isVisible]="isAlreaPlacedFeedbackLoading">
+    </ngx-shimmering-loader>
+  </ng-container>
+  <form [formGroup]="feedBackForm" *ngIf="!isAlreaPlacedFeedbackLoading && feedBackForm">
+   <div fxLayout="row wrap" fxLayoutAlign="space-between stretch">
+    <div class="child-1" fxFxlex="20" fxFlex.lt-sm="100"> 
+      <span class="label">Seller Cooperation
+        <span matTooltipTouchGestures="on" matTooltip="Required" class="red medium">*</span></span>
+    </div>
+    <div class="child-2" fxFxlex="80" fxFlex.lt-sm="100"> 
+      <ngx-star-rating formControlName="sellerCooperation" [id]="'sellerCooperation'"></ngx-star-rating> 
+    </div>
+
+    <div class="child-3" fxFxlex="20" fxFlex.lt-sm="100"> 
+      <span class="label">Satisfaction Rating
+        <span matTooltipTouchGestures="on" matTooltip="Required" class="red medium">*</span></span>
+    </div>
+    <div class="child-4" fxFxlex="80" fxFlex.lt-sm="100"> 
+      <ngx-star-rating formControlName="satisfactionRating" [id]="'satisfactionRating'"></ngx-star-rating> 
+    </div>
+
+    <div class="child-5" fxFxlex="20" fxFlex.lt-sm="100"> 
+      <span class="label">Overall Rating
+        <span matTooltipTouchGestures="on" matTooltip="Required" class="red medium">*</span></span>
+    </div>
+    <div class="child-6" fxFxlex="80" fxFlex.lt-sm="100"> 
+      <ngx-star-rating formControlName="overallRating" [id]="'overallRating'"></ngx-star-rating> 
+    </div>
+   </div>
+   <div fxLayout="row wrap" fxLayoutAlign="space-between stretch">
+    <div class="child-1" fxFxlex="20" fxFlex.lt-sm="100"> 
+      <span class="label">Comment</span>
+    </div>
+    <div class="child-2 comment" fxFxlex="80" fxFlex.lt-sm="100"> 
+      <input class="input" placeholder="write here...." formControlName="comments">
+    </div>
+   </div>
+</form>
+</div>
+<div class="mt-10" [ngClass]="{'disable-without-bg':isFeedbackSubmitting}" mat-dialog-actions 
+align="end" style="margin-top:15px;" *ngIf="!isAlreaPlacedFeedbackLoading">
+  <button mat-button (click)="closeDialogCancel()">Cancel</button>
+  <button mat-button (click)="submitFeedback()" cdkFocusInitial 
+  [disabled]="disableSubmitBtn()">Submit Feedback</button>
+</div>

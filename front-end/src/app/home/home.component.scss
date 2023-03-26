@@ -1,0 +1,262 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,600&display=swap');
+
+// *{
+//     overflow: hidden;
+// }
+.container-home {
+    display: flow-root;
+}
+
+.margin {
+    margin: 15px 60px;
+}
+
+.fin {
+    padding-top: 0px;
+    padding-bottom: 3px;
+    font-weight: bold;
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.fin:first-child {
+    padding-top: 7px;
+}
+
+.text1 {
+    padding-right: 10px;
+    font-weight: 300;
+}
+
+.mat-card-img-size {
+    object-fit: cover;
+    /*this makes the image in src fit to the size specified below*/
+    max-height: 150px !important;
+    min-height: 150px !important;
+}
+
+.product-name {
+    margin-top: -10px !important;
+    margin-bottom: 0 !important;
+    text-transform: capitalize;
+    padding-bottom: 2px;
+}
+
+.text2 {
+    /* color: #606060; */
+    color: darkgrey;
+}
+
+.actions-margin {
+    margin-top: -1px !important;
+    margin-bottom: -3px !important;
+}
+
+.auction-card {
+    //border:1.5px solid rgba(0, 0, 0, 0.175);
+    //border:1.5px solid #d0d7de;
+    //border: 1.5px solid hsla(210, 18%, 87%, 1);
+    margin-bottom: 20px;
+    border-radius: 0.6em !important;
+}
+
+// .auction-card:not(:nth-child(3n)){
+//     //margin-right:10%;
+// }
+.mat-card {
+    padding: 8px !important;
+}
+
+.card-title {
+    margin: -8px -8px 0 -10px !important;
+    background: rgba(0, 0, 0, 0.03);
+    //border-bottom: 1.5px solid rgba(0, 0, 0, 0.175);
+}
+
+.card-sub-title {
+    margin: -10px !important;
+    padding: 5px 10px 15px !important;
+    width: -webkit-fill-available;
+    text-align: center;
+}
+
+.card-image {
+    min-height: 180px;
+    max-height: 180px;
+    padding: 1px 10px;
+}
+
+.mb-m20 {
+    margin-bottom: 0 !important;
+}
+
+.food-expiry-date {
+    font-weight: bolder;
+    width: -webkit-fill-available;
+    background: rgba(0, 0, 0, 0.02);
+    padding: 0 4px !important;
+    font-family: initial;
+}
+
+.current-bids {
+    padding: 15px 5px;
+    border-radius: 5px;
+}
+
+.sub-btn1 {
+    padding-top: 10px;
+    border: 1px solid blanchedalmond;
+    background: blanchedalmond;
+    text-align: center;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.sub-btn1:hover {
+    background-color: bisque;
+}
+
+.sub-btn2 {
+    background-color: lightgrey;
+    border: 1px solid lightgrey;
+    text-align: center;
+    padding-top: 10px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.sub-btn2 .mat-icon {
+    font-size: 18px;
+}
+
+.sub-btn2 span {
+    font-size: 25px;
+}
+
+.sub-btn2:hover {
+    background-color: gainsboro;
+}
+
+.see-all {
+    background: #000;
+    margin-top: 10px;
+    padding: 0 10px;
+    font-size: 18px;
+    color: #fff;
+}
+
+.see-all span {
+    font-size: 18px;
+    vertical-align: bottom;
+    color: orange;
+    padding-left: 4px;
+}
+
+.how-it-work {
+    font-size: 4.6rem;
+    padding-top: 10px;
+    color: #4d4d4d;
+    line-height: 62px;
+
+}
+
+.container-how {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.fddffdf {
+    width: 250px;
+    height: 250px;
+    background: rgb(214, 214, 214);
+    box-shadow: 5px 5px 10px #b6afaf, -5px -5px 10px #ffffff;
+    border-radius: 50%;
+    margin-top: 70px;
+}
+
+.circle {
+    text-align: center !important;
+}
+
+.circle .next {
+    color: darkgrey;
+    float: right;
+    margin-top: 59px;
+    margin-right: 44px;
+    font-size: 40px;
+}
+
+.circle+h1 {
+    padding-top: 8px;
+    text-align: center;
+    font-weight: bolder;
+    color: #4d4d4d;
+    line-height: 62px;
+    user-select: none;
+}
+
+.circle img {
+    opacity: 0.65;
+}
+
+.width-and-selection {
+    width: fit-content;
+    user-select: none;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+//to color
+:host ::ng-deep .custom-style {
+    font-size: 18px;
+
+    .item {
+        padding-left: 4px;
+
+        &:nth-child(1) {
+            color: rgb(199, 66, 0);
+        }
+
+        &:nth-child(2) {
+            color: rgb(45, 0, 170);
+        }
+
+        &:nth-child(3) {
+            color: rgb(207, 7, 147);
+        }
+    }
+}
+
+.timer {
+    float: right;
+    font-size: 18px;
+}
+.timer:hover{
+    background: rgba(0, 0, 0, 0.2);
+}
+.auctions-tyle{
+    color: #333;
+    font-family: "Myriad Pro";
+}
+.auctions-tyle h1{
+    font-weight: 600;
+    font-family: "Myriad Pro";
+}
+@media (max-width: 767px) {
+    .margin {
+        margin: 10px;
+    }
+
+    .how-it-work {
+        font-size: 3rem;
+    }
+
+    .center-img-sm {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 150px;
+        height: 150px;
+    }
+}

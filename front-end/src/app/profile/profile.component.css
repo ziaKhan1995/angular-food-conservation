@@ -1,0 +1,138 @@
+body {
+  font-family: Arial, sans-serif;
+}
+
+.heading {
+  font-family: fangsong;
+  font-size: 26px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+}
+.sale-loading{
+  margin-top: 10px !important;
+  display: inline-block !important;
+}
+.margin {
+  margin: 15px 60px;
+}
+.close-icon-initials{
+  height: initial !important;
+  width: initial !important;
+  bottom: -10px !important;
+  right: -3px !important;
+  cursor: pointer;
+}
+.table {
+  display: table;
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.tableRow {
+  display: table-row;
+}
+
+.tableHead {
+  font-weight: 600;
+  background: white;
+  FONT-FAMILY: math;
+}
+.icon-size{
+  font-size: 15px;
+  vertical-align: middle;
+  margin-right: -9px;
+  margin-left: 13px;
+  padding-top: 3px;
+}
+.tableCell,
+.tableHead {
+  display: table-cell;
+  padding: 3px 3px 3px 6px;
+  border: 1px solid grey;
+  text-overflow: word-wrap;
+}
+.tableCell .feedback{
+text-align: center;
+color: #444;
+cursor: pointer;
+}
+.feedback:hover{
+  text-decoration: underline;
+}
+.last-child{
+  width: 60px;
+  overflow-wrap: break-word;
+}
+.mb-0{
+  margin-bottom: 0px;
+  color: #1a73e8;
+}
+.clicked-row{
+  background: aliceblue;
+  border: 1.3px solid rgba(91 133 129 / 50%);
+}
+::-webkit-scrollbar {
+  width: 3px !important;
+}
+.bad-mood {
+  font-size: 16px;
+  color: red;
+}
+.query-builder{
+  font-size: 16px;
+  text-align: left;
+    vertical-align: text-top;
+}
+.good-mood {
+  font-size: 16px;
+  color: green;
+}
+
+.show-sm {
+  display: none;
+}
+.show-delete-icon .mat-icon{
+  vertical-align: sub;
+  cursor: pointer;
+}
+
+.property {
+  color: #444;
+  font-size: 15px;
+}
+
+.value {
+  font-weight: 500;
+  font-size: 18px;
+}
+
+.one {
+  margin-left: -10px;
+  margin-top: -5px !important;
+  color: #fff;
+  background: lightsteelblue;
+  min-width: 30px;
+  min-height: 30px;
+  border-radius: 50%;
+  border: none;
+}
+.border-blue{
+  border: 1px solid blue;
+}
+@media (max-width:767px) {
+  .table {
+    display: none;
+  }
+
+  .show-sm {
+    display: block;
+    padding-top: 1px;
+    padding-bottom: 15px;
+    padding-left: 5px;
+    border: 5px solid aliceblue;
+  }
+
+  .margin {
+    margin: 15px 10px;
+  }
+}

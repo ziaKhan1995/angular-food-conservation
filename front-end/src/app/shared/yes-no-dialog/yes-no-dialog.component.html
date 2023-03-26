@@ -1,0 +1,11 @@
+<h1  mat-dialog-title > {{data?.title}} </h1>
+ <div mat-dialog-content >
+  {{data?.message}} <strong>{{data?.mainTopic}}</strong>
+  <p class="small" *ngIf="data?.extraMessage"><i>{{data?.extraMessage}}</i></p>
+</div>
+<div class="mt-10"  mat-dialog-actions>
+  <button color="warn" mat-button (click)="sayNoAndCloseDialogCancel()">
+    {{data?.noText?data?.noText:'No'}}</button>
+  <button color="primary" mat-button (click)="sayYesAndCloseDialogCancel()" cdkFocusInitial>
+    {{data?.yesText?data?.yesText:'Yes'}}</button>
+</div>

@@ -1,0 +1,239 @@
+<div class="center">
+    <div class="profile-pic mb-5">
+        <label matRipple class="-label" (click)='displayWebCamera()' for="custFile">
+          <span>Change</span>
+        </label>
+        <img [defaultImage]="defaultImage" [lazyLoad]="isImageSubmiting?loader:imageSrc" 
+        alt="user profile Image" class="profile" title="profile image" [errorImage]="errorImage">
+      </div>
+      <span>
+        <button type="button" class="pic-btn" mat-stroked-button (click)='displayWebCamera()'>
+          Change
+        </button> 
+      </span>
+</div>
+<div *ngIf="!edit && userAccount" style="margin:30px">
+    <div class="navbar mb-10">
+        <a [ngClass]="{'margins':edit}">
+            <mat-slide-toggle color="primary" (change)="clickEdit()" title="Click to manage account info" [checked]="edit">
+                Editable Mode </mat-slide-toggle>
+        </a>
+    </div>
+    <div fxLayout="row wrap" >
+        <mat-card class="child-1 example-card" fxFlex fxFlex.lt-sm="100">
+            <mat-card-header>
+                <mat-card-title>ID</mat-card-title>
+                <mat-card-subtitle>
+                    <p>
+                        {{userAccount?.id ?? 'NA'}}
+                    </p>
+                </mat-card-subtitle>
+            </mat-card-header>
+
+        </mat-card>
+        <mat-card class="child-3 example-card" fxFlex fxFlex.lt-sm="100">
+            <mat-card-header>
+                <mat-card-title>First Name</mat-card-title>
+                <mat-card-subtitle>
+                    <p>
+                        {{userAccount?.userFname ?? 'NA'}}
+                    </p>
+                </mat-card-subtitle>
+            </mat-card-header>
+        </mat-card>
+        <mat-card class="child-3 example-card" fxFlex fxFlex.lt-sm="100">
+            <mat-card-header>
+                <mat-card-title>Last Name</mat-card-title>
+                <mat-card-subtitle>
+                    <p>
+                        {{userAccount?.userLname ?? 'NA'}}
+                    </p>
+                </mat-card-subtitle>
+            </mat-card-header>
+        </mat-card>
+    </div>
+    <div fxLayout="row wrap" >
+        <mat-card class="child-1 example-card" fxFlex fxFlex.lt-sm="100">
+            <mat-card-header>
+                <mat-card-title>Phone</mat-card-title>
+                <mat-card-subtitle>
+                    <p>
+                        {{userAccount?.userPhoneno ?? 'NA'}}
+                    </p>
+                </mat-card-subtitle>
+            </mat-card-header>
+        </mat-card>
+        <mat-card class="child-2 example-card" fxFlex fxFlex.lt-sm="100">
+            <mat-card-header>
+                <mat-card-title>Email Address</mat-card-title>
+                <mat-card-subtitle>
+                    <p>
+                        {{userAccount?.userEmail ?? 'NA'}}
+                    </p>
+                </mat-card-subtitle>
+            </mat-card-header>
+        </mat-card>
+        <mat-card class="child-3 example-card" fxFlex fxFlex.lt-sm="100">
+            <mat-card-header>
+                <mat-card-title>Street Name</mat-card-title>
+                <mat-card-subtitle>
+                    <p>
+                        {{userAccount?.userStreetname ?? 'NA'}}
+                    </p>
+                </mat-card-subtitle>
+            </mat-card-header>
+        </mat-card>
+    </div>
+
+    <div fxLayout="row wrap" fxLayoutAlign="space-between stretch">
+        <mat-card class="child-1 example-card" fxFlex fxFlex.lt-sm="100">
+            <mat-card-header>
+                <mat-card-title>Street No</mat-card-title>
+                <mat-card-subtitle>
+                    <p>
+                        {{userAccount?.userStreetno ?? 'NA'}}
+                    </p>
+                </mat-card-subtitle>
+            </mat-card-header>
+        </mat-card>
+        <mat-card class="child-2 example-card" fxFlex fxFlex.lt-sm="100">
+            <mat-card-header>
+                <mat-card-title>City</mat-card-title>
+                <mat-card-subtitle>
+                    <p>
+                        {{getUserCityByCodeGiven(userAccount?.userCity) ?? 'NA'}}
+                    </p>
+                </mat-card-subtitle>
+            </mat-card-header>
+
+        </mat-card>
+        <mat-card class="child-3 example-card" fxFlex fxFlex.lt-sm="100">
+            <mat-card-header>
+                <mat-card-title>
+                    Status <mat-icon class="status-mat-icon color-deepskyblue" 
+                    *ngIf="userAccount?.status==1">check_circle</mat-icon>
+                    <mat-icon class="status-mat-icon red" 
+                    matTooltip="Not Elgible to Bid or Create Auction due to rules violations" 
+                    matTooltipClass="tooltip-class" matTooltipTouchGestures="on"
+                    *ngIf="userAccount?.status!=1">notifications</mat-icon>
+                </mat-card-title>
+                <mat-card-subtitle>
+                        <span style="font-weight: 600;">
+                            {{_getBuyerTextByCode(userAccount?.status)}}</span>
+                            <span *ngIf="userAccount?.status!=1">
+                               , <a class="show-like">Rules</a> violations
+                            </span>
+                </mat-card-subtitle>
+            </mat-card-header>
+        </mat-card>
+    </div>
+</div>
+
+<!-----Ediable Fields-->
+<!-----Ediable Fields-->
+<!-----Ediable Fields-->
+<!-----Ediable Fields-->
+
+<div *ngIf="edit && userAccount" style="margin:30px">
+    <div class="navbar mb-10">
+        <a>
+            <mat-slide-toggle color="primary" (change)="clickEdit()" title="Click to manage account info" [checked]="edit">
+                Editable Mode </mat-slide-toggle>
+        </a>
+    </div>
+   <form [formGroup]="userForm" *ngIf="userForm">
+    <div fxLayout="row wrap">
+        <div class="child-1" fxFlex fxFlex.lt-sm="50">
+            <mat-form-field class="fullinput" appearance="outline">
+                <mat-label>First Name</mat-label>
+                <input #fname matInput placeholder="Jhon Doe" formControlName="userFname" maxlength="30" autocomplete="off">
+                <button type="button" matSuffix mat-icon-button>
+                  <mat-icon>person_outline</mat-icon>
+                </button>
+                <mat-hint align="end">{{fname?.value?.length ?? 0}}/30</mat-hint>
+                <mat-error *ngIf="f['userFname']?.invalid">{{getFNameErrorMessage()}}</mat-error>
+              </mat-form-field>
+        </div>
+        <div class="child-2" fxFlex fxFlex.lt-sm="50">
+            <mat-form-field class="fullinput" appearance="outline">
+                <mat-label>Last Name</mat-label>
+                <input #lname matInput placeholder="Jhon Doe" formControlName="userLname" maxlength="30" autocomplete="off">
+                <button type="button" matSuffix mat-icon-button>
+                  <mat-icon>person_outline</mat-icon>
+                </button>
+                <mat-hint align="end">{{lname?.value?.length ?? 0}}/30</mat-hint>
+                <mat-error *ngIf="f['userLname']?.invalid">{{getLNameErrorMessage()}}</mat-error>
+              </mat-form-field>
+        </div>
+        <div class="child-3" fxFlex fxFlex.lt-sm="100">
+            <mat-form-field class="fullinput" appearance="outline">
+                <mat-label>Phone</mat-label>
+                <input matInput placeholder="your contact no" formControlName="userPhoneno" type="tel" autocomplete="off">
+                <button type="button" matSuffix mat-icon-button>
+                  <mat-icon>phone</mat-icon>
+                </button>
+                <mat-error *ngIf="f!['userPhoneno']!?.invalid">{{getPhoneErrorMessage()}}</mat-error>
+              </mat-form-field>
+        </div>
+    </div>
+    <div fxLayout="row wrap" >
+        <div class="child-1" fxFlex fxFlex.lt-sm="100">
+            <mat-form-field class="fullinput" appearance="outline">
+                <mat-label>City</mat-label>
+                <mat-select formControlName="userCity">
+                  <mat-option value="1">Islamabad</mat-option>
+                  <mat-option value="2">Rawalpindi</mat-option>
+                  <mat-option value="3">Peshawer</mat-option>
+                  <mat-option value="4">Lahore</mat-option>
+                  <mat-option value="5">Quetta</mat-option>
+                  <mat-option value="6">Multan</mat-option>
+                  <mat-option value="7">Chitral</mat-option>
+                </mat-select>
+                <mat-error *ngIf="f!['userCity']?.invalid">{{getCityErrorMessage()}}</mat-error>
+              </mat-form-field>
+        </div>
+        <div class="child-2" fxFlex fxFlex.lt-sm="50">
+            <mat-form-field class="fullinput" appearance="outline">
+                <mat-label>Street Name</mat-label>
+                <input matInput placeholder="Your street Name"
+                  formControlName="userStreetname" autocomplete="off">
+                <mat-error *ngIf="f!['userStreetname']!?.invalid">{{getUserStreetNameErrorMessage()}}</mat-error>
+              </mat-form-field>
+        </div>
+        <div class="child-3" fxFlex fxFlex.lt-sm="50">
+            <mat-form-field class="fullinput" appearance="outline">
+                <mat-label>Street No</mat-label>
+                <input matInput placeholder="Your street No" type="number"
+                  formControlName="userStreetno" autocomplete="off">
+                <mat-error *ngIf="f!['userStreetno']!?.invalid">{{getUserStreetNoErrorMessage()}}</mat-error>
+              </mat-form-field>
+        </div>
+    </div>
+        <div fxLayout="row wrap">
+            <div class="child-1" fxFlex fxFlex.lt-sm="100">
+                <mat-form-field class="fullinput" appearance="outline">
+                    <mat-label>Email Address</mat-label>
+                    <input type="email" matInput placeholder="jhondoe@gmail.com" formControlName="userEmail" autocomplete="off">
+                    <button type="button" matSuffix mat-icon-button>
+                      <mat-icon>email</mat-icon>
+                    </button>
+                    <mat-hint>Email will be used for login and verifiction purposes. Make sure it is correct</mat-hint>
+                    <mat-error *ngIf="f!['userEmail']!?.invalid">{{getEmailErrorMessage()}}</mat-error>
+                  </mat-form-field>
+    
+            </div>           
+        </div>
+        <div class="bottomAction">
+            <button mat-stroked-button [disabled]="isSubmitting" (click)='discardChanges()'>Discard Changes</button>
+            &nbsp;
+            &nbsp;
+            <button color="primary" [disabled]="isSubmitting" mat-stroked-button (click)='onSubmitClick()'>
+                <img class="loader" *ngIf="isSubmitting" [src]="loader"> 
+                Save Setting
+            </button>
+        </div>
+    </form>
+    </div>
+
+   
+   

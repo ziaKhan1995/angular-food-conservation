@@ -1,0 +1,27 @@
+<h2  mat-dialog-title> <span *ngIf="sellerName">created <b>{{sellerName}}</b></span>  
+	<mat-icon (click)="closeDialogCancel()" class="close">cancel</mat-icon>
+</h2>
+<div mat-dialog-content>
+  <h2 class="mb-0" *ngIf="auctionAllBidsList">Bids Table of auction</h2>
+<div *ngIf="auctionAllBidsList" class="table">
+    <div class="tableRow">
+        <div class="tableHead">S#</div>
+        <div class="tableHead">Bidder Name</div>
+        <div class="tableHead">Bid Price</div>
+        <div class="tableHead">Comments</div>
+    </div>
+    <div *ngFor="let bidder of auctionAllBidsList;let y=index" class="tableRow" 
+    [ngClass]="{'row-my-bid-selected':bidder?.Bidder_ID==userId}" matTooltipPosition="above"
+    matTooltipTouchGestures="on" matTooltipClass="tooltip-class"
+    [matTooltip]="bidder?.Bidder_ID==userId?'This is my bid amount':''">
+        <div class="tableCell">{{y+1}}</div>
+        <div class="tableCell">{{bidder?.userFirstName+' '+bidder?.userLastName}}</div>
+        <div class="tableCell">{{bidder?.Bid_Price}}</div>
+        <div class="tableCell last-child" style="width:200px;">
+        {{bidder?.Bid_Comment}}</div>
+    </div>
+</div>
+</div>
+<div mat-dialog-actions align="end">
+  <button mat-button (click)="closeDialogCancel()">I got it</button>
+</div>

@@ -1,0 +1,184 @@
+%% BUICS THESIS STYLE for LaTeX2e
+%% how to use feupteses (changed from the original for MIEEC)
+%%
+%% FEUP, JCL & JCF, Tue May 20 18:53:15 2008
+%%
+%% PLEASE send improvements to jlopes at fe.up.pt, jcf at fe.up.pt
+%%
+%%========================================
+%% Commands: pdflatex tese
+%%           bibtex tese
+%%           makeindex tese (only if creating an index) 
+%%           pdflatex tese
+%%========================================
+
+\documentclass[11pt,a4paper,twoside,openright]{report}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+%\usepackage[portuges]{babel}
+\usepackage{fancyvrb}
+\usepackage{multirow}
+%\usepackage{epstopdf}
+\usepackage{rotating}
+\usepackage{slashbox,pict2e}
+\usepackage{soul}
+\usepackage{amssymb}
+\usepackage{lscape}
+\usepackage{longtable}
+\usepackage{makeidx}
+\usepackage{amsmath}
+\usepackage{multirow}
+\usepackage{makecell}
+
+%% For the final version, comment next line and uncomment the second line
+%\usepackage[provisional,alpharefs]{buics}
+\usepackage[alpharefs]{buics} 
+\usepackage[utf8]{inputenc}
+
+ %PDF properties 
+\hypersetup{
+pdftitle = {Data Warehouses in the Path from Databases to Archives},
+pdfauthor = {Arif Ur Rahman},
+		pdfsubject={Relational Database Preservation},
+    pdfcreator={MiKTex 2.9},
+    pdfproducer={MiKTex 2.9},
+    pdfkeywords = {Database Preservation, Dimensional Modeling, Model Migration, SIARD, RODA, DWXML},
+    pdfstartview={FitH},%fits the width of the page to the window
+}
+
+%% Options: 
+%% - english: titles, etc in english
+%% - provisional: the thesis has not been approved yet
+%% - print: links are not shown (for paper versions)
+%% - alpharefs: bibliography references are alphabetic
+%% - numericrefs: bibliography references are numbered (in order of citation)
+%% ( by default: author-date format of the ``natbib'' package is used 
+%%   the portuguese version requires the file ``plainnat-pt.bst'' to be 
+%%   present in the same directory )
+
+%% Provide a version number in order to keep track of
+%% thesis versions (it will printed in the footer of most pages)
+
+\version{v1.12.2012}
+
+%% uncomment in the final version in order to make version footer disappear
+%\noversiontrue
+
+%% uncomment to create an index (at the end of the document)
+\makeindex 
+
+%%  path to the figures directory
+%%  TIP: use folder ``figures'' to keep all your figures
+\graphicspath{{figures/}}
+
+%%----------------------------------------
+%% TIP: if you want to define more macros, use an external file to
+%% keep them
+\include{mymacros}
+%%----------------------------------------
+
+%%========================================
+%% Start of document
+%%========================================
+\begin{document}
+
+%%----------------------------------------
+%% Information about the work
+%%----------------------------------------
+\title{Data Warehouses in the Path from Databases to Archives}
+\author{Arif Ur Rahman}
+%\mapilogo{map-logo.png}
+\mapilogo{mapi-logo}
+%\degree{\textbf{\Large{Doctoral Program in Computer Science\\
+%of the Universities of Minho, Aveiro and Porto}}}
+
+\degree{\emph{Thesis submitted to Faculty of Engineering of the University of Porto\\for the Doctor Degree in Computer Science within the Joint Doctoral Program in\\Computer Science of the Universities of Minho, Aveiro and Porto}}
+%% Date of submission
+
+\department{Faculty of Engineering, University of Porto}
+\thesisdate{December 2012}
+%\thesisdate{\Large{\textbf{December 2012}}}
+
+%% insert copyright text if used
+\copyrightnotice{Arif Ur Rahman, 2012}
+
+%\supervisor{Supervisor}{Gabriel de Sousa Torcato David}{}% {(Title)}
+%% uncomment next line if necessary
+%\supervisor{Co-Supervisor}{Maria Cristina de Carvalho Alves Ribeiro}{}%{(Title)}
+
+%% uncomment committee stuff in the final version if used
+%\committeetext{Approved by \ldots:}
+%\committeemember{President}{Name of the President}{(Title)}
+%\signature
+%\committeemember{Referee}{Name of the Referee}{(Title)}
+%\signature
+%\committeemember{Referee}{Name of the Referee}{(Title)}
+%\signature
+%\committeedate{31$^{st}$ July, 2008}
+
+%% specify cover logo (in folder ``figures'')
+\logo{logo-feup.pdf}
+%\logo{logo-feup.png}
+
+
+%%----------------------------------------
+%% Cover page(s)
+%%----------------------------------------
+\maketitle
+%% uncomment next line in the final version if used
+%\committeepage
+%% Preliminary materials
+\StartPrelim
+\begin{singlespace}
+  \include{abstract} % the abstract
+  \include{acknows}  % the acknowledgments
+  \include{quote}    % initial quotation if desired
+  \cleardoublepage
+  \pdfbookmark[0]{Table of Contents}{contents}
+  \tableofcontents
+  \cleardoublepage
+  \pdfbookmark[0]{List of Figures}{figures}
+  \listoffigures
+  \cleardoublepage
+  \pdfbookmark[0]{List of Tables}{tables}
+  \listoftables
+  \include{abbrevs}  % the list of abbreviations used
+\end{singlespace}
+
+%%----------------------------------------
+%% Body
+%%----------------------------------------
+\StartBody
+
+%% TIP: use a separate  file for each
+\include{chapter1} 
+\include{chapter2}
+\include{chapter3}
+\include{chapter4}
+\include{chapter5}
+\include{chapter6}
+\include{chapter7}
+\include{chapter8}
+%%\printindex
+%% comment next 2 commands if numbered appendixes not used
+\appendix
+\include{appendix1}
+%\include{appendix2}
+
+%%----------------------------------------
+%% Final materials
+%%----------------------------------------
+
+\begin{singlespace}
+  %% Bibliography
+  %% comment the next command if BibTeX file not used
+  %% bibliography is in ``references.bib''
+  \PrintBib{references}
+
+  %% Index
+  %% uncomment next command if index is required
+  %% don't forget to run ``makeindex tese'' command
+  \PrintIndex
+\end{singlespace}
+
+\end{document}

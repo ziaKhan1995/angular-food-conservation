@@ -1,0 +1,127 @@
+<div>
+<div *ngIf="!isAdminVerified && !isUserLogged" class="row section" [style.opacity]="dialogStatus?'1':'0'">
+  <button class="click-btn" mat-raised-button (click)="openDialog()">
+    Click to verify yourself as admin</button>
+</div>
+<div *ngIf="!isAdminVerified && isUserLogged" class="center">
+  <div class="mtb-10 mlr-10">
+    You are logged in as user and can only create <span class="show-like">auction</span>
+    or submit a <span class="show-like">Bid</span> on an auction
+    If you think you have an admin account then <a class="show-like">LOGOUT</a> and SIGN IN
+    as ADMIN.
+  </div>
+</div>
+<mat-drawer-container class="example-container" *ngIf="admin && admin?.id" autosize>
+  <mat-drawer #drawer [opened]="innerWidth>640?true:false" class="example-sidenav"
+    [mode]="innerWidth>640?'side':'over'">
+
+    <h3 class="bold">Content</h3>
+    <ul style="list-style-type:none;">
+      <li><mat-icon>category</mat-icon> Add Category</li>
+      <li><mat-icon>list</mat-icon> Categories List</li>
+      <li><mat-icon>list</mat-icon> Auction List</li>
+    </ul>
+    <h3 class="bold">Users</h3>
+    <ul style="list-style-type:none;">
+      <li><mat-icon>person_add</mat-icon> Add New User</li>
+      <li><mat-icon>people_outline</mat-icon> user List</li>
+    </ul>
+    <h3 class="bold">Manage Completed Auctions</h3>
+    <ul style="list-style-type:none;">
+      <li><mat-icon>spellcheck</mat-icon> Auction Completed</li>
+    </ul>
+    <h3 class="bold">Admin</h3>
+    <ul style="list-style-type:none;">
+      <li><mat-icon>settings</mat-icon> Manage Profile</li>
+      <li><mat-icon>logout</mat-icon> Logout</li>
+    </ul>
+
+  </mat-drawer>
+  <button *ngIf="innerWidth<=640" mat-button (click)="drawer.toggle()">
+    Open Menu <mat-icon>menu</mat-icon>
+  </button>
+  <div class="example-sidenav-content">
+    <div class="header">
+      <h1>Admin Dashboard</h1>
+    </div> 
+    <mat-icon class="filter-list-icon cursor" (click)="clearFilters()" 
+     matRipple matTooltipPosition="above" 
+    [matTooltip]="hasFilterData()?'Remove Filters':''" matTooltipClass="tooltip-class"
+    >{{hasFilterData()?'filter_alt_off':'filter_list_alt'}}</mat-icon>
+    <mat-checkbox [formControl]="inBidding" (change)="getAuctions(1,$event)" color="primary">In Bidding</mat-checkbox> &nbsp;
+    <mat-checkbox [formControl]="sold" (change)="getAuctions(3,$event)" color="primary">Sold</mat-checkbox> &nbsp;
+    <mat-checkbox [formControl]="expired" (change)="getAuctions(4,$event)" color="primary">Expired</mat-checkbox> &nbsp;
+    <input class="product-name-search" [(ngModel)]="name"  (input)="search(name)" 
+    placeholder="search name">
+    <mat-icon (click)="name='';search('');" class="medium vam grey mat-icon-initials" *ngIf="name">clear</mat-icon>
+    <select class="product-category-search ml-5" 
+    [(ngModel)]="category" (ngModelChange)="onSelectChange($event)" name="sel2">
+      <option value="" selected disabled>select category</option>
+      <option *ngFor="let categ of categories" [value]="categ.id">{{categ.prodCatName}}</option>
+    </select> 
+    <mat-icon (click)="category='';onSelectChange('');" 
+    class="medium vam grey mat-icon-initials" *ngIf="category">clear</mat-icon>
+    <select class="product-category-search ml-5" 
+    [(ngModel)]="sortBY" (ngModelChange)="onSelectSortChange($event)" name="sort">
+      <option value="" selected disabled>sort by</option>
+      <option *ngFor="let sort of sortColumns" [value]="sort.value">{{sort.name}}</option>
+    </select> 
+    <mat-icon (click)="sortBY='';onSelectSortChange('');" 
+    class="medium vam grey mat-icon-initials" *ngIf="sortBY">clear</mat-icon>
+    <select class="product-category-search ml-5" 
+    [(ngModel)]="sortDirection" (ngModelChange)="onSelectSortDirectionChange($event)" name="sort">
+      <option value="" selected disabled>sort direction</option>
+      <option  value="ASC">Ascending</option>
+      <option  value="DESC">Descending</option>
+    </select> 
+    <mat-icon (click)="sortDirection='';onSelectSortDirectionChange('');" 
+    class="medium vam grey mat-icon-initials" *ngIf="sortDirection">clear</mat-icon>
+    &nbsp; 
+    <button class="product-name-search search-button" type="button" [disabled]="isAuctionListLoading" 
+    (click)="getAllAuctionList()">
+    <img [src]="loader" class="loader-filter-img" *ngIf="isAuctionListLoading">  
+    <mat-icon (click)="sortBY='';onSelectSortChange('');" 
+    class="medium vam mat-icon-initials" *ngIf="!isAuctionListLoading">search</mat-icon> search
+    </button>
+    <div class="row">
+      <div style="width:100%;">
+        <div class="data-card">
+          <h2>List of Auction (Current, Finished or Expired)</h2>
+
+          <h5>{{todayDate | date:'fullDate'}}</h5>
+          <table>
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Product</th>
+                <th>Category</th>
+                <th>Closing Date</th>
+                <th>Total Bids</th>
+                <th>Price</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let auction of listOfAllAuctions; let i=index">
+                <td>{{i+1}}</td>
+                <td>{{auction?.Prod_Name}}</td>
+                <td>{{auction?.prod_cat_name}}</td>
+                <td>{{auction?.Auc_Close_Date| date:'M/d/yy, h:mm a'}}
+                  <div>
+                    {{getAuctionStatus(auction?.status)}}
+                  </div>
+                </td>
+                <td><button mat-button type="button"
+                    (click)="getAllBidsForAuction(auction)">{{auction?.bidCount}}</button></td>
+                <td>{{auction?.Prod_Start_Bid_Amount}} /- RS</td>
+                <td><button mat-button type="button" (click)="updateSellerAuctionStatus(auction)"><mat-icon>delete</mat-icon></button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</mat-drawer-container>
+</div>

@@ -1,0 +1,177 @@
+<!--Finished auctions cards-->
+<div style="background:#fff" class="container-home">
+    <div class="margin">
+        <div class="fin" *ngIf="!isAuctionListLoading"> <span class="text1">Finished </span><span class="text2">Auctions</span>
+            <span class="green small ffss"> (These products are sold on biddings within due date)</span>
+        </div>
+        <ng-container *ngIf="isAuctionListLoading"><!--Loader while loading data-->
+            <p class='yellow large'>Auctions Loading...</p>
+            <ngx-shimmering-loader [style]="shimmarStyle" [isVisible]="isAuctionListLoading" 
+            [elemCount]="2">
+            </ngx-shimmering-loader>
+          </ng-container>
+        <div *ngIf="!isAuctionListLoading && finishedAuctionsList?.length>0" fxLayout="row wrap" 
+            fxLayoutGap="10" fxLayoutGap.lt-sm="0">
+            <div *ngFor="let auction of finishedAuctionsList;let i=index" class="child-{{i+1}}" fxFlex="25"
+                fxFlex.lt-sm="100">
+                <div matRipple class="width-and-selection">
+                    <mat-card>
+                        <mat-card-title-group>
+                            <mat-card-title class="pb-5">{{auction?.Prod_Name}}</mat-card-title>
+                            <mat-card-subtitle class="mb-m20"><span>Final Price RS {{auction?.Auc_Payment_Amount}} </span> 
+                                <p>
+                                    <span class="medium"><span class="green">Winner</span><br>
+                                    <a class="bold capitalize">
+                                        {{auction?.Auc_Winner_FName+" "+auction?.Auc_Winner_LName}}</a></span>
+                                </p>
+                            </mat-card-subtitle>
+                            <img fxHide.lt-md="true" mat-card-sm-image [alt]="auction.Prod_Name+' Image'"
+                                [src]="imagePart1+auction?.ID+imagePart2+randomNumber">
+                            <img style="width:130px;" fxHide.gt-sm="true" mat-card-md-image
+                                [src]="imagePart1+auction?.ID+imagePart2+randomNumber" [alt]="auction.Prod_Name+' Image'">
+                        </mat-card-title-group>
+                        <mat-card-content>
+                            <p style="text-align: justify;">
+                                This food item is sold and bidding is finished for this.
+                                Look for more food items available on biddings.</p>
+                        </mat-card-content>
+                    </mat-card>
+                </div>
+            </div>
+        </div>
+        <span *ngIf="!isAuctionListLoading && !finishedAuctionsList?.length" 
+        class="medium pb-5 italic">
+            No yet recently finished auctions
+        </span>
+        <br>
+    </div>
+</div>
+<!--Current auctions cards-->
+
+<div class="container-home">
+    <div class="current-bids">
+        <div class="margin">
+            <div class="fin"> <span class="text1">Current </span>
+                <span style="color:gray;" class="text2">Auctions</span> 
+                <mat-icon matTooltip="Refresh" matTooltipClass="tooltip-class"  
+                (click)="getAllAuctionList()" matRipple matTooltipPosition="above"
+                class="large vam ml-10 grey mat-icon-initials">sync</mat-icon>
+                <span *ngIf="!(currentLoggedInUser || currentLoggedInUser?.id)" class="red medium"> (Login required to
+                    place a bid) </span>
+            </div>
+            <div class="center" *ngIf="!isAuctionListLoading && !currentAuctionsList?.length">
+                <h1 class="ptb-10 mlr-10 center">No Auctions Available</h1>
+            </div>
+            <div fxLayout="row wrap" fxLayoutGap="20" fxLayoutGap.lt-sm="0" 
+            *ngIf="!isAuctionListLoading && currentAuctionsList?.length>0">
+                <!--Child 1-->
+                <div *ngFor="let auction of currentAuctionsList;let i=index"  fxFlex="30"
+                class="child-{{i+1}}" fxFlex.lt-sm="100">
+                    <mat-card class="example-card auction-card">
+                        <mat-card-title class="card-title">
+                          <button class="food-expiry-date" mat-button
+                        matTooltipClass='tooltip-class' matTooltip="The date this auction item will expire"
+                        matTooltipTouchGestures="on" matTooltipShowDelay="1000">
+                        <span class="small pr-5 red">Auction closing date </span>
+                        <span> {{auction.Auc_Close_Date | date :'MMM-d-y, h:mm a'}}</span>
+                       </button> 
+                        </mat-card-title>
+                        <!-- <mat-card-subtitle class="card-sub-title d-none">Auction Closing date
+                        </mat-card-subtitle> -->
+                        <img mat-card-image offset="100" [src]="imagePart1+auction?.ID+imagePart2+randomNumber"
+                            [alt]="'Product '+auction?.Prod_Name+' photo'" class="card-image" [alt]="auction.Prod_Name+' Image'">
+                        <!-- <mat-divider class="divider" inset></mat-divider> -->
+                        <mat-card-content>
+                            <div class="auctions-tyle">
+                                <h1>RS <sub>{{auction?.Prod_Start_Bid_Amount}}</sub> 
+                                </h1>
+                                <p class="product-name large">{{auction?.Prod_Name}} 
+                                    <span class="timer" matTooltipShowDelay="100" 
+                                    matTooltip="Hours left to expire"
+                                    matTooltipPosition="above" matTooltipClass="tooltip-class"
+                                    matTooltipTouchGestures="on">
+                                        <countdown [config]="getRemainingHoursCounter(auction.Auc_Close_Date)" 
+                                        class="custom-style" (event)="countDownEvent($event,auction)"></countdown>
+                                    </span>
+                                </p>
+                            </div>
+                        </mat-card-content>
+                        <mat-card-actions [ngClass]="{'actions-margin':auctionbidsLoading}">
+                            <div fxLayout="row wrap" [ngClass]="{'no-click':auctionbidsLoading}">
+                                <div (click)="goToAuctionDetails(auction)" matRipple class="child-1 sub-btn1"
+                                    fxFlex="65">
+                                    Submit A Bid
+                                </div>
+                                <div (click)="getAllBidsForAuction(auction)" matRipple class="child-2 sub-btn2"
+                                    fxFlex="35" matTooltipShowDelay="1000" 
+                                    [matTooltip]="auction?.bidCount>0?'Show All Bids on this auction':'No Bids Yet submitted'"
+                                    matTooltipPosition="above" matTooltipClass="tooltip-class"
+                                    matTooltipTouchGestures="on">
+                                    <mat-icon>close</mat-icon> <span>{{auction?.bidCount}}</span>
+                                </div>
+                            </div>
+                        </mat-card-actions>
+                        <mat-card-footer *ngIf="auction?.ID==auctionSelected?.ID && auctionbidsLoading">
+                            <div>
+                                <div class="progress-bar">
+                                    <div class="progress-bar-value"></div>
+                                </div>
+                            </div>
+                        </mat-card-footer>
+                    </mat-card>
+                </div>
+            </div>
+            <div style="margin-top:10px">
+                <button class="see-all" mat-button (click)="showMore()">
+                    {{btnText}}<span *ngIf="!showAllProductsInBidding">&#10095;</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--How it works or How to Bid section-->
+<div style="background:#fff" class="container-home">
+    <div class="margin">
+        <h1 class="how-it-work">How It works</h1>
+        <div class="container-how" fxLayout="row wrap">
+            <div class="child-1" fxFlex fxFlex.lt-sm="100">
+                <div class="circle">
+                    <img class="center-img-sm" src="assets/user.png" alt="" (contextmenu)="$event.preventDefault()" />
+                </div>
+                <h1 matRipple>&#49;&#8228; Register Yourself</h1>
+
+            </div>
+
+            <div class="child-2" fxFlex fxFlex.lt-sm="100">
+                <div class="circle">
+                    <img class="center-img-sm" src="assets/booking.png" alt=""
+                        (contextmenu)="$event.preventDefault()" />
+                </div>
+                <h1 matRipple>&#50;&#8228; Buy or Bid</h1>
+            </div>
+
+            <div class="child-3" fxFlex fxFlex.lt-sm="100">
+                <div class="circle">
+                    <img class="center-img-sm" src="assets/auction.png" alt=""
+                        (contextmenu)="$event.preventDefault()" />
+                    <!-- <span class="next">&#10095;</span> -->
+                </div>
+                <h1 matRipple>&#51;&#8228; Submit a Bid</h1>
+            </div>
+
+            <div class="child-4" fxFlex fxFlex.lt-sm="100">
+                <div class="circle">
+                    <img class="center-img-sm" src="assets/trophy.png" alt="" (contextmenu)="$event.preventDefault()" />
+                </div>
+                <h1 matRipple>&#52;&#8228; Win</h1>
+            </div>
+        </div>
+        <div style="padding-top:13px;">
+            If you have any issue, feel free to
+            <button mat-button routerLink="/contact-us">  
+                <u class="show-like">Contact Us</u> 
+            </button>
+        </div>
+    </div>
+</div>
