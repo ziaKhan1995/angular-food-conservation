@@ -34,25 +34,6 @@ npm install ngx-mask@8.2.0
 
 ```
 
-project path:
-D:\secureTech\working\bpos\fcwrservice
-
-
-code generator================================================
-D:\secureTech\working\springbootNodeJsprojectgenerator
-
-STEPS to generate new Table Nodejs code:
-open eclipse shortcuts open eclipse-jee mars
-
-1: goto file ApplicationCodeGen.java 
-2: add table name  
-like at line 102
-listTablesNamesForEntities.add("Users");
-
-3: right click in ApplicationCodeGen.java and run as java application
-
-4: goto fcwrservice see the controller , model generated and routes updated
-
 ======================================================================
 
 #### Create .env File
