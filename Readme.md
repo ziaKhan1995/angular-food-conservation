@@ -3,11 +3,76 @@
 This is a 3-tiers architecture with frontend in angular and REST APIs, Backend in nodejs(Expresjs), Sequelize ORM and MySQL Database.
  feel free to asky any question. I have alos provided Report and detail demo video. so, it will help you to read the code easily.
  
+
+## Note:
+This is my FYP project So, I have provided 
+````didd
+ -> Frontend code
+ -> backend Code
+ -> Databse with data
+ -> Proposal
+ -> Internal and External  presenatations
+ -> Project Report/thesis
+ -> Report/thesis Latext Code
+ -> A short Demo Video
+ -> Readme file
+ ````
+ 
+ 
+### download Nodejs(if not installed)
+https://nodejs.org/en
+
+### Install Angular CLI (if not installed)
+npm install -g @angular/cli
+
+### add angular material (if not installed)
+ng add @angular/material
+
+
+### NPM packages need to Installed in angular frontend project:
+
+npm install --save ngx-shimmering-loader
+
+npm i @auth0/angular-jwt
+
+npm install sweetalert2
+
+npm i ngx-image-cropper
+
+npm i ngx-file-drag-drop
+
+npm i ngx-image-compress
+
+npm i ng-lazyload-image
+
+npm i ngx-countdown
+
+npm install card-validator
+
+npm i ngx-star-rating
+
+npm i ng-image-slider
+
+npm install --save ngx-webcam
+
+npm i -s @angular/flex-layout @angular/cdk
+ 
+# NPM packages need to Installed in backend project:
+
+npm init
+
+npm install express sequelize mysql2 cors
+ 
+#Database
+
+##### In sqlyog import the database provided.
+
+
+#Demo:
+
 <h1>1. Register on the Site</h1>
 
 ![Responsive register page](https://user-images.githubusercontent.com/77499979/227800030-80f2f36c-0907-4143-be94-6fef6f10c346.jpeg)
-
-
 
 ##### Or Login if you are already registered
 
