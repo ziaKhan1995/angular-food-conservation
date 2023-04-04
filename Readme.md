@@ -9,7 +9,7 @@ This is my FYP project So, I have provided
 ````didd
  -> Frontend code
  -> backend Code
- -> Databse with data
+ -> Database with data
  -> Proposal
  -> Internal and External  presenatations
  -> Project Report/thesis
@@ -57,18 +57,18 @@ npm install --save ngx-webcam
 
 npm i -s @angular/flex-layout @angular/cdk
  
-# NPM packages need to Installed in backend project:
+## NPM packages need to Installed in backend project:
 
 npm init
 
 npm install express sequelize mysql2 cors
  
-#Database
+# Database
 
 ##### In sqlyog import the database provided.
 
 
-#Demo:
+# Demo:
 
 <h1>1. Register on the Site</h1>
 
