@@ -1,6 +1,6 @@
 # Food Conservation and waste Reduction Web application
 
-This is a 3-tiers architecture with frontend in angular and REST APIs, Backend in nodejs(Expresjs), Sequelize ORM and MySQL Database.
+This is a 3-tiers architecture with frontend in angular, Backend in nodejs(Expresjs) REST APIs Framework, Sequelize ORM and MySQL Database.
  feel free to asky any question. I have alos provided Report and detail demo video. so, it will help you to read the code easily.
  
 
