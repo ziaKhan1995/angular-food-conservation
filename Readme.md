@@ -23,14 +23,16 @@ This is my FYP project So, I have provided
 https://nodejs.org/en
 
 ### Install Angular CLI (if not installed)
+````diff
 npm install -g @angular/cli
-
+````
 ### add angular material (if not installed)
+````diff
 ng add @angular/material
-
+````
 
 ### NPM packages need to Installed in angular frontend project:
-
+````diff
 npm install --save ngx-shimmering-loader
 
 npm i @auth0/angular-jwt
@@ -56,16 +58,17 @@ npm i ng-image-slider
 npm install --save ngx-webcam
 
 npm i -s @angular/flex-layout @angular/cdk
- 
-## NPM packages need to Installed in backend project:
+````
 
+## NPM packages need to Installed in backend project:
+````diff
 npm init
 
 npm install express sequelize mysql2 cors
- 
+````
 # Database
 
-##### In sqlyog import the database provided.
+**In sqlyog import the database provided.**
 
 
 # Demo:
@@ -74,7 +77,7 @@ npm install express sequelize mysql2 cors
 
 ![Responsive register page](https://user-images.githubusercontent.com/77499979/227800030-80f2f36c-0907-4143-be94-6fef6f10c346.jpeg)
 
-##### Or Login if you are already registered
+**Or Login if you are already registered**
 
 ![Login required](https://user-images.githubusercontent.com/77499979/227800100-23a80b4b-7595-41b8-bdac-e1ed5abbeafd.jpeg)
 
